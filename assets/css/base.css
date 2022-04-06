@@ -3,11 +3,14 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
+    --star-gold-color: #ffce3e;
     
     --header-height: 64px;
 }
 * {
-    box-sizing: inherit ;
+    box-sizing: border-box ;
+    margin: 0;
+    padding: 0;
 }
 
 html {
