@@ -14,7 +14,7 @@
                     <div class="title1">ADD PRODUCTS</div>
     </div>
     <div class="add_products">
-        <form method="POST" action="process_insert.php">
+        <form method="POST" >
             <table class="add">
                 <tr>
                     <td>Producer</td>
@@ -61,7 +61,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <button>ADD</button>
+                        <button type="submit">ADD</button>
                     </td>
                 </tr>
             </table>

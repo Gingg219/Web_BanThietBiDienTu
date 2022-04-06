@@ -25,7 +25,7 @@ body{margin: 0px;
             float: left; width: 15%; display: flex; justify-content: center;
         }
                 #logo img{
-                    width: 154px;
+                    height: 53px;
                 }
         #container > #search{
             margin: auto; max-width: 50%; 

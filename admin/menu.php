@@ -1,20 +1,10 @@
 <div id="overall">
         <div id="container">
         <div>
-            <?php
-                    if(isset($_GET['error'])){
-            ?>
-                <span style="color: red; font-size: 20px;"><?php echo $_GET['error'] ?></span>
-            <?php } ?>
-            <?php
-                    if(isset($_GET['success'])){
-            ?>
-                <span style="color: green; font-size: 20px;"><?php echo $_GET['success'] ?></span>
-            <?php } ?>
             </div>
             <div id="logo">
                 <a href="#">
-                    <img src="icons/logoo.png" alt="">
+                    <img src="icons/logo.png" alt="">
                 </a>
             </div>
             <div id="search">
