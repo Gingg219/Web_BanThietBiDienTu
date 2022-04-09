@@ -19,3 +19,69 @@ html {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+
+.list-unstyled {
+    padding: 0;
+    list-style: none;
+}
+
+.font-weight-both {
+    font-weight: 700 !important;
+}
+
+.text-reset {
+    color: inherit !important;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+
+.m-0 {
+    margin: 0 !important;
+}
+/* Margin-bottom */
+.mb-1 {
+    margin-bottom: 0px !important;
+}
+.mb-1 {
+     margin-bottom: 5px !important;
+}
+.mb-2 {
+    margin-bottom: 10px !important;
+}
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item--active .pagination-item__link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+
+.pagination-item--active:hover .pagination-item__link {
+    background-color: #ec6b51;
+}
+
+.pagination-item__link {
+    --height: 30px; /* bien cuc bo */
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
