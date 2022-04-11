@@ -1,3 +1,4 @@
+/* Page Index CSS */
 /* Header */
 .header {
     background-color: var(--primary-color);
@@ -128,6 +129,7 @@
     line-height: 1.2;
     color: #ffffff;
     font-weight: 300;
+    margin-right: 5px;
 }
 .about-item__content p {
     margin: 0;
@@ -349,13 +351,13 @@
 
 .home-product-item {
     display: block;
-    min-height: 350px;
     text-decoration: none;
     position: relative;
     background-color: var(--white-color);
     margin-top: 10px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-radius: 5px;
+    /* border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px; */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: transform linear 0.1s;
     will-change: transform; /* khai báo để trình duyệt hiểu transform */
@@ -417,7 +419,7 @@
 .home-product-item__action  {
     display: flex;
     justify-content: space-between;
-    margin: 20px 10px;
+    padding: 20px 10px;
 }
 
 .home-product-item__rating  {
@@ -552,4 +554,148 @@
 
 .footer__info-address:nth-child(2) {
     color: #737373;
+}
+
+
+/* Page Mobile CSS */
+/* Mobile-Header */
+.box-header-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: left;
+    margin: 0 15px 0 0;
+    position: relative;
+}
+.box-header-menu__wrap {
+    background-color: rgba(238, 238, 238, 0.25);
+    padding: 13px;
+}
+.header-menu__icon {
+    color: var(--white-color);
+}
+
+.box-list-item__mobile {
+    min-width: 230px;
+    position: absolute;
+    top: -100%;
+    left: -176px;
+    visibility: hidden;
+    opacity: 0;
+}
+.box-header-menu:hover > .box-list-item__mobile {
+    visibility: visible;
+    opacity: 1;
+    top:100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.block-breadcrumbs {
+    width: 100%;
+    height: 30px;
+    display: grid;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #ffffff;
+    -webkit-box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    z-index: 1;
+    overflow-x: auto;
+    position: relative;
+}
+.block-breadcrumbs ul {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 0 0 0 0;
+    margin: 0;
+    font-size: 1.2rem;
+    list-style: none;
+}
+.block-breadcrumbs ul li {
+    float: left;
+    margin-right: 15px;
+    color: #707070;
+}
+.block-breadcrumbs ul li a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #707070;
+    float: left;
+}
+.breadcrumbs__home-icon {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Mobile-container */
+.container-mobile__content {
+    margin-top: 94px;
+}
+.item-subcate {
+    height: 34px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: left;
+    margin: 0 1rem 1rem 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    color: #444444;
+    overflow: hidden;
+    position: relative;
+}
+.icons-subcate {
+    height: 15px;
+}
+.box-title .box-title__title {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 22px;
+    color: #444444;
+}
+.block-filter {
+    font-size: 1.2rem;
+}
+.item-filter {
+    height: 34px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: left;
+    margin: 0 1rem 1rem 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    background: #F3F4F6;
+    color: #444444;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.item-filter > i {
+    margin-right: 5px;
 }
