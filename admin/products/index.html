@@ -4,22 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List products</title>
+    <title>List Products</title>
+    <script src="https://kit.fontawesome.com/8c12853810.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<body> 
-<?php include'../menu.php'?>
-            <div id="right">
-                <div class="title">
-                    <div class="title1">LIST OF PRODUCTS</div>
-                    <div class="title2">
-                        <div>
-                            <a href="form_insert.php"><button>Add products</button></a>
-                        </div>
-                    </div>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Dashboards</h2>
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-gauge"></i>Home</a></li>
+                <li><a href="index.html" class="pro-btn"><i class="fa-solid fa-tablet-screen-button"></i>Products<span class="fa-solid fa-caret-down first"></span></a>
+                    <ul class="pro-show">
+                        <li><a href="form_insert.html">Add products</a></li>
+                        <li><a href="#">Phone</a></li>
+                        <li><a href="#">Laptop</a></li>
+                        <li><a href="#">Tablet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-user"></i>Customers</a></li>
+                <li><a href="#"><i class="fa-solid fa-trademark"></i>Manufacturer</a></li>
+                <li><a href="#"><i class="fa-solid fa-users"></i>Users</a></li>
+                <li><a href="#"><i class="fa-solid fa-address-card"></i>Bill</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-invoice"></i>Profile</a></li>
+            </ul>
+        </div>
+        <!-- <script>
+            $('wrapper.sidebar ul li .pro-btn').click(function(){
+                $('wrapper.sidebar ul ul .pro-show').toggleClass("show");
+            });
+        </script> -->
+        <div class="logout"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
+        <div class="main_content">
+            <div class="header">
+                <h3>List products</h3>
+                <div class="search">
+                    <form>
+                        <input type="search" placeholder="Search" name="search" value="">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
                 </div>
-                <div class="list_product">
-                    <table class="products">
+                <div class="dear"><span>Hello Tuaans</span></div>
+            </div>
+            <div class="info">
+                    <table class="tb_views">
                         <tr>
                             <th>ID</th>
                             <th>PICTURE</th>
@@ -27,8 +55,8 @@
                             <th>DESCRIPTION</th>
                             <th>COLOR</th>
                             <th>PRICE</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -70,8 +98,6 @@ Tối ưu điện năng - Sạc nhanh 20 W, đầy 50% pin trong khoảng 30 ph�
                             <td><a href="process_del.php?del=<?php echo $se['ID'];?>">Delete</a></td>
                         </tr>
                     </table>
-                </div>
-            </div>
         </div>
     </div>
 </body>

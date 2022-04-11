@@ -1,314 +1,196 @@
-body{margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
 }
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        #overall{
-            background: white; width: 100%; height: 1000px;
-              position: relative; margin-top: 26px; display: flex; text-justify: flex-start;
-        }
-        #container{
-            background: #C20000; 
-            width: 100%; height: 8%; 
-            display: flex; justify-content: space-between;
-            float: left; 
-            position: fixed;     
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            z-index: 99;
-        }
-        #container > #logo{
-            float: left; width: 15%; display: flex; justify-content: center;
-        }
-                #logo img{
-                    height: 53px;
-                }
-        #container > #search{
-            margin: auto; max-width: 50%; 
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-        #search img{
-            margin: 10px 20px; width: 25px; height: 25px; 
-            float: left;padding: 0px 20px; 
-            background: #c9c9c9; 
-            border: 1px solid black;
-        }
-        #search input[type=text] {
-                width: 320px;
-                padding: 10px 20px;
-                margin-top: 3px;
-                box-sizing: border-box;
-                float: left;
-                border-radius: 15px;
-            }
-         #container > #logout{
-             max-width: 20%; float: right; justify-content: center; align-items: center; display: flex;
-         }
-         #container > #logout> a > img{
-             padding: 9px 15px; width: 30px;  background: #C20000;
-         }
-         #overall > #left{
-             width: 15%; height: 100%; background: #C20000; position: relative;
-         }
-         #left >#menu{
-            max-width: 90% ; height: 100%; position: fixed;
-                }
-                ul{
-                    list-style: none;
-                    text-align: left;
+body{
+    background-color: rgb(165, 182, 188);
+ }
 
-                }
-                ul>li{
-                    font-size: 30px;
-                    font-family: 'Montserrat', sans-serif;
-                    padding: 10px;
-                    border-radius: 15px;
-                            }
-                ul>li>a{
-                    text-decoration: none;
-                    color: darkslategray;
-                    
-                }
-                li:hover{
-                    background-color: #c9c9c9;
-                }
-                hr {
-                    border: 2px solid #c9c9c9;
-                    border-radius: 2px;
-                    width: 100%;
-                }
-        #overall > #right{
-            width: 85%; height: 100%; float: right; background: #c9c9c9; position: relative;
-        }
-            #overall > #right>.title{
-                width: 100%; height: 50px; background: #ffd154;
-                position: fixed; justify-content: space-evenly; display: flex;
-                
-            }
-            #overall > #right>.title>.title1{
-                font-size: 35px; display: flex;
-                align-items: center;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-                color: #3d3d3d;
+ /* sidebar */
+ .wrapper{
+   display: flex;
+   position: relative;
+ }
+ 
+ .wrapper .sidebar{
+   width: 200px;
+   height: 100%;
+   background: #4b4276;
+   padding: 30px 0px;
+   position: fixed;
+ }
+ 
+ .wrapper .sidebar h2{
+   color: #fff;
+   text-transform: uppercase;
+   text-align: center;
+   margin-bottom: 30px;
+ }
+ 
+ .wrapper .sidebar ul li{
+   padding: 15px;
+   border-bottom: 1px solid #bdb8d7;
+   border-bottom: 1px solid gray;
+   position: relative;
 
-            }
-            #overall > #right>.title>.title2{
-                display: flex;
-                align-items: center;
-            }
-            .title2 div button{
-                font-family: "Roboto", sans-serif;
+ }    
+ 
+ .wrapper .sidebar ul li a{
+   color: #bdb8d7;
+   display: block;
+   width: 100%;
+ }
+ 
+ .wrapper .sidebar ul li a .fa-solid{
+   width: 30px;
+ }
+ 
+ .wrapper .sidebar ul li:hover{
+   background-color: #594f8d;
+ }
+     
+ .wrapper .sidebar ul li:hover a{
+   color: #fff;
+ }
+ .wrapper .sidebar ul li a span{
+   position: absolute;
+   top: 25px;
+   right: 0px;
+   font-size: 25px;
+   transform: translateY(-50%);
+   transition: transform 0.4s;
+ }
+ .wrapper .sidebar ul li a:hover span{
+   transform: translateY(-50%) translateX(-50%)  rotate(180deg);
+ }
+ .wrapper .sidebar ul >li:hover >ul{
+   display: block;
+ }
+ /* submenu */
+ .wrapper .sidebar ul ul{
+   position: static;
+   display: none;
+ }
+ .wrapper .sidebar ul ul li a{
+   padding-left: 30px;
+ }
+ .wrapper .sidebar ul ul li:hover{
+  background-color: #c6c4d2;
+}
+    
+.wrapper .sidebar ul ul li:hover a{
+  color: rgb(151, 47, 47);
+}
+
+
+/* content */
+ .wrapper .main_content{
+     width: 100%;
+     margin-left: 200px;
+ }
+ .wrapper .main_content .header{
+    padding: 15px;
+    background: rgb(255, 255, 255);
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+    text-align: center;
+  }
+  .wrapper .main_content .header h3{
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .wrapper .main_content .header .dear{
+      position: absolute;
+      right: 80px;
+      top: 20px ;
+  }
+
+  /* search */
+  .wrapper .main_content .header .search input{
+    width: 300px;
+  }
+  .wrapper .main_content .header .search button{
+          width: 40px;
+  }
+
+  .wrapper .logout{
+      position: absolute;
+      right: 20px;
+      display: flex;
+      margin-top: 10px;
+  }
+  .wrapper .logout a{
+      display: block;
+      width: 40px;
+    background: #594f8d;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-radius: 5px;
+  }
+  .wrapper .logout a:hover{
+    color: #fff;
+}
+  
+  .wrapper .main_content .info{
+    margin: 20px;
+    color: #fff;
+    background: #537f85;
+}
+  
+  .wrapper .main_content .info div{
+    margin-bottom: 20px;
+  }
+  /* .wrapper .main_content .info div a{
+    padding: 5px 10px;
+    background-color: #4b4276;
+  } */
+  .wrapper.main_content .info .tb_views{
+    border-radius: 0px;
+    overflow: hidden;
+    width: 100%
+  }
+            th{
+                padding: 6px 0px;
+                font-weight: 500;
+                font-size: 14px;
+                color: #fff;
                 text-transform: uppercase;
-                background: #3d3d3d;
-                width: 100%;
-                border: 0;
-                padding: 10px;
-                color: white;
-                font-size: 20px;
-                cursor: pointer;
+                border-bottom: solid 5px 
             }
-            #right>.list_product{
-                background: forestgreen; margin-top: 60px;
+            td{
+                padding: 15px;
+                text-align: left;
+                font-weight: 300;
+                font-size: 16px;
+                color: #fff;
+                border-bottom: solid 1px ;
             }
-                .list_product>.products{
-                        background: #34495E;
-                        color: #fff;
-                        border-radius: 0px;
-                        overflow: hidden;
-                        width: 100%
-                }
-                th{
-                    padding: 6px 0px;
-                    font-weight: 500;
-                    font-size: 14px;
-                    color: #fff;
-                    text-transform: uppercase;
-                    border-bottom: solid 5px 
-
-                }
-                td{
-                    padding: 15px;
-                    text-align: left;
-                    font-weight: 300;
-                    font-size: 16px;
-                    color: #fff;
-                    border-bottom: solid 1px 
-                }
-                td>img{
-                    width: 100px;
-                }
-                td>a{
-                    color: aqua;
-                }
-            #right>.add_products{
-                margin-top: 60px; margin-left: 30%;
-            }
-    /* #login_form{
-        width: 400px;
-        margin: auto;        
-    }
-    .login{
-        background: darkgrey;
-        max-width: 100%;
-        padding: 30px;
-        text-align: center;
-    }
-    .login input{
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f2f2f2;
-        width: 70%;
-        border: 0;
-        margin: 0 0 20px;
-        padding: 25px;
-        font-size: 14px;
-    }
-    .login button{
-        font-family: Arial, Helvetica, sans-serif;
+                            td>img{
+                                width: 100px;
+                            }
+                            td>a{
+                                color: aqua;
+                            }
+  .info .form{
+    height: 100%;
+    width: 40%;
+    margin:auto;
+  }  
+  .info .form form button{
+    font-family: Arial, Helvetica, sans-serif;
         background: dimgray;
-        width: 70%;
+        width: 100%;
         border: 0;
         padding: 15px;
         color: #FFFFFF;
         font-size: 14px;
         cursor: pointer;
-    }
-    .login a{
-        text-decoration: none;
-    }
-    .login button:hover{
-        background: #34495E; font-size: 18px;
-    } */
-    #login_form {
-        width: 400px;
-    }
-    .login_container {
-        width: 100vw;
-        height: 100vh;
-        background: #16a085; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: -webkit-linear-gradient(
-            to right,
-            #f4d03f,
-            #16a085
-        );
-        background: linear-gradient(
-            to right,
-            #f4d03f,
-            #16a085
-        );
-    }
-    .login {
-        background: var(--background-color);
-        max-width: 100%;
-        padding: 30px;
-        text-align: center;
-        border-radius: 4px;
-    }
-    .login input {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #eee;
-        width: 70%;
-        border: 0;
-        margin: 0 0 20px;
-        padding: 10px 16px;
-        font-size: 16px;
-        border-radius: inherit;
-        outline: none;
-        color: var(--text-color);
-    }
-    .login form {
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .login button {
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--primary-color);
-        width: 70%;
-        border: 0;
-        padding: 12px 0;
-        color: #fff;
-        font-size: 14px;
-        cursor: pointer;
-    }
-    .login a {
-        margin-top: 20px;
-        line-height: 1.2;
-        text-decoration: none;
-    }
-    .login a:hover {
-        opacity: 0.8;
-    }
-    .login button:hover {
-        opacity: 0.8;
-    }
-    .highcharts-figure,
-    .highcharts-data-table table {
-        min-width: 320px;
-        max-width: 800px;
-        margin: 1em auto;
-    }
-
-
-/*-----------charts----------*/
-
-#container1{
-    width:100%;
-}
-    .highcharts-figure,
-.highcharts-data-table table {
-  min-width: 320px;
-  max-width: 800px;
-  margin: 1em auto;
-}
-
-.highcharts-data-table table {
-  font-family: Verdana, sans-serif;
-  border-collapse: collapse;
-  border: 1px solid #ebebeb;
-  margin: 10px auto;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-
-.highcharts-data-table caption {
-  padding: 1em 0;
-  font-size: 1.2em;
-  color: #555;
-}
-
-.highcharts-data-table th {
-  font-weight: 600;
-  padding: 0.5em;
-}
-
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-  padding: 0.5em;
-}
-
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-  background: darkcyan;
-}
-
-.highcharts-data-table tr:hover {
-  background: darkcyan;
-}
-
-input[type="number"] {
-  min-width: 50px;
-}
-
-        
+  }        
