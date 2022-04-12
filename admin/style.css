@@ -152,6 +152,39 @@ body{
     padding: 5px 10px;
     background-color: #4b4276;
   } */
+  .wrapper .main_content .info .add_new {
+    width: 100%;
+    height: 25px;
+    float: right;
+
+  }
+  .wrapper .main_content .info .add_new a{
+    display: block;
+      width: 150px;
+    background: #594f8d;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-radius: 5px;
+    float: right;
+
+  }
+  .wrapper .main_content .info .add_new a:hover{
+    color: #fff;
+  }
+  .wrapper .main_content .info .add_new span{
+    display: block;
+      width: 150px;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-radius: 5px;
+    float: right;
+  }
   .wrapper.main_content .info .tb_views{
     border-radius: 0px;
     overflow: hidden;
