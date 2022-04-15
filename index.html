@@ -5,79 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhonesShop</title>
+    <link rel="icon" href="./assets/img/logomain.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
     <!-- Header -->
     <div class="header">
-        <div class="header-container">
-            <div class="header-logo">
-                <a href=""><img src="./assets/img/cellphones-logo.png" alt="" class="header-logo__img"></a>
-            </div>
-            <div class="header-search">
-                <div class="search-box">
-                   <div class="search-box__btn">
-                        <i class="search-box__icon fa-solid fa-magnifying-glass"></i>
-                   </div>
-                   <input type="text" placeholder="Bạn cần tìm gì?" class="search-box__input">
+        <div class="grid wide">
+            <div class="header-container">
+                <div class="header-logo ">
+                    <a href="index.html"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
+                </div>
+                <div class="header-search hide-on-mobile">
+                    <div class="search-box">
+                       <div class="search-box__btn">
+                            <i class="search-box__icon fa-solid fa-magnifying-glass"></i>
+                       </div>
+                       <input type="text" placeholder="Bạn cần tìm gì?" class="search-box__input">
+                    </div>
+                </div>
+    
+                <div class="header-about hide-on-mobile-tablet">
+                    <a href="" class="about-item about-1">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Gọi mua hàng<br /><span>1800.0000</span></p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-2">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Cửa hàng <br />gần bạn</p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-3">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Tra cứu<br />đơn hàng</p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-4">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>1</span>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Giỏ<br />hàng</p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-5">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="about-item__content">Member</div>
+                    </a>
+                </div>
+    
+                <div class="header-cart">
+                    <a class="box-cart" href="">
+                    <div class="cart-box-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <p>Giỏ hàng</p>
+                    <span class="items-in-cart">1</span>
+                    </a>
                 </div>
             </div>
-            <div class="header-about">
-                <a href="" class="about-item about-1">
-                    <div class="about-item__icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div class="about-item__content">
-                        <p class="">Gọi mua hàng<br /><span>1800.0000</span></p>
-                    </div>
-                </a>
-                <a href="" class="about-item about-2">
-                    <div class="about-item__icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="about-item__content">
-                        <p class="">Cửa hàng <br />gần bạn</p>
-                    </div>
-                </a>
-                <a href="" class="about-item about-3">
-                    <div class="about-item__icon">
-                        <i class="fa-solid fa-truck"></i>
-                    </div>
-                    <div class="about-item__content">
-                        <p class="">Tra cứu<br />đơn hàng</p>
-                    </div>
-                </a>
-                <a href="" class="about-item about-4">
-                    <div class="about-item__icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span>1</span>
-                    </div>
-                    <div class="about-item__content">
-                        <p class="">Giỏ<br />hàng</p>
-                    </div>
-                </a>
-                <a href="" class="about-item about-5">
-                    <div class="about-item__icon">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                    <div class="about-item__content">Member</div>
-                </a>
-            </div>
         </div>
+        <ul class="header__sort-bar">
+            <li class="header__sort-item">
+                <a href="" class="header__sort-link">Liên quan</a>
+            </li>
+            <li class="header__sort-item header__sort-item--active">
+                <a href="" class="header__sort-link ">Nổi bật</a>
+            </li>
+            <li class="header__sort-item">
+                <a href="" class="header__sort-link">Bán chạy</a>
+            </li>
+            <li class="header__sort-item ">
+                <a href="" class="header__sort-link">
+                    Giá
+                    <i class="fas fa-chevron-down header__sort-price"></i>   
+                </a>
+                
+            </li>
+        </ul>
     </div>
 
     <!-- Container -->
     <div class="app-container">
         <div class="grid wide">
-            <div class="container__content">
-                <div class="row">
+            <div class="row sm-gutter container__content">
                     <!-- list-item -->
-                <div class="col l-2">
+                <div class="col l-2 m-0 c-0">
                     <div class="box-list-item">
                         <ul class="list-item">
                             <li class="item-menu">
@@ -269,7 +301,7 @@
                     </div>
                 </div>
                 <!-- list-product -->
-                <div class="col l-10">
+                <div class="col l-10 m-12 c-12">
                     <div class="box-title hide-on-mobile-tablet">
                         <a href="" class="box-title__title">
                             <h2>Điện thoại nổi bật</h2>
@@ -289,6 +321,72 @@
                             </div>   
                         </div>
                     </div>
+
+                    <!-- Mobile-tablet-category -->
+                    <nav class="mobile-tablet-category">
+                        <ul class="mobile-tablet-category__list">
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Điện thoại</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Lap top, màn hình</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Tablet</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Âm thanh</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Đồng hồ</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Nhà thông minh</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Phụ kiện</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Thu cũ</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Hàng cũ</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Tivi</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Tin công nghệ</div>
+                                </a>
+                            </li>
+                            <li class="mobile-tablet-category__item">
+                                <a href="" class="mobile-tablet-category__link">
+                                    <div class="mobile-tablet-category__name">Khuyến mại</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
 
                     <div class="home-product">
                         <!-- grip -> row -> column -->
@@ -575,10 +673,10 @@
     <div class="footer">
         <div class="grid wide footer-box-contact">
             <div class="row footer-box-contact__wrap">
-                <div class="col l-3">
+                <div class="col l-3 m-6 c-6">
                     <ul class="list-unstyled footer-location">
                         <li class="list-location-find">
-                            <p class="mb-2 list-location-title">Tìm cửa hàng</p>
+                            <p class="mb-2 footer-title">Tìm cửa hàng</p>
                             <p class="mb-1">
                                 <a class="footer-item-link text-decoration-none" href="">Tìm cửa hàng gần nhất</a>
                             </p>
@@ -593,9 +691,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col l-3">
+                <div class="col l-3 m-6 c-6">
                     <ul class="list-unstyled footer-phone-contact">
                         <li class="list-phone-contact">
+                            <p class="mb-2 footer-title">Thông tin liên hệ</p>
                             <p class="mb-1">
                                 Gọi mua hàng: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2097</a> (8h00 - 22h00)
                             </p>
@@ -608,8 +707,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col l-3">
+                <div class="col l-3 m-6 c-6">
                     <ul class="list-unstyled footer-seaches">
+                        <p class="mb-2 footer-title">Chính sách mua và bảo hành</p>
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Mua hàng và thanh toán Online</a></li>
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Mua hàng và trả góp Online</a></li>
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra thông tin đơn hàng</a></li>
@@ -621,8 +721,9 @@
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Dịch vụ bảo hành điện thoại</a></li>
                     </ul>
                 </div>
-                <div class="col l-3">
+                <div class="col l-3 m-6 c-6">
                     <ul class="list-unstyled footer-others">
+                        <p class="mb-2 footer-title">Các thông tin khác</p>
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Quy chế hoạt động</a></li>
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Chính sách bảo hành</a></li>
                         <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Liên hệ hợp tác kinh doanh</a></li>
@@ -649,7 +750,7 @@
                 </a>
             </div>
             <div class="footer__info-address">
-                <p>Công ty mỹ phẩm F8</p>
+                <p>Công ty thiết bị điện tử W</p>
                 <p>Chi nhánh: 34, 306 Tây Sơn, Đống Đa, Hà Nội</p>
             </div>
         </div>

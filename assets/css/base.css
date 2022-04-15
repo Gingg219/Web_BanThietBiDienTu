@@ -6,6 +6,7 @@
     --star-gold-color: #ffce3e;
     
     --header-height: 64px;
+    --header-sort-bar-height: 30px;
 }
 * {
     box-sizing: border-box ;
