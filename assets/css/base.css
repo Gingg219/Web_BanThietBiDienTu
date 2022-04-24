@@ -39,6 +39,10 @@ html {
 .text-decoration-none {
     text-decoration: none !important;
 }
+/* Margin-top */
+.mt-3 {
+    margin-top: 15px !important;
+}
 
 /* Margin-bottom */
 .mb-1 {
@@ -190,4 +194,21 @@ html {
 .breadcrumbs__home-icon {
     margin-right: 10px;
     color: var(--primary-color);
+}
+/* Prices */
+.price-old  {
+    display: inline-block;
+    margin: 0 0 10px 10px!important;
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    color: #707070;
+}
+
+.price-current  {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #D70018;
+    margin-left: 10px !important;
 }
