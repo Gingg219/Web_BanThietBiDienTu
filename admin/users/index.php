@@ -26,8 +26,8 @@
                             <th>PASSWORD</th>
                             <th>ADDRESS</th>
                             <th>Level</th>
-                            <th></th>
-                            <th></th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -39,8 +39,8 @@
                             <td>123</td>
                             <td>Bac Giang</td>
                             <td>Administrator</td>
-                            <td><a href="form_update.php?up=<?php echo $se['ID'];?>">Update</a></td>
-                            <td><a href="process_del.php?del=<?php echo $se['ID'];?>">Delete</a></td>
+                            <td><a href="form_update.php?up=<?php echo $se['ID'];?>"><i class="fa-solid fa-file-pen"></i></a></td>
+                            <td><a href="process_del.php?del=<?php echo $se['ID'];?>"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                     </table>
         </div>

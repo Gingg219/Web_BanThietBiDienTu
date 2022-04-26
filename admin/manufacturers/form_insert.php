@@ -11,8 +11,12 @@
 <body>
 <?php require_once '../menu.php'; ?>
             <div class="info">
+                <?php 
+                    require_once '../control.php';
+                    $result=(new data())->se_categories();
+                ?>
                 <div class="form">
-                    <form method="POST" >
+                    <form method="POST" action="process_insert.php">
                         <table>
                             <tr>
                                 <td>Name</td>
@@ -23,11 +27,12 @@
                             <tr>
                                 <td>Category</td>
                                 <td>
-                                    <select name="category">
-                                        <option>Phone</option>
-                                        <option>Laptop</option>
-                                        <option>Tablet</option>
-                                    </select>
+                                <select name="id_category">
+                            <?php foreach($result as $se) : ?>
+                                <option value="<?php echo $se['id'] ?>">
+                                    <?php echo $se['name'] ?>
+                                </option>
+                            <?php endforeach ?>
                                 </td>
                             </tr>
                             <tr>

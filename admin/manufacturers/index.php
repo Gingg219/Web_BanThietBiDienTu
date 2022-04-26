@@ -11,11 +11,14 @@
 <body>
     <?php require_once '../menu.php'; ?>
     <div class="info">
+        <?php
+            require_once '../control.php';
+            $result=(new data)->se_manuf();
+        ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
                         <span>Total:</span>
                     </div>
-            <div class="info">
                     <table class="tb_views">
                         <tr>
                             <th>ID</th>
@@ -24,13 +27,29 @@
                             <th></th>
                             <th></th>
                         </tr>
+                        <?php foreach ($result as $each): ?>
                         <tr>
-                            <td>1</td>
-                            <td>Apple</td>
-                            <td>Smartphone</td>
-                            <td><a href="form_update.php?up=<?php echo $se['ID'];?>">Update</a></td>
-                            <td><a href="process_del.php?del=<?php echo $se['ID'];?>">Delete</a></td>
+                            <td><?php echo $each['id']?></td>
+                            <td><?php echo $each['name']?></td>
+                            <td>
+                                <?php
+                                    switch($each['id_category']){
+                                        case 1:
+                                            echo "Smartphone";
+                                            break;
+                                        case 2:
+                                            echo "Tablet";
+                                            break;
+                                        case 3:
+                                            echo "Laptop";
+                                            break;
+                                    }
+                                 ?>
+                            </td>
+                            <td><a href="form_update.php?up=<?php echo $each['id'];?>">Update</a></td>
+                            <td><a href="process_del.php?del=<?php echo $each['id'];?>">Delete</a></td>
                         </tr>
+                        <?php endforeach ?>
                     </table>
         </div>
     </div>

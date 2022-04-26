@@ -11,24 +11,36 @@
 <body>
 <?php require_once '../menu.php'; ?>
             <div class="info">
-                <div class="form">
-                    <form method="POST" >
+                <?php require_once '../control.php';
+                    $id=$_GET['up']; 
+                    $result=(new data())->find_manuf($id);
+                    $each=mysqli_fetch_array($result);
+                    $categories=(new data())->se_categories();
+                ?>
+                <div class="form" >
+                    <form method="POST" action="process_update.php">
                         <table>
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
                             <tr>
                                 <td>Name</td>
                                 <td>
-                                    <input type="text" name="name" >
+                                    <input type="text" name="name" value="<?php echo $each['name'] ?>">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Category</td>
-                                <td>
-                                    <select name="category">
-                                        <option>Phone</option>
-                                        <option>Laptop</option>
-                                        <option>Tablet</option>
-                                    </select>
-                                </td>
+                                    <td>
+                                    <select name="id_category">
+                                <?php foreach($categories as $categories) : ?>
+                                    <option value="<?php echo $categories['id'] ?>"
+                                        <?php if($each['id_category']==$categories['id'])
+                                            echo "selected"
+                                        ?>
+                                    >
+                                        <?php echo $categories['name'] ?>
+                                    </option>
+                                <?php endforeach ?>
+                                    </td>
                             </tr>
                             <tr>
                                 <td>
