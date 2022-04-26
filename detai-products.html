@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
+    <!-- <style>
+        .mySlides {
+            display: none;
+        }
+    </style> -->
 </head>
 <body>
     <!-- Header -->
@@ -167,9 +172,23 @@
             <div class="row no-gutters">
                 <div class="c-4">
                     <div class="detail-product__box-left">
-                        <div class="slide-wrap">
-                            <img src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_se_2022.jpg" alt="">
+                        <div class="slides-wrap">
+                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_se_2022.jpg" style="width:100%">
+                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/l/c/lcimg-beede483-355b-48bb-b07a-51285393a1031122.jpg" style="width:100%">
+                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" style="width:100%">
                         </div>
+
+                        <div class="swiper-wrapper">
+                            <div class="thumb-wrap">
+                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_se_2022.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                            </div>
+                            <div class="thumb-wrap">
+                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/l/c/lcimg-beede483-355b-48bb-b07a-51285393a1031122.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                            </div>
+                            <div class="thumb-wrap">
+                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+                            </div>
+                          </div>
                     </div>
                 </div>
                 <div class="c-4">
@@ -359,6 +378,315 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <div class="box-btn-show-more">
+                                <a href="#" class="btn-show-more">
+                                    Xem cấu hình chi tiết
+                                    <i class="btn-show-more__icon fa-solid fa-angle-down"></i>
+                                </a>
+                            </div>
+                            <div class="modal modal-body__overlay modal-technical-more-info" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Thông số kỹ thuật</h4>
+                                            <botton type="botton" class="close">
+                                                <i class="close-icon fa-solid fa-xmark"></i>
+                                                Đóng
+                                            </botton>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="box-table">
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>4K 2160p@24fps
+                                                                        <br>
+                                                                        4K 2160p@30fps
+                                                                        <br>
+                                                                        4K 2160p@24fps
+                                                                        <br>
+                                                                        4K 2160p@30fps
+                                                                        <br>
+                                                                        4K 2160p@24fps
+                                                                        <br>
+                                                                        4K 2160p@30fps
+                                                                        <br>
+                                                                    </th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="box-table-item">
+                                                    <div class="box-title">
+                                                        <p class="box-title__title">Màn hình</p>
+                                                    </div>
+                                                    <div class="box-content">
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Kích thước màn hình</th>
+                                                                    <th>4.7 inches</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Công nghệ màn hình</th>
+                                                                    <th>Liquid Retina</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Độ phân giải màn hình</th>
+                                                                    <th>1334 x 750 pixels (HD+)</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Tính năng màn hình</th>
+                                                                    <th>625 nits, Haptic Touch, True Tone</th>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="#" class="btn-close">Đóng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -453,5 +781,43 @@
         </div>
     </div>
 
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 4000); // Change image every 2 seconds
+        }
+    </script>
+
+    <script>
+        function currentDiv(n) {
+        showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-opacity-off";
+        }
+    </script>
 </body>
 </html>
