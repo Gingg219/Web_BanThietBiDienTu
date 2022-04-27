@@ -1,5 +1,16 @@
 /* Page Index CSS */
 /* Header */
+body.hidden {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.demo {
+    display: none !important;
+}
+.demo.hideShow  {
+    display: block !important;
+}
 .header {
     background-color: var(--primary-color);
     height: var(--header-height);

@@ -380,12 +380,12 @@
                             </table>
 
                             <div class="box-btn-show-more">
-                                <a href="#" class="btn-show-more">
+                                <a href="#" class="btn-show-more" id="show">
                                     Xem cấu hình chi tiết
                                     <i class="btn-show-more__icon fa-solid fa-angle-down"></i>
                                 </a>
                             </div>
-                            <div class="modal modal-body__overlay modal-technical-more-info" style="display: none;">
+                            <div class="modal modal-body__overlay modal-technical-more-info demo">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -813,10 +813,24 @@
             x[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            dots[i].className = dots[i].className.replace("opacity-off", "");
         }
         x[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " w3-opacity-off";
+        dots[slideIndex-1].className += "opacity-off";
+        }
+    </script>
+    <script>
+        const show = document.getElementById("show")
+        const demo = document.querySelector(".demo");
+        const body = document.querySelector('body')
+        if(show) {
+            show.onclick = (e) => {
+                e.preventDefault()
+                if(demo) {
+                    demo.classList.toggle("hideShow")
+                    body.classList.add('hidden')
+                }
+            }
         }
     </script>
 </body>
