@@ -3,25 +3,20 @@
             <h2>Dashboards</h2>
             <ul>
                 <li><a href="#"><i class="fa-solid fa-gauge"></i>Home</a></li>
-                <li><a href="../products/index.php" class="pro-btn"><i class="fa-solid fa-tablet-screen-button"></i>Products<span class="fa-solid fa-caret-down first"></span></a>
+                <li><a href="" class="pro-btn"><i class="fa-solid fa-tablet-screen-button"></i>Products<span class="fa-solid fa-caret-down first"></span></a>
                     <ul class="pro-show">
-                        <li><a href="#">Phone</a></li>
-                        <li><a href="#">Laptop</a></li>
-                        <li><a href="#">Tablet</a></li>
+                        <li><a href="/admin/products/smartphones">Phone</a></li>
+                        <li><a href="/admin/products/tablets">Tablet</a></li>
+                        <li><a href="/admin/products/laptops">Laptop</a></li>
                     </ul>
                 </li>
-                <li><a href="../customers/index.php"><i class="fa-solid fa-user"></i>Customers</a></li>
-                <li><a href="../manufacturers/index.php"><i class="fa-solid fa-trademark"></i>Manufacturer</a></li>
-                <li><a href="../users/index.php"><i class="fa-solid fa-users"></i>Users</a></li>
-                <li><a href="../oders/index.php"><i class="fa-solid fa-address-card"></i>Bill</a></li>
+                <li><a href="/admin/customers"><i class="fa-solid fa-user"></i>Customers</a></li>
+                <li><a href="/admin/manufacturers"><i class="fa-solid fa-trademark"></i>Manufacturer</a></li>
+                <li><a href="/admin/users"><i class="fa-solid fa-users"></i>Users</a></li>
+                <li><a href="/admin/orders"><i class="fa-solid fa-address-card"></i>Bill</a></li>
                 <li><a href="#"><i class="fa-solid fa-file-invoice"></i>Profile</a></li>
             </ul>
         </div>
-        <!-- <script>
-            $('wrapper.sidebar ul li .pro-btn').click(function(){
-                $('wrapper.sidebar ul ul .pro-show').toggleClass("show");
-            });
-        </script> -->
         <div class="logout"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></div>
         <div class="main_content">
             <div class="header">

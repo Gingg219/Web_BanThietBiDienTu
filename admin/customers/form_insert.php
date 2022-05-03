@@ -12,7 +12,7 @@
 <?php require_once '../menu.php'; ?>
             <div class="info">
                 <div class="form">
-                    <form method="POST" >
+                    <form method="POST" action="process_insert.php" >
                         <table>
                             <tr>
                                 <td>Name</td>
@@ -29,9 +29,10 @@
                             <tr>
                                 <td>Gender</td>
                                 <td>
-                                    <select name="gender">
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                <select name="gender">
+                                        <option>male</option>
+                                        <option>female</option>
+                                        <option>other</option>
                                     </select>
                                 </td>
                             </tr>

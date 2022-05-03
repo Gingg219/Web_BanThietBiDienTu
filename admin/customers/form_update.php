@@ -11,52 +11,60 @@
 <body>
 <?php require_once '../menu.php'; ?>
             <div class="info">
+                <?php 
+                    require_once '../control.php';
+                    $id=$_GET['up'];
+                    $result=(new data)->find_cus($id);
+                    $each=mysqli_fetch_array($result);
+                ?>
                 <div class="form">
-                    <form method="POST" >
+                    <form method="POST" action="process_update.php">
                         <table>
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
                             <tr>
                                 <td>Name</td>
                                 <td>
-                                    <input type="text" name="name" >
+                                    <input type="text" name="name" value="<?php echo $each['name'] ?>">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Phone</td>
                                 <td>
-                                    <input type="number" name="phone" >
+                                    <input type="number" name="phone" value="<?php echo $each['phone_number'] ?>">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Gender</td>
                                 <td>
                                     <select name="gender">
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                        <option <?php if($each['gender']=='male') echo 'selected'; ?>>male</option>
+                                        <option <?php if($each['gender']=='female') echo 'selected'; ?>>female</option>
+                                        <option <?php if($each['gender']=='other') echo 'selected'; ?>>other</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Date</td>
                                 <td>
-                                    <input type="date" name="date">
+                                    <input type="date" name="date" value="<?php echo $each['date'] ?>">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Email</td>
                                 <td>
-                                    <input type="text" name="email">
+                                    <input type="text" name="email" value="<?php echo $each['email'] ?>">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Password</td>
                                 <td>
-                                    <input type="text" name="password">
+                                    <input type="text" name="password" value="<?php echo $each['password'] ?>">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Address</td>
                                 <td>
-                                    <input type="text" name="address">
+                                    <input type="text" name="address" value="<?php echo $each['address'] ?>">
                                 </td>
                             </tr>
                             <tr>
