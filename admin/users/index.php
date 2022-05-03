@@ -9,8 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <?php require_once '../menu.php'; ?>
-    <div class="info">
+<?php require_once '../menu.php'; ?>
+            <div class="info">
+                <?php 
+                    require_once '../control.php';
+                    $result=(new data)->se_users();
+                ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
                         <span>Total:</span>
@@ -22,26 +26,39 @@
                             <th>PHONE</th>
                             <th>GENDER</th>
                             <th>DATE</th>
+                            <th>ADDRESS</th>
                             <th>EMAIL</th>
                             <th>PASSWORD</th>
-                            <th>ADDRESS</th>
-                            <th>Level</th>
-                            <th>Update</th>
-                            <th>Delete</th>
+                            <th>level</th>
+                            <th></th>
+                            <th></th>
                         </tr>
+                        <?php foreach($result as $each):?>
                         <tr>
-                            <td>1</td>
-                            <td>Tuan Ngo Van</td>
-                            <td>0366484758</td>
-                            <td>male</td>
-                            <td>25/01/2077</td>
-                            <td>tuan2501012001@gamil.com</td>
-                            <td>123</td>
-                            <td>Bac Giang</td>
-                            <td>Administrator</td>
-                            <td><a href="form_update.php?up=<?php echo $se['ID'];?>"><i class="fa-solid fa-file-pen"></i></a></td>
-                            <td><a href="process_del.php?del=<?php echo $se['ID'];?>"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><?php echo $each['id']?></td>
+                            <td><?php echo $each['name']?></td>
+                            <td><?php echo $each['phone_number']?></td>
+                            <td><?php echo $each['gender']?></td>
+                            <td><?php echo $each['date']?></td>
+                            <td><?php echo $each['address']?></td>
+                            <td><?php echo $each['email']?></td>
+                            <td><?php echo $each['password']?></td>
+                            <td>
+                                <?php 
+                                    switch($each['level']){
+                                    case 0:
+                                        echo "Administrator";
+                                        break;
+                                    case 2:
+                                        echo "Super_Administrator";
+                                        break;
+                                    }
+                                ?>
+                            </td>
+                            <td><a href="form_update.php?up=<?php echo $each['id'];?>">Update</a></td>
+                            <td><a href="process_del.php?del=<?php echo $each['id'];?>">Delete</a></td>
                         </tr>
+                        <?php endforeach?>
                     </table>
         </div>
     </div>

@@ -6,19 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/8c12853810.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="/admin/style.css">
 </head>
 <body>
-<?php require_once '../menu.php'; ?>
+<?php     
+    $root = $_SERVER['DOCUMENT_ROOT'];
+    require_once ($root."/admin/menu.php"); ?>
             <div class="info">
+            <?php
+                    require_once ($root."/admin/control.php");
+                    $result=(new data)->se_manuf_smartphones();
+                    $colors=(new data)->se_colors();
+                ?>
                 <div class="form">
-                    <form method="POST" >
+                    <form method="POST" action="process_insert.php" >
                         <table>
                             <tr>
-                                <td>Producer</td>
+                                <td>Manufacturers</td>
                                 <td>
-                                    <select name="producer_id">
-                                       
+                                    <select name="id_manufacturers">
+                                         <?php foreach($result as $each) : ?>
+                                        <option value="<?php echo $each['id'] ?>">
+                                            <?php echo $each['name'] ?>
+                                        </option>
+                                        <?php endforeach?>
                                     </select>
                                 </td>
                             </tr>
@@ -37,11 +48,12 @@
                             <tr>
                                 <td>Color</td>
                                 <td>
-                                    <select name="color">
-                                        <option>Black</option>
-                                        <option>White</option>
-                                        <option>Brown</option>
-                                        <option>Pink</option>
+                                <select name="id_color">
+                                         <?php foreach($colors as $color) : ?>
+                                        <option value="<?php echo $color['id'] ?>">
+                                            <?php echo $color['name'] ?>
+                                        </option>
+                                        <?php endforeach?>
                                     </select>
                                 </td>
                             </tr>
@@ -52,14 +64,26 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>Price_sale</td>
+                                <td>
+                                    <input type="number" name="price_sale">
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>Image</td>
                                 <td>
                                     <input type="text" name="image">
                                 </td>
                             </tr>
                             <tr>
+                                <td>Quantity</td>
                                 <td>
-                                    <button type="submit">UPDATE</button>
+                                    <input type="number" name="quantity">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="submit">ADD</button>
                                 </td>
                             </tr>
                         </table>

@@ -9,7 +9,13 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
+            <?php
+                    if(isset($_GET['success'])){
+            ?>
+                 echo "<script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>');</script>";
+            <?php } ?>
     <?php require_once '../menu.php'; ?>
+    
     <div class="info">
         <?php
             require_once '../control.php';

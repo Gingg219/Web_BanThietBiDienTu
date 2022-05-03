@@ -40,6 +40,7 @@
                                         <?php echo $categories['name'] ?>
                                     </option>
                                 <?php endforeach ?>
+                                    </select>
                                     </td>
                             </tr>
                             <tr>
