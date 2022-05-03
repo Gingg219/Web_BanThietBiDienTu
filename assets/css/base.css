@@ -18,7 +18,7 @@
 
 html {
     font-size: 62.5%;
-    line-height: 1.6rem;
+    line-height: 2.2rem;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
@@ -38,6 +38,9 @@ html {
 
 .text-decoration-none {
     text-decoration: none !important;
+}
+.text-primary-color {
+    color: #d70018;
 }
 /* Margin-top */
 .mt-3 {
