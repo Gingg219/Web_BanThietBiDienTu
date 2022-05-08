@@ -108,7 +108,8 @@ class data{
     public function se_manuf_smartphones(){
         global $conn;
         $sql="select * from manufacturers
-        where id_category=1";
+        where id_category=1
+        order by name asc";
         $result=mysqli_query($conn,$sql);
         return $result;
         mysqli_close($conn);
@@ -185,6 +186,69 @@ class data{
         $sql="SELECT products.* FROM products INNER JOIN manufacturers On
         products.id_manufacturers=manufacturers.id
         WHERE manufacturers.id_category=1";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_smartphones($name){
+        global $conn;
+        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE 
+        manufacturers.id_category=1 and
+        manufacturers.name='$name'";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_laptops($name){
+        global $conn;
+        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE 
+        manufacturers.id_category=3 and
+        manufacturers.name='$name'";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_tablets($name){
+        global $conn;
+        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE 
+        manufacturers.id_category=2 and
+        manufacturers.name='$name'";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_products_smartphones_index(){
+        global $conn;
+        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE manufacturers.id_category=1
+        limit 10";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_products_tablets_index(){
+        global $conn;
+        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE manufacturers.id_category=2
+        limit 10";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_products_laptops_index(){
+        global $conn;
+        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE manufacturers.id_category=3
+        limit 10";
         $result=mysqli_query($conn,$sql);
         return $result;
         mysqli_close($conn);

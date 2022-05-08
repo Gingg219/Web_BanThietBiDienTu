@@ -31,7 +31,7 @@
                 <label for="header-mobile-search" class="header-search-overlay"></label>
 
                 <div class="header-logo ">
-                    <a href="index.html"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
+                    <a href="index.php"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
                 </div>
 
                 <ul class="header__menu-list">
@@ -122,7 +122,7 @@
             <div class="grid wide">
                 <ul class="list-unstyled">
                     <li>
-                        <a href="index.html">
+                        <a href="index.php">
                             <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
                             Trang chủ
                         </a>

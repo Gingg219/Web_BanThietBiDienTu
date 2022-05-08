@@ -199,12 +199,12 @@ body{
                 border-bottom: solid 5px 
             }
             td{
-                padding: 15px;
+                margin: 15px;
                 text-align: left;
                 font-weight: 300;
                 font-size: 16px;
                 color: #fff;
-                border-bottom: solid 1px ;
+                /* border-bottom: solid 1px ; */
             }
                             td>img{
                                 width: 100px;
@@ -212,6 +212,16 @@ body{
                             td>a{
                                 color: aqua;
                             }
+            .tb_views tbody tr:nth-child(odd) {
+
+              background: #2478a0;
+              }
+  .tb_views > tbody > tr > td:nth-child(4) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }    
   .info .form{
     height: 100%;
     width: 100%;

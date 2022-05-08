@@ -31,7 +31,7 @@
                 <label for="header-mobile-search" class="header-search-overlay"></label>
 
                 <div class="header-logo ">
-                    <a href="index.html"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
+                    <a href="index.php"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
                 </div>
 
                 <ul class="header__menu-list">
@@ -120,7 +120,7 @@
             <div class="grid wide">
                 <ul class="list-unstyled">
                     <li>
-                        <a href="index.html">
+                        <a href="index.php">
                             <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
                             Trang chủ
                         </a>
@@ -233,247 +233,45 @@
                         <div class="grid wide">
                             <div class="row sm-gutter">
                             <!-- product item -->
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">34.200.000đ</span>
-                                        <span class="home-product-item__price-current">24.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                            <?php
+                                    require_once 'admin/control.php';
+                                    if(isset($_GET['laptop'])){
+                                        $laptop=$_GET['laptop'];
+                                    }
+                                    if(empty($_GET['laptop'])){
+                                        $se_laptops=(new data)->se_products_laptop();
+                                    }
+                                    else{
+                                        $se_laptops=(new data)->se_laptops($laptop);
+                                    }
+                                ?>
+                                <?php foreach($se_laptops as $each_laptop): ?>
+                                <div class="col l-2-4 m-4 c-6">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(<?php echo $each_laptop['image'] ?>);"></div>
+                                        <h4 class="home-product-item__name"><?php echo $each_laptop['name'] ?></h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old"><?php echo $each_laptop['price'] ?></span>
+                                            <span class="home-product-item__price-current"><?php echo $each_laptop['price_sale'] ?></span>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                        <div class="home-product-item__action">
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="home-product-item__star--gold fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fas fa-check"></i>
+                                            <Span>Yêu thích</Span>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
+                                <?php endforeach?>
                             </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col l-2-4 m-4 c-6">
-                                <a class="home-product-item" href="#">
-                                    <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                    <h4 class="home-product-item__name">Phấn phủ chống nắng Sun Powder Pack SPF50+/PA+++</h4>
-                                    <div class="home-product-item__price">
-                                        <span class="home-product-item__price-old">1.200.000đ</span>
-                                        <span class="home-product-item__price-current">1.080.000đ</span>
-                                    </div>
-                                    <div class="home-product-item__action">
-                                        <div class="home-product-item__rating">
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="home-product-item__star--gold fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
-                                    </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                         </div>
                     </div>
                     
