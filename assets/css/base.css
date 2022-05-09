@@ -42,6 +42,9 @@ html {
     color: #d70018;
 }
 /* Margin-top */
+.mt-2 {
+    margin-top: 10px !important;
+}
 .mt-3 {
     margin-top: 15px !important;
 }
@@ -128,10 +131,10 @@ html {
 /* button style */
 .btn {
     min-width: 124px;
-    height: 34px;
+    height: 44px;
     text-decoration: none;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     font-size: 1.4rem;
     padding: 0 12px;
     outline: none;

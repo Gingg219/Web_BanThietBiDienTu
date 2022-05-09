@@ -364,17 +364,17 @@
             <nav class="mobile-tablet-category">
                 <ul class="mobile-tablet-category__list">
                     <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
+                        <a href="mobile.php" class="mobile-tablet-category__link">
                             <div class="mobile-tablet-category__name">Điện thoại</div>
                         </a>
                     </li>
                     <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
-                            <div class="mobile-tablet-category__name">Lap top, màn hình</div>
+                        <a href="laptop.php" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Lap top</div>
                         </a>
                     </li>
                     <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
+                        <a href="tablet.php" class="mobile-tablet-category__link">
                             <div class="mobile-tablet-category__name">Tablet</div>
                         </a>
                     </li>
@@ -434,8 +434,8 @@
                     <!-- mobile-item -->
                     <div class="col l-12 m-12 c-12">
                         <!-- list-product -->
-                        <div class="box-title hide-on-mobile-tablet">
-                            <a href="" class="box-title__title">
+                        <div class="box-outstanding-title">
+                            <a href="" class="box-outstanding-title__title text-decoration-none">
                                 <h2>Điện thoại nổi bật</h2>
                             </a>
                             <div class="box-related-tag">
@@ -486,8 +486,8 @@
                     <!-- Laptop-item  -->
                     <div class="col l-12 m-12 c-12">
                         <!-- list-product -->
-                        <div class="box-title hide-on-mobile-tablet">
-                            <a href="" class="box-title__title">
+                        <div class="box-outstanding-title">
+                            <a href="" class="box-outstanding-title__title text-decoration-none">
                                 <h2>Điện thoại nổi bật</h2>
                             </a>
                             <div class="box-related-tag">
@@ -538,8 +538,8 @@
                     <!-- tablet-item  -->
                     <div class="col l-12 m-12 c-12">
                         <!-- list-product -->
-                        <div class="box-title hide-on-mobile-tablet">
-                            <a href="" class="box-title__title">
+                        <div class="box-outstanding-title">
+                            <a href="" class="box-outstanding-title__title text-decoration-none">
                                 <h2>Điện thoại nổi bật</h2>
                             </a>
                             <div class="box-related-tag">

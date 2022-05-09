@@ -71,7 +71,7 @@
                             <p class="">Tra cứu<br />đơn hàng</p>
                         </div>
                     </a>
-                    <a href="" class="about-item about-4">
+                    <a href="cart.php" class="about-item about-4">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-bag-shopping"></i>
                             <span>1</span>
