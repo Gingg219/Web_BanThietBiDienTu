@@ -13,11 +13,14 @@
             <div class="info">
                 <?php 
                     require_once '../control.php';
-                    $result=(new data)->se_cus();
+                    $search='';
+                    $all_product=(new data)->count_cus($search);
+                    require_once '../process_paging&search.php';
+                    $result=(new data)->se_cus($search,$skip_page);
                 ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
-                        <span>Total:</span>
+                        <span>Total:  <?php echo $all_product?></span>
                     </div>
                     <table class="tb_views">
                         <tr>
@@ -47,6 +50,7 @@
                         </tr>
                         <?php endforeach?>
                     </table>
+        <?php require_once '../paging.php'; ?>
         </div>
     </div>
 </body>

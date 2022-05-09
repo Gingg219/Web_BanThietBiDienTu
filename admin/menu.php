@@ -23,7 +23,8 @@
                 <h3></h3>
                 <div class="search">
                     <form>
-                        <input type="search" placeholder="Search" name="search" value="">
+                        <input type="search" placeholder="Search" name="search" value="<?php if(isset($_GET['search']))
+                            echo $_GET['search'] ; ?>">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>

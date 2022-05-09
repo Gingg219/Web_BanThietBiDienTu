@@ -16,11 +16,14 @@
     <div class="info">
                 <?php
                     require_once ($root."/admin/control.php");
-                    $result=(new data)->se_products_laptop();
+                    $search='';
+                    $all_product=(new data)->count_paging_laptop($search);
+                    require_once ($root."/admin/process_paging&search.php");
+                    $laptops=(new data)->search_paging_laptop($search,$skip_page);
                 ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
-                        <span>Total:</span>
+                        <span>Total: <?php echo $all_product?></span>
                     </div>
                     <div>
                         <table class="tb_views">
@@ -35,7 +38,7 @@
                                 <th></th>
                             </tr>
                             <?php 
-                                foreach($result as $each):
+                                foreach($laptops as $each):
                             ?>
                             <tr>
                                 <td><?php echo $each['id']?></td>
@@ -72,6 +75,7 @@
                             <?php endforeach?>
                         </table>
                     </div>
+                    <?php require_once ($root."/admin/paging.php"); ?>
         </div>
     </div>
 </body>

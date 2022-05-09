@@ -19,7 +19,10 @@
     <div class="info">
         <?php
             require_once '../control.php';
-            $result=(new data)->se_manuf();
+            $search='';
+            $all_product=(new data)->count_manuf($search);
+            require_once '../process_paging&search.php';
+            $result=(new data)->se_manuf($search,$skip_page);
         ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
@@ -57,6 +60,7 @@
                         </tr>
                         <?php endforeach ?>
                     </table>
+                    <?php require_once '../paging.php'; ?>
         </div>
     </div>
 </body>

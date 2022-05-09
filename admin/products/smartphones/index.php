@@ -16,7 +16,10 @@
     <div class="info">
                 <?php
                     require_once ($root."/admin/control.php");
-                    $result=(new data)->se_products_smartphones();
+                    $search='';
+                    $all_product=(new data)->count_paging_smartphone($search);
+                    require_once ($root."/admin/process_paging&search.php");
+                    $smartphone=(new data)->search_paging_smartphone($search,$skip_page);
                 ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
@@ -35,7 +38,7 @@
                                 <th></th>
                             </tr>
                             <?php 
-                                foreach($result as $each):
+                                foreach($smartphone as $each):
                             ?>
                             <tr>
                                 <td><?php echo $each['id']?></td>
@@ -72,6 +75,7 @@
                             <?php endforeach?>
                         </table>
                     </div>
+                    <?php require_once ($root."/admin/paging.php"); ?>
         </div>
     </div>
 </body>

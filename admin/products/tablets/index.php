@@ -16,7 +16,10 @@
     <div class="info">
                 <?php
                     require_once ($root."/admin/control.php");
-                    $result=(new data)->se_products_tablet();
+                    $search='';
+                    $all_product=(new data)->count_paging_tablet($search);
+                    require_once ($root."/admin/process_paging&search.php");
+                    $result=(new data)->search_paging_tablet($search,$skip_page);
                 ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
@@ -72,6 +75,7 @@
                             <?php endforeach?>
                         </table>
                     </div>
+                    <?php require_once ($root."/admin/paging.php"); ?>
         </div>
     </div>
 </body>

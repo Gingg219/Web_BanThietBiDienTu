@@ -3,11 +3,23 @@ require_once 'connect.php';
 class data{
 
 //Customers
-    public function se_cus(){
+    public function count_cus($search=''){
         global $conn;
-        $sql="select * from customers";
+        $sql="SELECT count(*) as total from customers
+        where name like '%$search%'";
+        $run=mysqli_query($conn,$sql);
+        $result=mysqli_fetch_array($run);
+        $all_product=$result['total'];
+        return($all_product);
+        mysqli_close($conn);;
+    }
+    public function se_cus($search='',$skip_page){
+        global $conn;
+        $sql="SELECT * from customers
+        where name like '%$search%'
+        limit 4 offset $skip_page";
         $result=mysqli_query($conn,$sql);
-        return $result;
+        return($result);
         mysqli_close($conn);
     }
     public function create_cus($name,$phone_number,$gender,$address,$date,$email,$password){
@@ -47,15 +59,29 @@ class data{
         return $result;
         mysqli_close($conn);
     }
+        // Paging
+
 
 //Users
-    public function se_users(){
-        global $conn;
-        $sql="select * from users";
-        $result=mysqli_query($conn,$sql);
-        return $result;
-        mysqli_close($conn);
-    }
+public function count_users($search=''){
+    global $conn;
+    $sql="SELECT count(*) as total from users
+    where name like '%$search%'";
+    $run=mysqli_query($conn,$sql);
+    $result=mysqli_fetch_array($run);
+    $all_product=$result['total'];
+    return($all_product);
+    mysqli_close($conn);;
+}
+public function se_users($search='',$skip_page){
+    global $conn;
+    $sql="SELECT * from users
+    where name like '%$search%'
+    limit 4 offset $skip_page";
+    $result=mysqli_query($conn,$sql);
+    return($result);
+    mysqli_close($conn);
+}
     public function create_user($name,$phone_number,$gender,$address,$date,$email,$password,$level){
         global $conn;
         $sql="insert into users(name,phone_number,gender,address,date,email,password,level)
@@ -98,11 +124,23 @@ class data{
     }
 // Manufacturers
 
-    public function se_manuf(){
+    public function count_manuf($search=''){
         global $conn;
-        $sql="select * from manufacturers";
+        $sql="SELECT count(*) as total from manufacturers
+        where name like '%$search%'";
+        $run=mysqli_query($conn,$sql);
+        $result=mysqli_fetch_array($run);
+        $all_product=$result['total'];
+        return($all_product);
+        mysqli_close($conn);;
+    }
+    public function se_manuf($search='',$skip_page){
+        global $conn;
+        $sql="SELECT * from manufacturers
+        where name like '%$search%'
+        limit 4 offset $skip_page";
         $result=mysqli_query($conn,$sql);
-        return $result;
+        return($result);
         mysqli_close($conn);
     }
     public function se_manuf_smartphones(){
@@ -180,16 +218,6 @@ class data{
         mysqli_close($conn);
     }
 // Products
-
-    public function se_products_smartphones(){
-        global $conn;
-        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
-        products.id_manufacturers=manufacturers.id
-        WHERE manufacturers.id_category=1";
-        $result=mysqli_query($conn,$sql);
-        return $result;
-        mysqli_close($conn);
-    }
     public function se_smartphones($name){
         global $conn;
         $sql="SELECT products.* FROM products INNER JOIN manufacturers On
@@ -253,24 +281,76 @@ class data{
         return $result;
         mysqli_close($conn);
     }
-    public function se_products_tablet(){
-        global $conn;
-        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
-        products.id_manufacturers=manufacturers.id
-        WHERE manufacturers.id_category=2";
-        $result=mysqli_query($conn,$sql);
-        return $result;
-        mysqli_close($conn);
-    }
-    public function se_products_laptop(){
-        global $conn;
-        $sql="SELECT products.* FROM products INNER JOIN manufacturers On
-        products.id_manufacturers=manufacturers.id
-        WHERE manufacturers.id_category=3";
-        $result=mysqli_query($conn,$sql);
-        return $result;
-        mysqli_close($conn);
-    }
+        // Paging&searching
+        public function count_paging_laptop($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=3 and
+            products.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function search_paging_laptop($search,$skip_page){
+            global $conn;
+            $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=3 and
+            products.name like '%$search%'
+            limit 4 offset $skip_page";
+            $result=mysqli_query($conn,$sql);
+            return($result);
+            mysqli_close($conn);
+        }
+        public function count_paging_tablet($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=2 and
+            products.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function search_paging_tablet($search,$skip_page){
+            global $conn;
+            $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=2 and
+            products.name like '%$search%'
+            limit 4 offset $skip_page";
+            $result=mysqli_query($conn,$sql);
+            return($result);
+            mysqli_close($conn);
+        }
+        public function count_paging_smartphone($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=1 and
+            products.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function search_paging_smartphone($search,$skip_page){
+            global $conn;
+            $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=1 and
+            products.name like '%$search%'
+            limit 4 offset $skip_page";
+            $result=mysqli_query($conn,$sql);
+            return($result);
+            mysqli_close($conn);
+        }
     public function create_products($id_manuf,$id_color,$name,$description,$image,$quantity,$price,$price_sale){
         global $conn;
         $sql="insert into products(id_manufacturers,id_color,name,description,image,quantity,price,price_sale)
