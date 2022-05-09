@@ -15,296 +15,207 @@
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <div class="grid wide">
-            <div class="header-container">
-                <label for="header-mobile-menu" class="header__mobile-menu">
-                    <i class="header__mobile-menu-icon fa-solid fa-bars"></i>
-                </label>
-                <input type="checkbox" hidden id="header-mobile-menu" class="header__menu-checkbox">
-                <label for="header-mobile-menu" class="header-menu-overlay"></label>
-                <label for="header-mobile-search" class="header__mobile-search">
-                    <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
-                </label>
-                <input type="checkbox" hidden id="header-mobile-search" class="header__search-checkbox">
-                <label for="header-mobile-search" class="header-search-overlay"></label>
-
-                <div class="header-logo ">
-                    <a href="index.php"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
-                </div>
-
-                <ul class="header__menu-list">
-                    <div class="user__moblie-info">
-                        <img src="./assets/img/avatar.png" alt="" class="navbar__user-img">
-                        <span class="navbar__user-name">Tượng Văn Trưng</span>
-                    </div>
-                    
-                    <li class="header__menu-item">
-                        <a href="">Tài khoản của tôi</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="">Địa chỉ của tôi</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="">Đơn mua</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="">Đăng xuất</a>
-                    </li>
-                </ul>
-
-                <div class="header-search hide-on-mobile">
-                    <div class="search-box">
-                       <div class="search-box__btn">
-                            <i class="search-box__icon fa-solid fa-magnifying-glass"></i>
-                       </div>
-                       <input type="text" placeholder="Bạn cần tìm gì?" class="search-box__input">
-                    </div>
-                </div>
-    
-                <div class="header-about hide-on-mobile-tablet">
-                    <a href="" class="about-item about-1">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Gọi mua hàng<br /><span>1800.0000</span></p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-2">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Cửa hàng <br />gần bạn</p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-3">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-truck"></i>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Tra cứu<br />đơn hàng</p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-4">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span>1</span>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Giỏ<br />hàng</p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-5">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div class="about-item__content">Member</div>
-                    </a>
-                </div>
-    
-                <div class="header-cart">
-                    <a class="box-cart" href="">
-                    <div class="cart-box-icon">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <p>Giỏ hàng</p>
-                    <span class="items-in-cart">1</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+        include ('header.php');
+    ?>
 
     <!-- Container -->
     <div class="app-container">
         <div class="grid wide">
             <div class="col">
                 <div class="row block-sliding-home">
-                    <!-- list-item -->
-                    <?php
-                        require_once 'admin/control.php';
-                        $manuf_smartphones=(new data)->se_manuf_smartphones();
-                        $manuf_laptops=(new data)->se_manuf_laptops();
-                        $manuf_tablets=(new data)->se_manuf_tablets();
-                    ?>
-                    <div class="block-sliding-home__left hide-on-mobile-tablet">
-                        <div class="box-list-item">
-                            <ul class="list-item">
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="mobile.php">
-                                        <i class="item-menu__icon fa-solid fa-mobile-screen"></i>
-                                        <span>Điện thoại</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
+                    <!-- Begin: list-item -->
+                        <?php
+                            require_once 'admin/control.php';
+                            $manuf_smartphones=(new data)->se_manuf_smartphones();
+                            $manuf_laptops=(new data)->se_manuf_laptops();
+                            $manuf_tablets=(new data)->se_manuf_tablets();
+                        ?>
+                        <!-- Begin: block-sliding-home__left -->
+                            <div class="block-sliding-home__left hide-on-mobile-tablet">
+                                <div class="box-list-item">
+                                    <ul class="list-item">
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="mobile.php">
+                                                <i class="item-menu__icon fa-solid fa-mobile-screen"></i>
+                                                <span>Điện thoại</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
 
-                                    <div class="box-list-item box-child-list-item">
-                                        <ul class="list-item">
-                                        <?php foreach($manuf_smartphones as $each_smartphone): ?>
-                                            <li class="item-menu">
-                                                <a class="item-menu__link" href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>">
-                                                    <span><?php echo $each_smartphone['name'] ?></span>
-                                                    <?php if($each_smartphone['name']=='Apple'){
-                                                        echo '<i class="item-menu__icon-sub fa-solid fa-angle-right"></i>';
-                                                    }?>
-                                                </a>
-                                                <?php if($each_smartphone['name']=='Apple'){
-                                                    echo '<div class="box-list-item box-child-list-item">
-                                                    <ul class="list-item">
-                                                        <li class="item-menu">
-                                                            <a class="item-menu__link" href="">
-                                                                <span>Iphone 13 Series</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="item-menu">
-                                                            <a class="item-menu__link" href="">
-                                                                <span>Iphone 12 Series</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="item-menu">
-                                                            <a class="item-menu__link" href="">
-                                                                <span>Iphone 11 Series</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="item-menu">
-                                                            <a class="item-menu__link" href="">
-                                                                <span>Iphone SE</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>';
-                                                } ?>
-                                            </li>
-                                            <?php endforeach?>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-tablet-screen-button"></i>
-                                        <span>Laptop</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                    <div class="box-list-item box-child-list-item">
-                                        <ul class="list-item">
-                                        <?php foreach($manuf_laptops as $each_laptop): ?>
-                                            <li class="item-menu">
-                                                <a class="item-menu__link" href="laptop.php?laptop=<?php echo $each_laptop['name'] ?>">
-                                                    <span><?php echo $each_laptop['name'] ?></span>
-                                                </a>
-                                            </li>
-                                            <?php endforeach?>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-tablet-screen-button"></i>
-                                        <span>Table</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                    <div class="box-list-item box-child-list-item">
-                                        <ul class="list-item">
-                                        <?php foreach($manuf_tablets as $each_tablet): ?>
-                                            <li class="item-menu">
-                                                <a class="item-menu__link" href="tablet.php?tablet=<?php echo $each_tablet['name'] ?>">
-                                                    <span><?php echo $each_tablet['name'] ?></span>
-                                                </a>
-                                            </li>
-                                            <?php endforeach?>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-headphones"></i>
-                                        <span>Âm thanh</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-clock"></i>
-                                        <span>Đồng hồ</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-house-signal"></i>
-                                        <span>Nhà thông minh</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-diagram-project"></i>
-                                        <span>Phụ kiện</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-comments-dollar"></i>
-                                        <span>Thu cũ</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-right-left"></i>
-                                        <span>Hàng cũ</span>
-                                        <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-tv"></i>
-                                        <span>Tivi</span>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-newspaper"></i>
-                                        <span>Tin công nghệ</span>
-                                    </a>
-                                </li>
-                                <li class="item-menu">
-                                    <a class="item-menu__link" href="">
-                                        <i class="item-menu__icon fa-solid fa-bullhorn"></i>
-                                        <span>Khuyến mại</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="block-sliding-home__center">
-                        <div class="silding-home__wrap">
-                            <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/UX363.png" alt="">
-                            <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/kt-690-300-max.png" alt="">
-                            <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Nokia_G21.png" alt="">
-                            <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/M_b_n_PC.png" alt="">
+                                            <div class="box-list-item box-child-list-item">
+                                                <ul class="list-item">
+                                                <?php foreach($manuf_smartphones as $each_smartphone): ?>
+                                                    <li class="item-menu">
+                                                        <a class="item-menu__link" href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>">
+                                                            <span><?php echo $each_smartphone['name'] ?></span>
+                                                            <?php if($each_smartphone['name']=='Apple'){
+                                                                echo '<i class="item-menu__icon-sub fa-solid fa-angle-right"></i>';
+                                                            }?>
+                                                        </a>
+                                                        <?php if($each_smartphone['name']=='Apple'){
+                                                            echo '<div class="box-list-item box-child-list-item">
+                                                            <ul class="list-item">
+                                                                <li class="item-menu">
+                                                                    <a class="item-menu__link" href="">
+                                                                        <span>Iphone 13 Series</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="item-menu">
+                                                                    <a class="item-menu__link" href="">
+                                                                        <span>Iphone 12 Series</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="item-menu">
+                                                                    <a class="item-menu__link" href="">
+                                                                        <span>Iphone 11 Series</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="item-menu">
+                                                                    <a class="item-menu__link" href="">
+                                                                        <span>Iphone SE</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>';
+                                                        } ?>
+                                                    </li>
+                                                    <?php endforeach?>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="laptop.php">
+                                                <i class="item-menu__icon fa-solid fa-tablet-screen-button"></i>
+                                                <span>Laptop</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                            <div class="box-list-item box-child-list-item">
+                                                <ul class="list-item">
+                                                <?php foreach($manuf_laptops as $each_laptop): ?>
+                                                    <li class="item-menu">
+                                                        <a class="item-menu__link" href="laptop.php?laptop=<?php echo $each_laptop['name'] ?>">
+                                                            <span><?php echo $each_laptop['name'] ?></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach?>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="tablet.php">
+                                                <i class="item-menu__icon fa-solid fa-tablet-screen-button"></i>
+                                                <span>Table</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                            <div class="box-list-item box-child-list-item">
+                                                <ul class="list-item">
+                                                <?php foreach($manuf_tablets as $each_tablet): ?>
+                                                    <li class="item-menu">
+                                                        <a class="item-menu__link" href="tablet.php?tablet=<?php echo $each_tablet['name'] ?>">
+                                                            <span><?php echo $each_tablet['name'] ?></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach?>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-headphones"></i>
+                                                <span>Âm thanh</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-clock"></i>
+                                                <span>Đồng hồ</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-house-signal"></i>
+                                                <span>Nhà thông minh</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-diagram-project"></i>
+                                                <span>Phụ kiện</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-comments-dollar"></i>
+                                                <span>Thu cũ</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-right-left"></i>
+                                                <span>Hàng cũ</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-tv"></i>
+                                                <span>Tivi</span>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-newspaper"></i>
+                                                <span>Tin công nghệ</span>
+                                            </a>
+                                        </li>
+                                        <li class="item-menu">
+                                            <a class="item-menu__link" href="">
+                                                <i class="item-menu__icon fa-solid fa-bullhorn"></i>
+                                                <span>Khuyến mại</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <!-- End: block-sliding-home__left -->
 
-                            <button class="btn-slide btn-slide__left" onclick="plusDivs(-1)"><i class="fa-solid fa-angle-left"></i></i></button>
-                            <button class="btn-slide btn-slide__right" onclick="plusDivs(1)"><i class="fa-solid fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                    <div class="block-sliding-home__right hide-on-mobile-tablet">
-                        <a class="banner-right__item" href="">
-                            <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Galaxy_A23.png" alt="">
-                        </a>
-                        <a class="banner-right__item" href="">
-                            <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Right_banner_AW.png" alt="">
-                        </a>
-                        <a class="banner-right__item" href="">
-                            <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/690-300-Right_dell.png" alt="">
-                        </a>
-                    </div>
+                        <!-- Begin: block-sliding-home__center -->
+                            <div class="block-sliding-home__center">
+                                <div class="silding-home__wrap">
+                                    <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/UX363.png" alt="">
+                                    <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Sea_game.png" alt="">
+                                    <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Nokia_G21.png" alt="">
+                                    <img class="myHomeSlides" src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/M_b_n_PC.png" alt="">
+
+                                    <button class="btn-slide btn-slide__left" onclick="plusDivs(-1)"><i class="fa-solid fa-angle-left"></i></i></button>
+                                    <button class="btn-slide btn-slide__right" onclick="plusDivs(1)"><i class="fa-solid fa-angle-right"></i></button>
+                                </div>
+                            </div>
+                        <!-- End: block-sliding-home__center -->
+
+                        <!-- Begin: block-sliding-home__right -->
+                            <div class="block-sliding-home__right hide-on-mobile-tablet">
+                                <a class="banner-right__item" href="">
+                                    <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Galaxy_A23.png" alt="">
+                                </a>
+                                <a class="banner-right__item" href="">
+                                    <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Right_banner_AW.png" alt="">
+                                </a>
+                                <a class="banner-right__item" href="">
+                                    <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/690-300-Right_dell.png" alt="">
+                                </a>
+                            </div>
+                        <!-- End: block-sliding-home__right -->
+                    <!-- End: list-item -->
                 </div>
             </div>
             
+            <!-- Swiper-block  -->
             <div class="col">
                 <div class="row">
                     <nav class="box-products">
@@ -448,10 +359,79 @@
                     </nav>
                 </div>
             </div>
-
+            
+            <!-- Mobile-tablet-category -->
+            <nav class="mobile-tablet-category">
+                <ul class="mobile-tablet-category__list">
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Điện thoại</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Lap top, màn hình</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Tablet</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Âm thanh</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Đồng hồ</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Nhà thông minh</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Phụ kiện</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Thu cũ</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Hàng cũ</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Tivi</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Tin công nghệ</div>
+                        </a>
+                    </li>
+                    <li class="mobile-tablet-category__item">
+                        <a href="" class="mobile-tablet-category__link">
+                            <div class="mobile-tablet-category__name">Khuyến mại</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Home-Product  -->
             <div class="home-product">
                 <div class="row sm-gutter">
                     <!-- grip -> row -> column -->
+
+                    <!-- mobile-item -->
                     <div class="col l-12 m-12 c-12">
                         <!-- list-product -->
                         <div class="box-title hide-on-mobile-tablet">
@@ -468,72 +448,8 @@
                                 </div>   
                             </div>
                         </div>
-                        <!-- Mobile-tablet-category -->
-                        <nav class="mobile-tablet-category">
-                            <ul class="mobile-tablet-category__list">
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Điện thoại</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Lap top, màn hình</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Tablet</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Âm thanh</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Đồng hồ</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Nhà thông minh</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Phụ kiện</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Thu cũ</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Hàng cũ</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Tivi</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Tin công nghệ</div>
-                                    </a>
-                                </li>
-                                <li class="mobile-tablet-category__item">
-                                    <a href="" class="mobile-tablet-category__link">
-                                        <div class="mobile-tablet-category__name">Khuyến mại</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="row sm-gutter product-item__wrap">
+                        
+                        <div class="row sm-gutter product-item__wrap mb-3 ">
                             <!-- product item -->
                             <?php
                                 $smartphones_index=(new data)->se_products_smartphones_index();
@@ -564,222 +480,125 @@
                                 </a>
                             </div>
                             <?php endforeach?>
-                    <!-- Pagination -->
-                    <ul class="pagination home-product__pagination">
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-item__link">
-                                <i class="pagination-item__icon fas fa-chevron-left"></i>
+                        </div>         
+                    </div>
+
+                    <!-- Laptop-item  -->
+                    <div class="col l-12 m-12 c-12">
+                        <!-- list-product -->
+                        <div class="box-title hide-on-mobile-tablet">
+                            <a href="" class="box-title__title">
+                                <h2>Điện thoại nổi bật</h2>
                             </a>
-                        </li>
-                        <li class="pagination-item pagination-item--active">
-                            <a href="#" class="pagination-item__link">1</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-item__link">2</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">3</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">4</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">5</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">...</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">14</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-item__link">
-                                <i class="pagination-item__icon fas fa-chevron-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer -->
-    <div class="footer">
-        <div class="grid wide footer-box-contact">
-            <div class="row footer-box-contact__wrap">
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-location">
-                        <li class="list-location-find">
-                            <p class="mb-2 footer-title">Tìm cửa hàng</p>
-                            <p class="mb-1">
-                                <a class="footer-item-link text-decoration-none" href="">Tìm cửa hàng gần nhất</a>
-                            </p>
-                            <p class="mb-1">
-                                <a class="footer-item-link text-decoration-none" href="">Mua hàng từ xa</a>
-                            </p>
-                            <p class="mb-1">
-                                <a class="footer-item-link text-decoration-none" href="">
-                                    <span style="color: #d70018;">Gặp trực tiếp cửa hàng gần nhất (Zalo hoặc gọi điện)</span>
+                            <div class="box-related-tag">
+                                <div class="list-related-tag">
+                                    <!-- <a class="item-related-tag" href="">Reno7</a> -->
+                                <?php foreach($manuf_smartphones as $each_smartphone): ?>
+                                    <a href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>"><?php echo $each_smartphone['name'] ?></a>
+                                <?php endforeach?>
+                                    <a class="item-related-tag" href="">Xem tất cả</a>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="row sm-gutter product-item__wrap mb-3">
+                            <!-- product item -->
+                            <?php
+                                $smartphones_index=(new data)->se_products_smartphones_index();
+                                foreach($smartphones_index as $each_smartphone_index):
+                            ?>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="detai-products.php">
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_smartphone_index['name']?></h4>
+                                    <div class="home-product-item__price">
+                                        <span class="price-old"><?php echo $each_smartphone_index['price']?> đ</span>
+                                        <span class="price-current"><?php echo $each_smartphone_index['price_sale']?> đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fas fa-check"></i>
+                                        <Span>Yêu thích</Span>
+                                    </div>
                                 </a>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-phone-contact">
-                        <li class="list-phone-contact">
-                            <p class="mb-2 footer-title">Thông tin liên hệ</p>
-                            <p class="mb-1">
-                                Gọi mua hàng: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2097</a> (8h00 - 22h00)
-                            </p>
-                            <p class="mb-1">
-                                Gọi khiếu nại: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2063</a> (8h00 - 21h30)
-                            </p>
-                            <p class="mb-1">
-                                Gọi bảo hành: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2064</a> (8h00 - 21h00)
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-seaches">
-                        <p class="mb-2 footer-title">Chính sách mua và bảo hành</p>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Mua hàng và thanh toán Online</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Mua hàng và trả góp Online</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra thông tin đơn hàng</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra điểm Member</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra thông tin bảo hành</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra cứu hóa đơn điện tử</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Trung tâm bảo hành chính hãng</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Quy định về việc sao lưu dữ liệu</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Dịch vụ bảo hành điện thoại</a></li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-others">
-                        <p class="mb-2 footer-title">Các thông tin khác</p>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Quy chế hoạt động</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Chính sách bảo hành</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Liên hệ hợp tác kinh doanh</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Đơn doanh nghiệp</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Ưu đẫi từ đối tác</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tuyển dụng</a></li>
-                    </ul>
+                            </div>
+                            <?php endforeach?>
+                        </div>         
+                    </div>
+
+                    <!-- tablet-item  -->
+                    <div class="col l-12 m-12 c-12">
+                        <!-- list-product -->
+                        <div class="box-title hide-on-mobile-tablet">
+                            <a href="" class="box-title__title">
+                                <h2>Điện thoại nổi bật</h2>
+                            </a>
+                            <div class="box-related-tag">
+                                <div class="list-related-tag">
+                                    <!-- <a class="item-related-tag" href="">Reno7</a> -->
+                                <?php foreach($manuf_smartphones as $each_smartphone): ?>
+                                    <a href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>"><?php echo $each_smartphone['name'] ?></a>
+                                <?php endforeach?>
+                                    <a class="item-related-tag" href="">Xem tất cả</a>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="row sm-gutter product-item__wrap mb-3">
+                            <!-- product item -->
+                            <?php
+                                $smartphones_index=(new data)->se_products_smartphones_index();
+                                foreach($smartphones_index as $each_smartphone_index):
+                            ?>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="detai-products.php">
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_smartphone_index['name']?></h4>
+                                    <div class="home-product-item__price">
+                                        <span class="price-old"><?php echo $each_smartphone_index['price']?> đ</span>
+                                        <span class="price-current"><?php echo $each_smartphone_index['price_sale']?> đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold">88 đã bán</span>
+                                    </div>
+                                    <div class="home-product-item__favorite">
+                                        <i class="fas fa-check"></i>
+                                        <Span>Yêu thích</Span>
+                                    </div>
+                                </a>
+                            </div>
+                            <?php endforeach?>
+                        </div>         
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="footer__bottom">
-        <div class="grid wide">
-            <div class="footer__info-menu">
-                <a href="" class="footer__info-menu-link">
-                    <span>Chính sách bảo mật</span>
-                </a>
-                <a href="" class="footer__info-menu-link">
-                    <span>Quy chế hoạt động</span>
-                </a>
-                <a href="" class="footer__info-menu-link">
-                    <span>Trả hàng & hoàn tiền</span>
-                </a>
-            </div>
-            <div class="footer__info-address">
-                <p>Công ty thiết bị điện tử W</p>
-                <p>Chi nhánh: 34, 306 Tây Sơn, Đống Đa, Hà Nội</p>
-            </div>
-        </div>
-    </div>
+    <?php 
+        include ('footer.php')
+    ?>
 
-    <!-- Begin Modal -->
-    <!-- <div class="modal">
-        <div class="modal__overlay"></div>
+    <?php 
+        include('login-register.php')
+    ?>
 
-        <!-- <div class="modal__body">
-            <!-- Register form -->
-            <!-- <div class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng Ký</h3>
-                        <span class="auth-form__switch-btn">Đăng Nhập</span>
-                    </div>
-    
-                    <div class="auth-form_form">
-                        <div class="auth-form__group">
-                            <input type="email" placeholder="Email..." class="auth-form__input">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" placeholder="Password..." class="auth-form__input">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" placeholder="Xác nhận Password..." class="auth-form__input">
-                        </div>
-                    </div>
-    
-                    <div class="auth-form-aside">
-                        <p class="auth-form__policy-text">
-                            Bằng việc đăng ký bạn đã đồng ý với F8-shop về
-                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> & 
-                            <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
-                        </p>
-                    </div>
-    
-                    <div class="auth-form__controls">
-                        <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG KÝ</button>
-                    </div>
-                </div>
-
-                <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                        <i class=" auth-form__socials-icon fab fa-facebook-square"></i>
-                        <span class="auth-form__socials-tittle">Kết nối với Facebook</span>
-                    </a>
-                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
-                        <i class=" auth-form__socials-icon fab fa-google"></i>
-                        <span class="auth-form__socials-tittle">Kết nối với Google</span>
-                    </a>
-                </div>
-            </div> -->
-
-            <!-- Login form -->
-            <!-- <div class="auth-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">Đăng Nhập</h3>
-                        <span class="auth-form__switch-btn">Đăng Ký</span>
-                    </div>
-    
-                    <div class="auth-form_form">
-                        <div class="auth-form__group">
-                            <input type="email" placeholder="Email..." class="auth-form__input">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" placeholder="Password..." class="auth-form__input">
-                        </div>
-                    </div>
-    
-                    <div class="auth-form__aside">
-                        <div class="auth-form__help">
-                            <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                            <span class="auth-form__help-separate"></span>
-                            <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                        </div>
-                    </div>
-    
-                    <div class="auth-form__controls">
-                        <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
-                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
-                    </div>
-                </div>
-
-                <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                        <i class=" auth-form__socials-icon fab fa-facebook-square"></i>
-                        <span class="auth-form__socials-tittle">Kết nối với Facebook</span>
-                    </a>
-                    <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
-                        <i class=" auth-form__socials-icon fab fa-google"></i>
-                        <span class="auth-form__socials-tittle">Kết nối với Google</span>
-                    </a>
-                </div>
-            </div> -->
-        </div> -->
-    </div> -->
-    
     <!-- home-slide -->
     <script>
         var slideIndex = 1;

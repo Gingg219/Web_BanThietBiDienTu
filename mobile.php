@@ -15,125 +15,29 @@
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
+    <?php
+        include('header.php')
+    ?>
+
+    <!-- Block-breadcrumb  -->
+    <div class="block-breadcrumbs">
         <div class="grid wide">
-            <div class="header-container">
-                <label for="header-mobile-menu" class="header__mobile-menu">
-                    <i class="header__mobile-menu-icon fa-solid fa-bars"></i>
-                </label>
-                <input type="checkbox" hidden id="header-mobile-menu" class="header__menu-checkbox">
-                <label for="header-mobile-menu" class="header-menu-overlay"></label>
-                <label for="header-mobile-search" class="header__mobile-search">
-                    <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
-                </label>
-                <input type="checkbox" hidden id="header-mobile-search" class="header__search-checkbox">
-                <label for="header-mobile-search" class="header-search-overlay"></label>
-
-                <div class="header-logo ">
-                    <a href="index.php"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
-                </div>
-
-                <ul class="header__menu-list">
-                    <div class="user__moblie-info">
-                        <img src="./assets/img/avatar.png" alt="" class="navbar__user-img">
-                        <span class="navbar__user-name">Tượng Văn Trưng</span>
-                    </div>
-                    
-                    <li class="header__menu-item">
-                        <a href="">Tài khoản của tôi</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="">Địa chỉ của tôi</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="">Đơn mua</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="">Đăng xuất</a>
-                    </li>
-                </ul>
-
-                <div class="header-search hide-on-mobile">
-                    <div class="search-box">
-                       <div class="search-box__btn">
-                            <i class="search-box__icon fa-solid fa-magnifying-glass"></i>
-                       </div>
-                       <input type="text" placeholder="Bạn cần tìm gì?" class="search-box__input">
-                    </div>
-                </div>
-    
-                <div class="header-about hide-on-mobile-tablet">
-                    <a href="" class="about-item about-1">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Gọi mua hàng<br /><span>1800.0000</span></p>
-                        </div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="index.php">
+                        <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
+                        Trang chủ
                     </a>
-                    <a href="" class="about-item about-2">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Cửa hàng <br />gần bạn</p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-3">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-truck"></i>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Tra cứu<br />đơn hàng</p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-4">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span>1</span>
-                        </div>
-                        <div class="about-item__content">
-                            <p class="">Giỏ<br />hàng</p>
-                        </div>
-                    </a>
-                    <a href="" class="about-item about-5">
-                        <div class="about-item__icon">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div class="about-item__content">Member</div>
-                    </a>
-                </div>
-    
-                <div class="header-cart">
-                    <a class="box-cart" href="">
-                    <div class="cart-box-icon">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <p>Giỏ hàng</p>
-                    <span class="items-in-cart">1</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="block-breadcrumbs">
-            <div class="grid wide">
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="index.php">
-                            <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
-                            Trang chủ
-                        </a>
-                        <i class="fa-solid fa-angle-right"></i>
-                    </li>
-                    <li>
-                        Điện thoại
-                    </li>
-                </ul>
-            </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </li>
+                <li>
+                    Điện thoại
+                </li>
+            </ul>
         </div>
     </div>
 
+    
     <!-- Container -->
     <div class="container">
         <div class="grid wide">
@@ -198,6 +102,153 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Swiper-block  -->
+                    <div class="grid wide">
+                        <div class="col">
+                            <div class="row">
+                                <nav class="box-products mb-3">
+                                    <ul class="box-products__list list-unstyled">
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detai-products.php">
+                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
+                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old">34.200.000đ</span>
+                                                    <span class="price-current">24.080.000đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Yêu thích</Span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="col" style="width: 100%">
                         <div class="block-filter">
@@ -251,8 +302,8 @@
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone['image'] ?>);"></div>
                                         <h4 class="home-product-item__name"><?php echo $each_smartphone['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="home-product-item__price-old"><?php echo $each_smartphone['price'] ?></span>
-                                            <span class="home-product-item__price-current"><?php echo $each_smartphone['price_sale'] ?></span>
+                                            <span class="price-old"><?php echo $each_smartphone['price'] ?></span>
+                                            <span class="price-current"><?php echo $each_smartphone['price_sale'] ?></span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <div class="home-product-item__rating">
@@ -276,7 +327,7 @@
                     </div>
                     
                     <!-- Pagination -->
-                    <!-- <ul class="pagination home-product__pagination">
+                    <ul class="pagination home-product__pagination">
                         <li class="pagination-item">
                             <a href="#" class="pagination-item__link">
                                 <i class="pagination-item__icon fas fa-chevron-left"></i>
@@ -303,97 +354,15 @@
                                 <i class="pagination-item__icon fas fa-chevron-right"></i>
                             </a>
                         </li>
-                    </ul> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer -->
-    <div class="footer">
-        <div class="grid wide footer-box-contact">
-            <div class="row footer-box-contact__wrap">
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-location">
-                        <li class="list-location-find">
-                            <p class="mb-2 footer-title">Tìm cửa hàng</p>
-                            <p class="mb-1">
-                                <a class="footer-item-link text-decoration-none" href="">Tìm cửa hàng gần nhất</a>
-                            </p>
-                            <p class="mb-1">
-                                <a class="footer-item-link text-decoration-none" href="">Mua hàng từ xa</a>
-                            </p>
-                            <p class="mb-1">
-                                <a class="footer-item-link text-decoration-none" href="">
-                                    <span style="color: #d70018;">Gặp trực tiếp cửa hàng gần nhất (Zalo hoặc gọi điện)</span>
-                                </a>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-phone-contact">
-                        <li class="list-phone-contact">
-                            <p class="mb-2 footer-title">Thông tin liên hệ</p>
-                            <p class="mb-1">
-                                Gọi mua hàng: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2097</a> (8h00 - 22h00)
-                            </p>
-                            <p class="mb-1">
-                                Gọi khiếu nại: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2063</a> (8h00 - 21h30)
-                            </p>
-                            <p class="mb-1">
-                                Gọi bảo hành: <a class="footer-item-link font-weight-both text-decoration-none" href="">1800.2064</a> (8h00 - 21h00)
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-seaches">
-                        <p class="mb-2 footer-title">Chính sách mua và bảo hành</p>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Mua hàng và thanh toán Online</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Mua hàng và trả góp Online</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra thông tin đơn hàng</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra điểm Member</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra thông tin bảo hành</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tra cứu hóa đơn điện tử</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Trung tâm bảo hành chính hãng</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Quy định về việc sao lưu dữ liệu</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Dịch vụ bảo hành điện thoại</a></li>
-                    </ul>
-                </div>
-                <div class="col l-3 m-6 c-6">
-                    <ul class="list-unstyled footer-others">
-                        <p class="mb-2 footer-title">Các thông tin khác</p>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Quy chế hoạt động</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Chính sách bảo hành</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Liên hệ hợp tác kinh doanh</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Đơn doanh nghiệp</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Ưu đẫi từ đối tác</a></li>
-                        <li class="mb-1"><a class="footer-item-link text-decoration-none" href="">Tuyển dụng</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="footer__bottom">
-        <div class="grid wide">
-            <div class="footer__info-menu">
-                <a href="" class="footer__info-menu-link">
-                    <span>Chính sách bảo mật</span>
-                </a>
-                <a href="" class="footer__info-menu-link">
-                    <span>Quy chế hoạt động</span>
-                </a>
-                <a href="" class="footer__info-menu-link">
-                    <span>Trả hàng & hoàn tiền</span>
-                </a>
-            </div>
-            <div class="footer__info-address">
-                <p>Công ty thiết bị điện tử W</p>
-                <p>Chi nhánh: 34, 306 Tây Sơn, Đống Đa, Hà Nội</p>
-            </div>
-        </div>
-    </div>
+    <?php
+        include('footer.php')
+    ?>
 </body>
 </html>
 
