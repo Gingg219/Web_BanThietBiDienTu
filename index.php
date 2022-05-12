@@ -46,7 +46,7 @@
                                                 <ul class="list-item">
                                                 <?php foreach($manuf_smartphones as $each_smartphone): ?>
                                                     <li class="item-menu">
-                                                        <a class="item-menu__link" href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>">
+                                                        <a class="item-menu__link" href="mobile.php?catalog=<?php echo $each_smartphone['name'] ?>">
                                                             <span><?php echo $each_smartphone['name'] ?></span>
                                                             <?php if($each_smartphone['name']=='Apple'){
                                                                 echo '<i class="item-menu__icon-sub fa-solid fa-angle-right"></i>';
@@ -93,7 +93,7 @@
                                                 <ul class="list-item">
                                                 <?php foreach($manuf_laptops as $each_laptop): ?>
                                                     <li class="item-menu">
-                                                        <a class="item-menu__link" href="laptop.php?laptop=<?php echo $each_laptop['name'] ?>">
+                                                        <a class="item-menu__link" href="laptop.php?catalog=<?php echo $each_laptop['name'] ?>">
                                                             <span><?php echo $each_laptop['name'] ?></span>
                                                         </a>
                                                     </li>
@@ -111,7 +111,7 @@
                                                 <ul class="list-item">
                                                 <?php foreach($manuf_tablets as $each_tablet): ?>
                                                     <li class="item-menu">
-                                                        <a class="item-menu__link" href="tablet.php?tablet=<?php echo $each_tablet['name'] ?>">
+                                                        <a class="item-menu__link" href="tablet.php?catalog=<?php echo $each_tablet['name'] ?>">
                                                             <span><?php echo $each_tablet['name'] ?></span>
                                                         </a>
                                                     </li>
@@ -488,13 +488,13 @@
                         <!-- list-product -->
                         <div class="box-outstanding-title">
                             <a href="" class="box-outstanding-title__title text-decoration-none">
-                                <h2>Điện thoại nổi bật</h2>
+                                <h2>Tablet nổi bật</h2>
                             </a>
                             <div class="box-related-tag">
                                 <div class="list-related-tag">
                                     <!-- <a class="item-related-tag" href="">Reno7</a> -->
-                                <?php foreach($manuf_smartphones as $each_smartphone): ?>
-                                    <a href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>"><?php echo $each_smartphone['name'] ?></a>
+                                <?php foreach($manuf_tablets as $each_tablet): ?>
+                                    <a href="tablet.php?tablet=<?php echo $each_tablet['name'] ?>"><?php echo $each_tablet['name'] ?></a>
                                 <?php endforeach?>
                                     <a class="item-related-tag" href="">Xem tất cả</a>
                                 </div>   
@@ -504,16 +504,16 @@
                         <div class="row sm-gutter product-item__wrap mb-3">
                             <!-- product item -->
                             <?php
-                                $smartphones_index=(new data)->se_products_smartphones_index();
-                                foreach($smartphones_index as $each_smartphone_index):
+                                $tablets_index=(new data)->se_products_tablets_index();
+                                foreach($tablets_index as $each_tablet_index):
                             ?>
                             <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="detai-products.php">
-                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone_index['image']?>);"></div>
-                                    <h4 class="home-product-item__name"><?php echo $each_smartphone_index['name']?></h4>
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_tablet_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_tablet_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_smartphone_index['price']?> đ</span>
-                                        <span class="price-current"><?php echo $each_smartphone_index['price_sale']?> đ</span>
+                                        <span class="price-old"><?php echo $each_tablet_index['price']?> đ</span>
+                                        <span class="price-current"><?php echo $each_tablet_index['price_sale']?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">
                                         <div class="home-product-item__rating">
@@ -540,13 +540,13 @@
                         <!-- list-product -->
                         <div class="box-outstanding-title">
                             <a href="" class="box-outstanding-title__title text-decoration-none">
-                                <h2>Điện thoại nổi bật</h2>
+                                <h2>Laptop nổi bật</h2>
                             </a>
                             <div class="box-related-tag">
                                 <div class="list-related-tag">
                                     <!-- <a class="item-related-tag" href="">Reno7</a> -->
-                                <?php foreach($manuf_smartphones as $each_smartphone): ?>
-                                    <a href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>"><?php echo $each_smartphone['name'] ?></a>
+                                <?php foreach($manuf_laptops as $each_laptop): ?>
+                                    <a href="laptop.php?catalog=<?php echo $each_laptop['name'] ?>"><?php echo $each_laptop['name'] ?></a>
                                 <?php endforeach?>
                                     <a class="item-related-tag" href="">Xem tất cả</a>
                                 </div>   
@@ -556,16 +556,16 @@
                         <div class="row sm-gutter product-item__wrap mb-3">
                             <!-- product item -->
                             <?php
-                                $smartphones_index=(new data)->se_products_smartphones_index();
-                                foreach($smartphones_index as $each_smartphone_index):
+                                $laptops_index=(new data)->se_products_laptops_index();
+                                foreach($laptops_index as $each_laptop_index):
                             ?>
                             <div class="col l-2-4 m-4 c-6">
                                 <a class="home-product-item" href="detai-products.php">
-                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone_index['image']?>);"></div>
-                                    <h4 class="home-product-item__name"><?php echo $each_smartphone_index['name']?></h4>
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_laptop_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_laptop_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_smartphone_index['price']?> đ</span>
-                                        <span class="price-current"><?php echo $each_smartphone_index['price_sale']?> đ</span>
+                                        <span class="price-old"><?php echo $each_laptop_index['price']?> đ</span>
+                                        <span class="price-current"><?php echo $each_laptop_index['price_sale']?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">
                                         <div class="home-product-item__rating">

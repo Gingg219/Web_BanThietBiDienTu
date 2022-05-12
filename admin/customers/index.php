@@ -14,8 +14,17 @@
                 <?php 
                     require_once '../control.php';
                     $search='';
+                    
+                    if(isset($_GET['search'])){
+                        $search=$_GET['search'];
+                    }
+                    $page=1;
+                    if(isset($_GET['page'])){
+                        $page=$_GET['page'];
+                    }
                     $all_product=(new data)->count_cus($search);
-                    require_once '../process_paging&search.php';
+                    $all_page=ceil($all_product/4);
+                    $skip_page=4*($page-1);
                     $result=(new data)->se_cus($search,$skip_page);
                 ?>
                     <div class="add_new">

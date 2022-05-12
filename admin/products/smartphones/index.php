@@ -17,13 +17,21 @@
                 <?php
                     require_once ($root."/admin/control.php");
                     $search='';
+                    if(isset($_GET['search'])){
+                        $search=$_GET['search'];
+                    }
+                    $page=1;
+                    if(isset($_GET['page'])){
+                        $page=$_GET['page'];
+                    }
                     $all_product=(new data)->count_paging_smartphone($search);
-                    require_once ($root."/admin/process_paging&search.php");
+                    $all_page=ceil($all_product/4);
+                    $skip_page=4*($page-1);
                     $smartphone=(new data)->search_paging_smartphone($search,$skip_page);
                 ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
-                        <span>Total:</span>
+                        <span>Total: <?php echo $all_product?></span>
                     </div>
                     <div>
                         <table class="tb_views">

@@ -286,47 +286,26 @@
                             <!-- product item -->
                             <?php
                                     require_once 'admin/control.php';
-                                    $catalog='';
-                                    if(isset($_GET['catalog'])){
-                                        $catalog=$_GET['catalog'];
+                                    if(isset($_GET['search'])){
+                                        $search=$_GET['search'];
                                     }
-                                    if($catalog==''){
-                                        $search='';
-                                        if(isset($_GET['search'])){
-                                            $search=$_GET['search'];
-                                        }
-                                        $page=1;
+                                    $page=1;
                                         if(isset($_GET['page'])){
                                             $page=$_GET['page'];
                                         }
-                                        $all_product=(new data)->count_paging_smartphone($search);
+                                        $all_product=(new data)->count_product($search);
                                         $all_page=ceil($all_product/20);
                                         $skip_page=20*($page-1);
-                                        $se_smartphones=(new data)->paging_mobile($skip_page);
-                                    }
-                                    else{
-                                        $search='';
-                                        if(isset($_GET['search'])){
-                                            $search=$_GET['search'];
-                                        }
-                                        $page=1;
-                                        if(isset($_GET['page'])){
-                                            $page=$_GET['page'];
-                                        }
-                                        $all_product=(new data)->count_search_mobile($catalog);
-                                        $all_page=ceil($all_product/20);
-                                        $skip_page=20*($page-1);
-                                        $se_smartphones=(new data)->paging_search_mobile($catalog,$skip_page);
-                                    }
-                                    
-                                foreach($se_smartphones as $each_smartphone): ?>
+                                        $se_products=(new data)->search_product($search,$skip_page);
+                                ?>
+                                <?php foreach($se_products as $each_product): ?>
                                 <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="#">
-                                        <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone['image'] ?>);"></div>
-                                        <h4 class="home-product-item__name"><?php echo $each_smartphone['name'] ?></h4>
+                                        <div class="home-product-item__img" style="background-image: url(<?php echo $each_product['image'] ?>);"></div>
+                                        <h4 class="home-product-item__name"><?php echo $each_product['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo $each_smartphone['price'] ?></span>
-                                            <span class="price-current"><?php echo $each_smartphone['price_sale'] ?></span>
+                                            <span class="price-old"><?php echo $each_product['price'] ?></span>
+                                            <span class="price-current"><?php echo $each_product['price_sale'] ?></span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <div class="home-product-item__rating">
@@ -348,15 +327,16 @@
                             </div>
                         </div>
                     </div>
+                    
                     <!-- Pagination -->
-                    <?php require_once 'paging.php'; ?>
+                    <?php require_once 'paging.php'?>
                 </div>
             </div>
         </div>
     </div>
 
     <?php
-        require_once 'footer.php';
+        include('footer.php')
     ?>
 </body>
 </html>

@@ -285,14 +285,37 @@
                             <!-- product item -->
                             <?php
                                     require_once 'admin/control.php';
-                                    if(isset($_GET['tablet'])){
-                                        $tablet=$_GET['tablet'];
+                                    $catalog='';
+                                    if(isset($_GET['catalog'])){
+                                        $catalog=$_GET['catalog'];
                                     }
-                                    if(empty($_GET['tablet'])){
-                                        $se_tablets=(new data)->se_products_tablet();
+                                    if($catalog==''){
+                                        $search='';
+                                        if(isset($_GET['search'])){
+                                            $search=$_GET['search'];
+                                        }
+                                        $page=1;
+                                        if(isset($_GET['page'])){
+                                            $page=$_GET['page'];
+                                        }
+                                        $all_product=(new data)->count_paging_tablet($search);
+                                        $all_page=ceil($all_product/20);
+                                        $skip_page=20*($page-1);
+                                        $se_tablets=(new data)->paging_tablet($skip_page);
                                     }
                                     else{
-                                        $se_tablets=(new data)->se_tablets($tablet);
+                                        $search='';
+                                        if(isset($_GET['search'])){
+                                            $search=$_GET['search'];
+                                        }
+                                        $page=1;
+                                        if(isset($_GET['page'])){
+                                            $page=$_GET['page'];
+                                        }
+                                        $all_product=(new data)->count_search_tablet($catalog);
+                                        $all_page=ceil($all_product/2);
+                                        $skip_page=2*($page-1);
+                                        $se_tablets=(new data)->paging_search_tablet($catalog,$skip_page);
                                     }
                                 ?>
                                 <?php foreach($se_tablets as $each_tablet): ?>
@@ -326,34 +349,7 @@
                     </div>
                     
                     <!-- Pagination -->
-                    <!-- <ul class="pagination home-product__pagination">
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-item__link">
-                                <i class="pagination-item__icon fas fa-chevron-left"></i>
-                            </a>
-                        </li>
-                        <li class="pagination-item pagination-item--active">
-                            <a href="#" class="pagination-item__link">1</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-item__link">2</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">3</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">4</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">5</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">...</a>
-                        </li><li class="pagination-item">
-                            <a href="#" class="pagination-item__link">14</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-item__link">
-                                <i class="pagination-item__icon fas fa-chevron-right"></i>
-                            </a>
-                        </li>
-                    </ul> -->
+                    <?php require_once 'paging.php';?>
                 </div>
             </div>
         </div>
