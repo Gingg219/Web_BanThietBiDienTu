@@ -274,6 +274,7 @@
                 background-color: var(--white-color);
                 border-radius: 5px;
                 overflow: hidden; /* khi element con vượt quá elemen cha thì ẩn */
+                margin: auto;
             }
 
             .auth-form__container {

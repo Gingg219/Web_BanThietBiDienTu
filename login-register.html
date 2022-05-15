@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhonesShop</title>
+    <link rel="icon" href="./assets/img/logomain.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
+</head>
+<body>
+    <!-- Begin: Header -->
+    <div class="header">
+        <div class="grid wide">
+            <div class="header-container">
+                <label for="header-mobile-menu" class="header__mobile-menu">
+                    <i class="header__mobile-menu-icon fa-solid fa-bars"></i>
+                </label>
+                <input type="checkbox" hidden id="header-mobile-menu" class="header__menu-checkbox">
+                <label for="header-mobile-menu" class="header-menu-overlay"></label>
+                <label for="header-mobile-search" class="header__mobile-search">
+                    <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input type="checkbox" hidden id="header-mobile-search" class="header__search-checkbox">
+                <label for="header-mobile-search" class="header-search-overlay"></label>
+
+                <div class="header-logo ">
+                    <a href="index.php"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
+                </div>
+
+                <ul class="header__menu-list">
+                    <div class="user__moblie-info">
+                        <img src="./assets/img/avatar.png" alt="" class="navbar__user-img">
+                        <span class="navbar__user-name">Tượng Văn Trưng</span>
+                    </div>
+                    
+                    <li class="header__menu-item">
+                        <a href="">Tài khoản của tôi</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="">Địa chỉ của tôi</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="">Đơn mua</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="">Đăng xuất</a>
+                    </li>
+                </ul>
+
+                <div class="header-search hide-on-mobile">
+                    <div class="search-box">
+                       <div class="search-box__btn">
+                            <i class="search-box__icon fa-solid fa-magnifying-glass"></i>
+                       </div>
+                       <input type="text" placeholder="Bạn cần tìm gì?" class="search-box__input">
+                    </div>
+                </div>
+    
+                <div class="header-about hide-on-mobile-tablet">
+                    <a href="" class="about-item about-1">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Gọi mua hàng<br /><span>1800.0000</span></p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-2">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Cửa hàng <br />gần bạn</p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-3">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Tra cứu<br />đơn hàng</p>
+                        </div>
+                    </a>
+                    <a href="cart.php" class="about-item about-4">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>1</span>
+                        </div>
+                        <div class="about-item__content">
+                            <p class="">Giỏ<br />hàng</p>
+                        </div>
+                    </a>
+                    <a href="" class="about-item about-5">
+                        <div class="about-item__icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="about-item__content">Member</div>
+                    </a>
+                </div>
+    
+                <div class="header-cart">
+                    <a class="box-cart" href="">
+                    <div class="cart-box-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <p>Giỏ hàng</p>
+                    <span class="items-in-cart">1</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End: Header  -->
+    
+    <div class="app-container">
+
+        <!-- <div class="modal__overlay"></div> -->
+
+    <!-- Login form -->
+    <div class="auth-form" id="login">
+        <div class="auth-form__container">
+            <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng Nhập</h3>
+                <span class="auth-form__switch-btn" id="showRegister">Đăng Ký</span>
+            </div>
+
+            <div class="auth-form_form">
+                <div class="auth-form__group">
+                    <input type="email" placeholder="Email..." class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <input type="password" placeholder="Password..." class="auth-form__input">
+                </div>
+            </div>
+
+            <div class="auth-form__aside">
+                <div class="auth-form__help">
+                    <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                    <span class="auth-form__help-separate"></span>
+                    <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                </div>
+            </div>
+
+            <div class="auth-form__controls">
+                <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
+                <button class="btn btn--primary">ĐĂNG NHẬP</button>
+            </div>
+        </div>
+
+        <div class="auth-form__socials">
+            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                <i class=" auth-form__socials-icon fab fa-facebook-square"></i>
+                <span class="auth-form__socials-tittle">Kết nối với Facebook</span>
+            </a>
+            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                <i class=" auth-form__socials-icon fab fa-google"></i>
+                <span class="auth-form__socials-tittle">Kết nối với Google</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Register form -->
+    <div class="auth-form" id="register" style="display: none;">
+        <div class="auth-form__container">
+            <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng Ký</h3>
+                <span class="auth-form__switch-btn" id="showLogin">Đăng Nhập</span>
+            </div>
+
+            <div class="auth-form_form">
+                <div class="auth-form__group">
+                    <input type="email" placeholder="Email..." class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <input type="password" placeholder="Password..." class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <input type="password" placeholder="Xác nhận Password..." class="auth-form__input">
+                </div>
+            </div>
+
+            <div class="auth-form-aside">
+                <p class="auth-form__policy-text">
+                    Bằng việc đăng ký bạn đã đồng ý với CellPhoneW về
+                    <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> & 
+                    <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                </p>
+            </div>
+
+            <div class="auth-form__controls">
+                <button class="btn btn--normal auth-form__control-back">TRỞ LẠI</button>
+                <button class="btn btn--primary">ĐĂNG KÝ</button>
+            </div>
+        </div>
+
+        <div class="auth-form__socials">
+            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                <i class=" auth-form__socials-icon fab fa-facebook-square"></i>
+                <span class="auth-form__socials-tittle">Kết nối với Facebook</span>
+            </a>
+            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                <i class=" auth-form__socials-icon fab fa-google"></i>
+                <span class="auth-form__socials-tittle">Kết nối với Google</span>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        const register= document.getElementById("register")
+        const showRegister = document.getElementById("showRegister")
+        const login = document.getElementById("login")
+        const showLogin = document.getElementById("showLogin")
+
+        if(showRegister) {
+            showRegister.onclick = (e) => {
+                login.style.display = "none";
+                register.style.display = "block";
+            }
+        }
+        
+        if(showLogin) {
+            showLogin.onclick = (e) => {
+                register.style.display = "none";
+                login.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -83,7 +83,7 @@
                             <p class="">Giỏ<br />hàng</p>
                         </div>
                     </a>
-                    <a href="" class="about-item about-5">
+                    <a href="#" class="about-item about-5" id="loginForm">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
