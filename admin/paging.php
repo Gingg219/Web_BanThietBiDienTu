@@ -8,6 +8,5 @@
                                     <?php echo $i?>
                                 </a>
                          <?php } ?>
-                         <?php echo $page?>
                         <a href="?page=<?php if($page<$all_page){$page++;} ; echo $page; ?>&search=<?php echo $search?>">Next</a>
                     </div>

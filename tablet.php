@@ -49,52 +49,28 @@
                                 <div class="box-list-subcate">
                                     <div class="list-subcate">
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-286.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-ipad.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
                                             <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-211.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-274.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-lenovo.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-769.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-274.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
                                             <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-1214.svg" alt="">
                                         </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-721.svg" alt="">
+                                        <a class="item-subcate" href="">                                           
+                                            Kindle 
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-vsmart.svg" alt="">
+                                            Máy đọc sách
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-1052.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-vivo.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-oneplus.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-nubia.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Cat
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Điện thoại phổ thông
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Tin đồn - mới ra
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Tecno
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Hãng khác
+                                            Alcatel
                                         </a>
                                     </div>
                                 </div>

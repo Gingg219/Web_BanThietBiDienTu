@@ -442,7 +442,7 @@
                                 <div class="list-related-tag">
                                     <!-- <a class="item-related-tag" href="">Reno7</a> -->
                                 <?php foreach($manuf_smartphones as $each_smartphone): ?>
-                                    <a href="mobile.php?phone=<?php echo $each_smartphone['name'] ?>"><?php echo $each_smartphone['name'] ?></a>
+                                    <a href="mobile.php?catalog=<?php echo $each_smartphone['name'] ?>"><?php echo $each_smartphone['name'] ?></a>
                                 <?php endforeach?>
                                     <a class="item-related-tag" href="">Xem tất cả</a>
                                 </div>   
@@ -494,7 +494,7 @@
                                 <div class="list-related-tag">
                                     <!-- <a class="item-related-tag" href="">Reno7</a> -->
                                 <?php foreach($manuf_tablets as $each_tablet): ?>
-                                    <a href="tablet.php?tablet=<?php echo $each_tablet['name'] ?>"><?php echo $each_tablet['name'] ?></a>
+                                    <a href="tablet.php?catalog=<?php echo $each_tablet['name'] ?>"><?php echo $each_tablet['name'] ?></a>
                                 <?php endforeach?>
                                     <a class="item-related-tag" href="">Xem tất cả</a>
                                 </div>   

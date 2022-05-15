@@ -49,52 +49,43 @@
                                 <div class="box-list-subcate">
                                     <div class="list-subcate">
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-286.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-macbook-2.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-211.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-hp-2.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-274.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-dell.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-769.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-lenovo.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-1214.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-micosoftsurface.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-721.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-asus.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-vsmart.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-acer.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-1052.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-lg.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-vivo.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-msi.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-oneplus.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-gygabyte.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-nubia.svg" alt="">
+                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-fujitsu.svg" alt="">
                                         </a>
                                         <a class="item-subcate" href="">
-                                            Cat
+                                            Laptop Avita
                                         </a>
                                         <a class="item-subcate" href="">
-                                            Điện thoại phổ thông
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Tin đồn - mới ra
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Tecno
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Hãng khác
+                                            Huawei
                                         </a>
                                     </div>
                                 </div>

@@ -42,7 +42,7 @@
                        <div class="search-box__btn">
                             <i class="search-box__icon fa-solid fa-magnifying-glass"></i>
                        </div>
-                       <form action="catalogsearch.php">
+                       <form action="catalogsearch.php" style="Width: 100%">
                             <input type="search" placeholder="Bạn cần tìm gì?" name="search" class="search-box__input" value="<?php if(isset($_GET['search']))
                             echo $_GET['search'] ; ?>">
                        </form>

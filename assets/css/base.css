@@ -70,13 +70,13 @@ html {
     list-style: none;
 }
 
-.pagination-item--active .pagination-item__link {
-    color: var(--white-color);
+.pagination-item--active {
+    color: var(--white-color) !important;
     background-color: var(--primary-color);
 }
 
 
-.pagination-item--active:hover .pagination-item__link {
+.pagination-item--active:hover {
     background-color: #ec6b51;
 }
 
@@ -91,10 +91,11 @@ html {
     height: var(--height);
     line-height: var(--height);
     text-align: center;
+    margin: 0 12px;
 }
 
 .pagination-item {
-    margin: 0 12px;
+    display: flex;
 }
 
 /* Modal */
