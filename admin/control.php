@@ -531,16 +531,31 @@ public function se_users($search='',$skip_page){
     public function del_products($id){
         global $conn;
         $sql="delete from products where id='$id'";
-        mysqli_query($conn,$sql);
-        $result=mysqli_close($conn);
+        $result= mysqli_query($conn,$sql);
         return($result);
         mysqli_close($conn);
     }
     public function find_products($id){
         global $conn;
-        $sql="select * from products where id=$id";
+        $sql="select products.*, colors.name as name_color from products  INNER JOIN colors on
+        products.id_color=colors.id
+        where products.id=$id";
         $result=mysqli_query($conn,$sql);
         return $result;
         mysqli_close($conn);
+    }
+    public function se_products_sale(){
+        global $conn;
+        $sql="SELECT products.* ,
+        (products.price-products.price_sale) as sale FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        order by sale desc
+        limit 10";
+        $result=mysqli_query($conn,$sql);
+        return($result);
+        mysqli_close($conn);
+    }
+    public function delete_in_cart($id){
+        unset($_SESSION['cart'][$id]);
     }
 }

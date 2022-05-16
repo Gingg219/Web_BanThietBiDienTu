@@ -104,149 +104,33 @@
                     </div>
 
                     <!-- Swiper-block  -->
-                    <div class="grid wide">
-                        <div class="col">
-                            <div class="row">
-                                <nav class="box-products mb-3">
-                                    <ul class="box-products__list list-unstyled">
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detai-products.php">
-                                                <div class="home-product-item__img" style="background-image: url(https://image.cellphones.com.vn/220x/media/catalog/product/i/p/iphone-se-red-select-20220322.jpg);"></div>
-                                                <h4 class="home-product-item__name">iPhone SE 2022 | Chính hãng VN/A</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old">34.200.000đ</span>
-                                                    <span class="price-current">24.080.000đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Yêu thích</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+                    <div class="col">
+                        <div class="row">
+                            <nav class="box-products">
+                                <ul class="box-products__list list-unstyled">
+                                <?php
+                                        require_once 'admin/control.php';
+                                        $products_sale=(new data)->se_products_sale();
+                                        foreach($products_sale as $each_sale):
+                                ?>
+                                    <li class="box-products__item">
+                                        <a class="home-product-item" href="detail_products.php?id=<?php echo $each_sale['id'] ?>">
+                                            <div class="home-product-item__img" style="background-image: url(<?php echo $each_sale['image'] ?>);"></div>
+                                            <h4 class="home-product-item__name"><?php echo $each_sale['name'] ?></h4>
+                                            <div class="home-product-item__price">
+                                                <span class="price-old"><?php echo $each_sale['price'] ?></span>
+                                                <span class="price-current"><?php echo number_format($each_sale['price_sale']) ?> đ</span>
+                                            </div>
+                                            
+                                            <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Deal Shock</Span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php endforeach ?>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     
@@ -285,7 +169,6 @@
                             <div class="row sm-gutter">
                             <!-- product item -->
                             <?php
-                                    require_once 'admin/control.php';
                                     $catalog='';
                                     if(isset($_GET['catalog'])){
                                         $catalog=$_GET['catalog'];
@@ -321,12 +204,12 @@
                                     
                                 foreach($se_smartphones as $each_smartphone): ?>
                                 <div class="col l-2-4 m-4 c-6">
-                                    <a class="home-product-item" href="#">
+                                    <a class="home-product-item" href="detail_products.php?id=<?php echo $each_smartphone['id'] ?>">
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone['image'] ?>);"></div>
                                         <h4 class="home-product-item__name"><?php echo $each_smartphone['name'] ?></h4>
                                         <div class="home-product-item__price">
                                             <span class="price-old"><?php echo $each_smartphone['price'] ?></span>
-                                            <span class="price-current"><?php echo $each_smartphone['price_sale'] ?></span>
+                                            <span class="price-current"><?php echo number_format($each_smartphone['price_sale']); ?> đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <div class="home-product-item__rating">

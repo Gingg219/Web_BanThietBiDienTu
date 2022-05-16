@@ -20,7 +20,6 @@
                             <th>ID</th>
                             <th>Customers</th>
                             <th>Phone_customer</th>
-                            <th>Deliver</th>
                             <th>Delivery address</th>
                             <th>Oder_ date</th>
                             <th>NOTE</th>
@@ -32,12 +31,11 @@
                             <td>1</td>
                             <td>Tuan NGo Van</td>
                             <td>0366484758</td>
-                            <td>Goingsa</td>
                             <td>Bac GIang</td>
                             <td>25/01/2077</td>
                             <td>Note</td>
                             <td><a href="#">View</a></td>
-                            <td><a href="form_update.php">Update</a></td>
+                            <td><a href="form_update.php">Confirm</a></td>
                             <td><a href="process_del.php?del=<?php echo $se['ID'];?>">Delete</a></td>
                         </tr>
                     </table>

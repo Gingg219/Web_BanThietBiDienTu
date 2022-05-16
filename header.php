@@ -83,11 +83,17 @@
                             <p class="">Giỏ<br />hàng</p>
                         </div>
                     </a>
-                    <a href="#" class="about-item about-5" id="loginForm">
+                    <a href="login_register.php" class="about-item about-5" id="loginForm">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <div class="about-item__content">Member</div>
+                        <div class="about-item__content"><?php if(isset($_SESSION['name'])){ echo $_SESSION['name'];}?></div>
+                    </a>
+                    <a href="process_sign_out.php" class="about-item about-5" id="loginForm">
+                        <div class="about-item__icon">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </div>
+                        <div class="about-item__content"></div>
                     </a>
                 </div>
     

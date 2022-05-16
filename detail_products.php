@@ -40,9 +40,15 @@
     <!-- Block-detail-product -->
     <div class="block-detail-product">
         <div class="detail-product__box-name">
+        <?php
+            require_once 'admin/control.php';
+            $id=$_GET['id'];
+            $products=(new data)->find_products($id);
+            $each_product=mysqli_fetch_array($products);
+        ?>
             <div class="grid wide">
                 <div class="box-name__box-product-name">
-                    <h1>iPhone SE 2022 | Chính hãng VN/A</h1>
+                    <h1><?php echo $each_product['name'] ?></h1>
                 </div>
             </div>
         </div>
@@ -51,17 +57,17 @@
                 <div class="l-4 c-12 ">
                     <div class="detail-product__box-left mb-3">
                         <div class="slides-wrap">
-                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_se_2022.jpg" style="width:100%">
-                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/l/c/lcimg-beede483-355b-48bb-b07a-51285393a1031122.jpg" style="width:100%">
+                            <img class="mySlides" src="<?php echo $each_product['image'] ?>" style="width:100%">
+                            <img class="mySlides" src="<?php echo $each_product['image'] ?>" style="width:100%">
                             <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" style="width:100%">
                         </div>
 
                         <div class="swiper-wrapper">
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone_se_2022.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
                             </div>
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/l/c/lcimg-beede483-355b-48bb-b07a-51285393a1031122.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
                             </div>
                             <div class="thumb-wrap">
                               <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
@@ -74,8 +80,8 @@
                         <!-- Box-price -->
                     <div class="box-info mb-2">
                         <div class="box-info__box-price">
-                            <p class="price-current">24.080.000đ</p>
-                            <p class="price-old">34.200.000đ</p>
+                            <p class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</p>
+                            <p class="price-old"><?php echo $each_product['price'] ?> đ</p>
                         </div>
                     </div>
                     <!-- Box-version -->
@@ -83,7 +89,7 @@
                         <div class="list-version">
                             <a class="version-item active" href="#">
                                 <strong>256GB</strong>
-                                <span>16.490.000</span>
+                                <span><?php echo $each_product['price'] ?></span>
                             </a>
                             <a class="version-item" href="#">
                                 <strong>128GB</strong>
@@ -110,17 +116,17 @@
                                             <img src="https://image.cellphones.com.vn/25x/media/catalog/product/d/o/download_2__3_7.png" alt="">
                                         </a>
                                         <p>
-                                            <strong>Trắng</strong>
+                                            <strong>Green</strong>
                                             <span>12.490.000</span>
                                         </p>
                                     </li>
                                     <li class="item-color active">
                                         <a href="#">
-                                            <img src="https://image.cellphones.com.vn/358x/media/catalog/product/d/o/download_10_10.png" alt="">
+                                            <img src="<?php echo $each_product['image'] ?>" alt="">
                                         </a>
                                         <p>
-                                            <strong>Đen</strong>
-                                            <span>12.490.000</span>
+                                            <strong><?php echo $each_product['name_color'] ?></strong>
+                                            <span><?php echo number_format($each_product['price_sale']) ?> đ</span>
                                         </p>
                                     </li>
                                     <li class="item-color disable">
@@ -128,7 +134,7 @@
                                             <img src="https://image.cellphones.com.vn/25x/media/catalog/product/d/o/download_1__6_7.png" alt="">
                                         </a>
                                         <p>
-                                            <strong>Đỏ</strong>
+                                            <strong>Orange</strong>
                                             <span>12.490.000</span>
                                         </p>
                                     </li>
@@ -148,7 +154,7 @@
                             <ul class="list-promotions">
                                 <li class="promotion-item">
                                     <a href="#" class="text-decoration-none">
-                                        Nhập CPS500 - Giảm 500.000đ cho các sản phẩm Apple từ 10 triệu khi thanh toán qua VNPAY tại cửa hàng 
+                                        Nhập CPS500 - Giảm 0đ cho các sản phẩm từ 0 triệu khi thanh toán qua VNPAY tại cửa hàng 
                                         <span>(xem chi tiết)</span>
                                     </a>
                                 </li>
@@ -163,7 +169,7 @@
                     </div>
                     <!-- Button-Buy -->
                     <div class="box-action-botton">
-                        <a href="" class="action-botton">
+                        <a href="add2cart.php?id=<?php echo $each_product['id'] ?>" class="action-botton">
                             <strong>MUA NGAY</strong>
                             <span>(Giao tận nơi hoặc lấy tại cửa hàng)</span>
                         </a>
@@ -205,9 +211,9 @@
                                             <i class="warranty-info-item__icon fa-solid fa-mobile-screen-button"></i>
                                         </div>
                                         <p>
-                                            Máy mới 100% , chính hãng Apple Việt Nam.
+                                            Máy mới 100% , chính hãng tại Việt Nam.
                                             <br>
-                                            CellphoneS hiện là đại lý bán lẻ uỷ quyền iPhone chính hãng VN/A của Apple Việt Nam
+                                            CellphoneW hiện là đại lý bán lẻ uỷ quyền iPhone chính hãng VN/A
                                         </p>
                                     </div>
                                     <div class="warranty-info-item">
@@ -215,7 +221,7 @@
                                             <i class="warranty-info-item__icon fa-solid fa-box-open"></i>
                                         </div>
                                         <p>
-                                            iPhone SE 2022, Cáp USB-C - Lightning
+                                            Điện thoại, Cáp sạc
                                         </p>
                                     </div>
                                     <div class="warranty-info-item">
@@ -223,7 +229,7 @@
                                             <i class="warranty-info-item__icon fa-solid fa-shield-halved"></i>
                                         </div>
                                         <p>
-                                            1 ĐỔI 1 trong 30 ngày nếu có lỗi phần cứng nhà sản xuất. Bảo hành 12 tháng tại trung tâm bảo hành chính hãng Apple : Điện Thoại Vui ASP (Apple Authorized Service Provider) <a class="text-decoration-none text-primary-color" href="#">(Xem chi tiết)</a>
+                                            1 ĐỔI 1 trong 30 ngày nếu có lỗi phần cứng nhà sản xuất. Bảo hành 12 tháng tại trung tâm bảo hành chính hãng Authorized Service Provider <a class="text-decoration-none text-primary-color" href="#">(Xem chi tiết)</a>
                                         </p>
                                     </div>
                                 </div>
@@ -247,7 +253,7 @@
                             </div>
                             <div class="box-content">
                                 <ul>
-                                    <li>Hiệu năng vượt trội với vi xử lý mới nhất - Chip Apple A15 tiên tiến nhất, cân mọi tác vụ</li>
+                                    <li>Hiệu năng vượt trội với vi xử lý mới nhất - Chip tiên tiến nhất, cân mọi tác vụ</li>
                                     <li>Tận hưởng không gian hiển thị sắc nét - Màn hình Liquid Retina nhỏ gọn 4.7 inch tỷ lệ 16:9</li>
                                     <li>Giải trí trọn vẹn ngày dài - Viên pin có nhiều cải tiến giúp bạn không còn lo lắng khi sử dụng</li>
                                     <li>Camera ghi trọn mọi khoảnh khắc - Camera đơn 12 MP f/1.8 hỗ trợ công nghệ Deep Fusion</li>
@@ -258,54 +264,15 @@
                             <p>
                                 <span>
                                     <strong>
-                                        Thông tin mới nhất về điện thoại iPhone SE 2022
+                                        Thông tin mới nhất về điện thoại
                                     </strong>
                                 </span>
                             </p>
                             <p>
-                                Những thông tin mới nhất về các dòng iPhone vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc iPhone SE là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật, iPhone SE 2022 có giá bao nhiêu và khi nào ra mắt? Hãy cùng chúng tôi tìm hiểu nhé!<span id="dots">...</span>
+                                Những thông tin mới nhất về các dòng vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc điện thoại này là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật!<span id="dots">...</span>
                             </p>
                             <span id="more">
-                                <p>
-                                    <span>
-                                        <strong>
-                                            Thông tin mới nhất về điện thoại iPhone SE 2022
-                                        </strong>
-                                    </span>
-                                </p>
-                                <p>
-                                    Những thông tin mới nhất về các dòng iPhone vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc iPhone SE là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật, iPhone SE 2022 có giá bao nhiêu và khi nào ra mắt? Hãy cùng chúng tôi tìm hiểu nhé!
-                                </p>
-                                <p>
-                                    <span>
-                                        <strong>
-                                            Thông tin mới nhất về điện thoại iPhone SE 2022
-                                        </strong>
-                                    </span>
-                                </p>
-                                <p>
-                                    Những thông tin mới nhất về các dòng iPhone vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc iPhone SE là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật, iPhone SE 2022 có giá bao nhiêu và khi nào ra mắt? Hãy cùng chúng tôi tìm hiểu nhé!
-                                </p>
-                                <p>
-                                    <span>
-                                        <strong>
-                                            Thông tin mới nhất về điện thoại iPhone SE 2022
-                                        </strong>
-                                    </span>
-                                </p>
-                                <p>
-                                    Những thông tin mới nhất về các dòng iPhone vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc iPhone SE là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật, iPhone SE 2022 có giá bao nhiêu và khi nào ra mắt? Hãy cùng chúng tôi tìm hiểu nhé!
-                                </p>
-                                <p>
-                                    <span>
-                                        <strong>
-                                            Thông tin mới nhất về điện thoại iPhone SE 2022
-                                        </strong>
-                                    </span>
-                                </p>
-                                <p>
-                                    Những thông tin mới nhất về các dòng iPhone vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc iPhone SE là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật, iPhone SE 2022 có giá bao nhiêu và khi nào ra mắt? Hãy cùng chúng tôi tìm hiểu nhé!
-                                </p>
+                            <?php echo nl2br($each_product['description']) ?>
                             </span>
                             <button onclick="myFunction()" id="showMoreInfo">Xem thêm</button>
                         </div>
@@ -337,7 +304,7 @@
                                     </tr>
                                     <tr>
                                         <th>Chipset</th>
-                                        <th>Apple A15</th>
+                                        <th>Banana A15</th>
                                     </tr>
                                     <tr>
                                         <th>Dung lượng RAM</th>

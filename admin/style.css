@@ -285,3 +285,77 @@ body{
               color: #bdb8d7;
               font-weight: 300;
           }
+/* Login Admin */
+#login_form {
+  width: 400px;
+}
+.login_container {
+  width: 100vw;
+  height: 100vh;
+  background: #16a085; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: -webkit-linear-gradient(
+      to right,
+      #f4d03f,
+      #16a085
+  );
+  background: linear-gradient(
+      to right,
+      #f4d03f,
+      #16a085
+  );
+}
+.login {
+  background: var(--background-color);
+  max-width: 100%;
+  padding: 30px;
+  text-align: center;
+  border-radius: 4px;
+}
+.login input {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eee;
+  width: 70%;
+  border: 0;
+  margin: 0 0 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: inherit;
+  outline: none;
+  color: var(--text-color);
+}
+.login form {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login button {
+  font-family: Arial, Helvetica, sans-serif;
+  background: dimgray;
+  width: 70%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+}
+.login a {
+  margin-top: 20px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.login a:hover {
+  opacity: 0.8;
+}
+.login button:hover {
+  opacity: 0.8;
+}
+.highcharts-figure,
+.highcharts-data-table table {
+  min-width: 320px;
+  max-width: 800px;
+  margin: 1em auto;
+}
