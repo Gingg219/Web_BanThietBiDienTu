@@ -38,7 +38,7 @@
                 <span class="auth-form__switch-btn" id="showRegister">Đăng Ký</span>
             </div>
 
-            <div class="auth-form_form">
+            <div class="auth-form__form">
                 <div class="auth-form__group">
                     <input type="email" name="email" placeholder="Email..." class="auth-form__input">
                 </div>
@@ -85,7 +85,7 @@
                 <span class="auth-form__switch-btn" id="showLogin">Đăng Nhập</span>
             </div>
 
-            <div class="auth-form_form">
+            <div class="auth-form__form">
                 <div class="auth-form__group">
                     <input type="text" name="name" placeholder="Name..." class="auth-form__input">
                 </div>

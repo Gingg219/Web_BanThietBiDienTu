@@ -233,6 +233,7 @@
             height: unset;
             padding: .5rem 1rem;
             border-radius: .5rem;
+            margin: 0 1rem .5rem 0;;
         }
     /* Responsive Detail Page */
         .detail-product__box-left,
@@ -264,7 +265,7 @@
             margin: .5rem 1rem;
         }
         .price-old {
-            margin: 0 0 .5rem 1rem !important;
+            margin: 0 4rem .5rem 1rem !important;
         }
         .price-current {
             margin: 0 0 1rem 1rem !important;

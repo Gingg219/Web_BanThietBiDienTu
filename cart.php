@@ -52,6 +52,8 @@
         $sum = 0;
         ?>
         <?php foreach ($cart as $id => $each): ?>
+
+        <!-- Cart container  -->
         <div class="cart-container">
             <div class="cart-product-item">
                 <div class="cart-product-item__info">
@@ -100,7 +102,53 @@
                 <!-- <div class="delete-cart"><a href="<?php //unset($_SESSION['cart'][$id]); ?>"><i class="delete-cart__icon fa-solid fa-xmark"></i></a></div> -->
             </div>  
         </div>
-            <?php endforeach ?>
+        <?php endforeach ?>
+
+        <div class="auth-form block-info">
+        <div class="auth-form__container">
+            <div class="auth-form__header">
+                <strong style="font-size: 1.6rem; padding: 1rem 0">Thông tin khách hàng</strong>
+            </div>
+
+            <div class="auth-form__form">
+                <div class="auth-form__group">
+                    <input type="text" name="name" placeholder="Name..." class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <input type="number" name="phone" placeholder="Phone number..." class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <input type="text" name="add" placeholder="Address..." class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <!-- <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Male
+                    <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Female
+                    <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Other -->
+                    <!-- <select name="gender" class="auth-form__input">
+                        <option>male</option>
+                        <option>female</option>
+                        <option>other</option>
+                    </select> -->
+                    <label class="auth-form__gender">
+                        <input type="radio" name="gender" checked>Male
+                    </label>
+                    <label class="auth-form__gender">
+                        <input type="radio" name="gender" checked>Female
+                    </label>
+                    <label class="auth-form__gender">
+                        <input type="radio" name="gender" checked>Orther
+                    </label>
+                </div>
+                <div class="auth-form__group">
+                    <!-- <h5 class="auth-form__heading">Birthdate</h5> -->
+                    <input type="date" name="date" class="auth-form__input">
+                </div>
+                <div class="auth-form__group">
+                    <input type="email" name="email" placeholder="Email..." class="auth-form__input">
+                </div>
+            </div>
+        </div>
+    </div>
 
         <div class="cart-bottom-bar">
             <div class="total-box">

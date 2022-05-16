@@ -1,4 +1,4 @@
-<!-- Begin: modal-login-regisyter  -->\
+<!-- Begin: modal-login-regisyter  -->
 
     <div class="modal" style="display: none;">
         <div class="modal__overlay" style="display: none;"></div>
@@ -11,7 +11,7 @@
                         <span class="auth-form__switch-btn" id="showLogin">Đăng Ký</span>
                     </div>
 
-                    <div class="auth-form_form">
+                    <div class="auth-form__form">
                         <div class="auth-form__group">
                             <input type="email" placeholder="Email..." class="auth-form__input">
                         </div>
@@ -53,7 +53,7 @@
                         <span class="auth-form__switch-btn" id="showRegister">Đăng Nhập</span>
                     </div>
 
-                    <div class="auth-form_form">
+                    <div class="auth-form__form">
                         <div class="auth-form__group">
                             <input type="email" placeholder="Email..." class="auth-form__input">
                         </div>
