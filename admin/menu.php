@@ -2,7 +2,7 @@
         <div class="sidebar">
             <h2>Dashboards</h2>
             <ul>
-                <li><a href="#"><i class="fa-solid fa-gauge"></i>Home</a></li>
+                <li><a href="/admin/root"><i class="fa-solid fa-gauge"></i>Home</a></li>
                 <li><a href="" class="pro-btn"><i class="fa-solid fa-tablet-screen-button"></i>Products<span class="fa-solid fa-caret-down first"></span></a>
                     <ul class="pro-show">
                         <li><a href="/admin/products/smartphones">Phone</a></li>

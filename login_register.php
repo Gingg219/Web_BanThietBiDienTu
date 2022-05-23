@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
+<?php
+                    if(isset($_GET['error'])){
+            ?>
+                 echo "<script type='text/javascript'>alert(' <?php echo $_GET['error'] ?>');</script>";
+            <?php } ?>
     <!-- Begin: Header -->
     <?php require_once 'header.php'; ?>
 <!-- End: Header  -->

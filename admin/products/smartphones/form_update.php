@@ -1,3 +1,7 @@
+<?php     
+    $root = $_SERVER['DOCUMENT_ROOT']; 
+    require_once ($root."/admin/check_admin_login.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,6 @@
 </head>
 <body>
 <?php     
-    $root = $_SERVER['DOCUMENT_ROOT'];
     require_once ($root."/admin/menu.php"); ?>
             <div class="info">
             <?php

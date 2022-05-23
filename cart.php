@@ -99,7 +99,7 @@
                     </div>
                     
                 </div>
-                <!-- <div class="delete-cart"><a href="<?php //unset($_SESSION['cart'][$id]); ?>"><i class="delete-cart__icon fa-solid fa-xmark"></i></a></div> -->
+                <div class="delete-cart"><a href="delete_product_from_cart.php?id=<?php echo $id ?>"><i class="delete-cart__icon fa-solid fa-xmark"></i></a></div>
             </div>  
         </div>
         <?php endforeach ?>
@@ -110,41 +110,22 @@
                 <strong style="font-size: 1.6rem; padding: 1rem 0">Thông tin khách hàng</strong>
             </div>
 
+            <?php
+            if(isset($_SESSION['id'])){
+                $id = $_SESSION['id'];
+                $result =(new data)->find_cus($id);
+                $each_cus = mysqli_fetch_array($result);}
+                ?>
             <div class="auth-form__form">
+                <form action="process_checkout.php" method="POST">
                 <div class="auth-form__group">
-                    <input type="text" name="name" placeholder="Name..." class="auth-form__input">
+                    <input type="text" name="name" placeholder="Name..." class="auth-form__input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['name']; } ?>">
                 </div>
                 <div class="auth-form__group">
-                    <input type="number" name="phone" placeholder="Phone number..." class="auth-form__input">
+                    <input type="number" name="phone" placeholder="Phone number..." class="auth-form__input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['phone_number']; } ?>">
                 </div>
                 <div class="auth-form__group">
-                    <input type="text" name="add" placeholder="Address..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <!-- <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Male
-                    <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Female
-                    <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Other -->
-                    <!-- <select name="gender" class="auth-form__input">
-                        <option>male</option>
-                        <option>female</option>
-                        <option>other</option>
-                    </select> -->
-                    <label class="auth-form__gender">
-                        <input type="radio" name="gender" checked>Male
-                    </label>
-                    <label class="auth-form__gender">
-                        <input type="radio" name="gender" checked>Female
-                    </label>
-                    <label class="auth-form__gender">
-                        <input type="radio" name="gender" checked>Orther
-                    </label>
-                </div>
-                <div class="auth-form__group">
-                    <!-- <h5 class="auth-form__heading">Birthdate</h5> -->
-                    <input type="date" name="date" class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="email" name="email" placeholder="Email..." class="auth-form__input">
+                    <input type="text" name="add" placeholder="Address..." class="auth-form__input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['address']; } ?>">
                 </div>
             </div>
         </div>
@@ -158,11 +139,11 @@
                 </div>
             </div>
             <div class="btn-submit mt-2">
-                <button class="btn btn--primary">Tiến hành đặt hàng</button>
+                <button type="submit" class="btn btn--primary">Tiến hành đặt hàng</button>
                 <a href="index.php" class="choose-more-products text-decoration-none mt-2">Chọn thêm sản phẩm khác</a>
             </div>
         </div>
     </div>
-    
+    </form>
 </body>
 </html>

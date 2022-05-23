@@ -15,6 +15,4 @@
         <?php } ?>
     </div>
     <a class="pagination-item__link" href="?page=<?php if($page<$all_page){$page++;} ; echo $page; ?>&search=<?php echo $search?>&catalog=<?php echo $catalog?>">Next</a>
-</div>
-
-                   
+</div>                 

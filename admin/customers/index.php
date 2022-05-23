@@ -1,3 +1,6 @@
+<?php 
+require '../check_admin_login.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +34,7 @@
                         <a href="form_insert.php">ADD NEW</a>
                         <span>Total:  <?php echo $all_product?></span>
                     </div>
-                    <table class="tb_views">
+                    <table class="tb_views" style="width: 100%;">
                         <tr>
                             <th>ID</th>
                             <th>NAME</th>

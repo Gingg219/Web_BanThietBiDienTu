@@ -15,29 +15,33 @@
                         <a href="form_insert.php">ADD NEW</a>
                         <span>Total:</span>
                     </div>
-                    <table class="tb_views">
+                    <table class="tb_views" style="width: 100%;">
                         <tr>
                             <th>ID</th>
                             <th>Customers</th>
                             <th>Phone_customer</th>
                             <th>Delivery address</th>
                             <th>Oder_ date</th>
-                            <th>NOTE</th>
                             <th></th>
                             <th></th>
                             <th></th>
                         </tr>
+                        <?php
+                            require_once '../control.php';
+                            $result=(new data)->se_orders();
+                            foreach($result as $each):
+                        ?>
                         <tr>
-                            <td>1</td>
-                            <td>Tuan NGo Van</td>
-                            <td>0366484758</td>
-                            <td>Bac GIang</td>
-                            <td>25/01/2077</td>
-                            <td>Note</td>
+                            <td><?php echo $each['id'] ?></td>
+                            <td><?php echo $each['receiver_name'] ?></td>
+                            <td><?php echo $each['receiver_phone'] ?></td>
+                            <td><?php echo $each['receiver_address'] ?></td>
+                            <td><?php echo $each['order_date'] ?></td>
                             <td><a href="#">View</a></td>
                             <td><a href="form_update.php">Confirm</a></td>
-                            <td><a href="process_del.php?del=<?php echo $se['ID'];?>">Delete</a></td>
+                            <td><a href="process_del.php?del=">Delete</a></td>
                         </tr>
+                        <?php endforeach?>
                     </table>
         </div>
     </div>

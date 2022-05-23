@@ -77,7 +77,19 @@
                     <a href="cart.php" class="about-item about-4">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-bag-shopping"></i>
-                            <span>1</span>
+                            <span>
+                                <?php
+                                    // if(isset($_SESSION['cart'])){ 
+                                    //     $cart=$_SESSION['name'];
+                                    //     $a=0;
+									// 	if(isset($_GET['id'])){$id=$_GET['id'];
+                                    //     foreach($cart as $id => $each){
+                                    //         $a++;
+                                    //     }}
+                                    //     echo $a;
+                                    // }
+                                 ?>
+                            </span>
                         </div>
                         <div class="about-item__content">
                             <p class="">Giỏ<br />hàng</p>
@@ -103,7 +115,7 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                     <p>Giỏ hàng</p>
-                    <span class="items-in-cart">1</span>
+                    <span class="items-in-cart"></span>
                     </a>
                 </div>
             </div>

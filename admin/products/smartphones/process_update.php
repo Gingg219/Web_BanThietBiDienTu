@@ -11,7 +11,5 @@ $quantity=$_POST['quantity'];
 $price=$_POST['price'];
 $price_sale=$_POST['price_sale'];
 $result=(new data())->store_products($id,$id_manuf,$id_color,$name,$description,$image,$quantity,$price,$price_sale);
-if($result)
-    echo "OK";
-else
-    echo "false";
+
+header('location:index.php');

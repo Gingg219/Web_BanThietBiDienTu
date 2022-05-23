@@ -9,7 +9,5 @@ $email=$_POST['email'];
 $password=$_POST['password'];
 $level=$_POST['level'];
 $result=(new data())->create_user($name,$phone_number,$gender,$address,$date,$email,$password,$level);
-if($result)
-    echo "OK";
-else
-    echo "false";
+
+header('location:index.php');

@@ -541,7 +541,7 @@ public function se_users($search='',$skip_page){
         products.id_color=colors.id
         where products.id=$id";
         $result=mysqli_query($conn,$sql);
-        return $result;
+        return ($result);
         mysqli_close($conn);
     }
     public function se_products_sale(){
@@ -557,5 +557,13 @@ public function se_users($search='',$skip_page){
     }
     public function delete_in_cart($id){
         unset($_SESSION['cart'][$id]);
+    }
+    // Order
+    public function se_orders(){
+        global $conn;
+        $sql="SELECT * FROM orders";
+        $result=mysqli_query($conn,$sql);
+        return($result);
+        mysqli_close($conn);
     }
 }

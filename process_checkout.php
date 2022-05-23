@@ -1,36 +1,36 @@
 <?php 
 
-$name_receiver = $_POST['name_receiver'];
-$phone_receiver = $_POST['phone_receiver'];
-$address_receiver = $_POST['address_receiver'];
+$name_receiver = $_POST['name'];
+$phone_receiver = $_POST['phone'];
+$address_receiver = $_POST['add'];
 
-require 'admin/connect.php';
+require 'admin/control.php';
 session_start();
 
 $cart = $_SESSION['cart'];
 
 $total_price = 0;
 foreach($cart as $each){
-	$total_price += $each['quantity'] * $each['price'];
+	$total_price += $each['quantity'] * $each['price_sale'];
 }
 $customer_id = $_SESSION['id'];
 $status = 0;
 
-$sql = "insert into orders(customer_id, name_receiver, phone_receiver, address_receiver, status, total_price)
-values ('$customer_id', '$name_receiver', '$phone_receiver', '$address_receiver', '$status', '$total_price')";
-mysqli_query($connect,$sql);
+$sql = "insert into orders(id_customer, receiver_name, receiver_phone, receiver_address, total_current, status)
+values ('$customer_id', '$name_receiver', '$phone_receiver', '$address_receiver', '$total_price', '$status')";
+mysqli_query($conn,$sql);
 
-$sql = "select max(id) from orders where customer_id = '$customer_id'";
-$result = mysqli_query($connect,$sql);
+$sql = "select max(id) from orders where id_customer = '$customer_id'";
+$result = mysqli_query($conn,$sql);
 $order_id = mysqli_fetch_array($result)['max(id)'];
 
 foreach($cart as $product_id => $each){
 	$quantity = $each['quantity'];
-	$sql = "insert into order_product(order_id, product_id, quantity)
+	$sql = "insert into order_product(id_order, id_product, quantity)
 	values('$order_id', '$product_id', '$quantity')";
-	mysqli_query($connect,$sql);
+	mysqli_query($conn,$sql);
 }
-mysqli_close($connect);
+mysqli_close($conn);
 unset($_SESSION['cart']);
 
 header('location:index.php');

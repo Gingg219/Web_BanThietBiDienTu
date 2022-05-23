@@ -10,7 +10,5 @@ $email=$_POST['email'];
 $password=$_POST['password'];
 $level=$_POST['level'];
 $result=(new data())->store_user($id,$name,$phone_number,$gender,$address,$date,$email,$password,$level);
-if($result)
-    echo "OK";
-else
-    echo "false";
+
+header('location:index.php');

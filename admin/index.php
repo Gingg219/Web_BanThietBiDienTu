@@ -13,10 +13,10 @@
     <div class="login_container">
         <div id="login_form">
             <div class="login">
-                <form>
-                    <input type="text" placeholder="User" class="login_input">
-                    <input type="password" placeholder="Password" class="login_input">
-                    <button type="button">LOGIN</button>
+                <form action="process_signin.php" method="POST">
+                    <input type="text" name="email" placeholder="Email" class="login_input">
+                    <input type="password" name="pass" placeholder="Password" class="login_input">
+                    <button type="submit">LOGIN</button>
                     <!-- <a href="signup.php">Sign up ?</a> -->
                 </form>
             </div>

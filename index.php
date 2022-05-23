@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,7 @@
     <?php
         include ('header.php');
     ?>
+    
 
     <!-- Container -->
     <div class="app-container">
