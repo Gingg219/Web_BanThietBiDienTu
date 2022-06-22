@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/css/validation.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
@@ -30,128 +31,117 @@
     <?php require_once 'header.php'; ?>
 <!-- End: Header  -->
     
-    <div class="app-container">
+<div class="main">
+    <form action="" method="POST" class="form" id="register" style="display: none">
+      <div class="form-header">
+          <h3 class="form-heading">Đăng Ký</h3>
+          <span class="form-switch-btn" id="showLogin">Đăng Nhập</span>
+      </div>
 
-        <!-- <div class="modal__overlay"></div> -->
+      <div class="spacer"></div>
 
-    <!-- Login form -->
-    <div class="auth-form" id="login">
-        <div class="auth-form__container">
-            <form action="process_signing.php" method="POST" >
-            <div class="auth-form__header">
-                <h3 class="auth-form__heading">Đăng Nhập</h3>
-                <span class="auth-form__switch-btn" id="showRegister">Đăng Ký</span>
-            </div>
+      <div class="form-group">
+          <input id="fullname" name="fullname" type="text" placeholder=" " class="form-input">
+          <label for="fullname" class="form-label">Name...</label>
+          <span class="form-message"></span>
+      </div>
 
-            <div class="auth-form__form">
-                <div class="auth-form__group">
-                    <input type="email" name="email" placeholder="Email..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="password" name="pass" placeholder="Password..." class="auth-form__input">
-                </div>
-            </div>
+      <div class="form-group">
+          <input id="phone" name="phone" type="number" placeholder=" " class="form-input">
+          <label for="phone" class="form-label">Phone number...</label>
+          <span class="form-message"></span>
+      </div>
 
-            <div class="auth-form__aside">
-                <div class="auth-form__help">
-                    <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
-                    <span class="auth-form__help-separate"></span>
-                    <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
-                </div>
-            </div>
+      <div class="form-group gender">
+              <input type="radio" name="gender" value="male" class="form-input"> <span>Male</span>
+              <input type="radio" name="gender" value="female" class="form-input"><span>Female</span>
+              <input type="radio" name="gender" value="other" class="form-input"><span>Other</span>
+          <span class="form-message"></span>
+      </div>
 
-            <div class="auth-form__controls">
-                <button class="btn btn--normal auth-form__control-back">
-                    <a href="index.php" style="text-decoration: none;">TRỞ LẠI</a> 
-                </button>
-                <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
-            </div>
-            </form>
+      <div class="form-group">
+        <input id="address" name="address" placeholder=" " type="text" class="form-input">
+        <label for="address" class="form-label">Address...</label>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input id="date" name="date" placeholder=" " type="date" class="form-input">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input id="email" name="email" placeholder=" " type="text" class="form-input">
+        <label for="email" class="form-label">Email...</label>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input id="password" name="password" placeholder=" " type="password" class="form-input">
+        <label for="password" class="form-label">Password...</label>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input id="password-confirmation" name="password-confirmation" placeholder=" " type="password" class="form-input">
+        <label for="password-confirmation" class="form-label">Password confirmation...</label>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-aside">
+        <p class="form-policy-text">
+            Bằng việc đăng ký bạn đã đồng ý với CellPhoneW về
+            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> & 
+            <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+        </p>
+      </div>
+
+      <div class="form-controls">
+        <!-- <button class="btn btn--normal auth-form__control-back">
+             TRỞ LẠI
+        </button> -->
+        <button type="submit" class="btn btn--primary">ĐĂNG KÝ</button>
+    </div>
+    </form>
+
+    <form action="" method="POST" class="form" id="login" >
+        <div class="form-header">
+            <h3 class="form-heading">Đăng Nhập</h3>
+            <span class="form-switch-btn" id="showRegister">Đăng Ký</span>
         </div>
 
-        <div class="auth-form__socials">
-            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                <i class=" auth-form__socials-icon fab fa-facebook-square"></i>
-                <span class="auth-form__socials-tittle">Kết nối với Facebook</span>
-            </a>
-            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
-                <i class=" auth-form__socials-icon fab fa-google"></i>
-                <span class="auth-form__socials-tittle">Kết nối với Google</span>
-            </a>
+      <div class="spacer"></div>
+
+      <div class="form-group">
+        <input id="email" name="email" type="text" placeholder=" " class="form-input">
+        <label for="email" class="form-label">Email...</label>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <input id="password" name="password" type="password" placeholder=" " class="form-input">
+        <label for="password" class="form-label">Password...</label>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-aside">
+        <div class="form-help">
+            <a href="" class="form-help-link form-help-forgot">Quên mật khẩu</a>
+            <span class="form-help-separate"></span>
+            <a href="" class="form-help-link">Cần trợ giúp?</a>
         </div>
     </div>
 
-    <!-- Register form -->
-    <div class="auth-form" id="register" style="display: none;">
-        <div class="auth-form__container">
-            <form action="process_signup.php" method="POST">
-            <div class="auth-form__header">
-                <h3 class="auth-form__heading">Đăng Ký</h3>
-                <span class="auth-form__switch-btn" id="showLogin">Đăng Nhập</span>
-            </div>
-
-            <div class="auth-form__form">
-                <div class="auth-form__group">
-                    <input type="text" name="name" placeholder="Name..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="number" name="phone" placeholder="Phone number..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="text" name="add" placeholder="Address..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <!-- <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Male
-                    <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Female
-                    <input type="radio" name="gender" placeholder="Gender" class="auth-form__input"> Other -->
-                    <select name="gender" class="auth-form__input">
-                        <option>male</option>
-                        <option>female</option>
-                        <option>other</option>
-                    </select>
-                </div>
-                <div class="auth-form__group">
-                    <!-- <h5 class="auth-form__heading">Birthdate</h5> -->
-                    <input type="date" name="date" class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="email" name="email" placeholder="Email..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="password" name="pass1" placeholder="Password..." class="auth-form__input">
-                </div>
-                <div class="auth-form__group">
-                    <input type="password" name="pass2" placeholder="Confirm Password..." class="auth-form__input">
-                </div>
-            </div>
-            <div class="auth-form-aside">
-                <p class="auth-form__policy-text">
-                    Bằng việc đăng ký bạn đã đồng ý với CellPhoneW về
-                    <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> & 
-                    <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
-                </p>
-            </div>
-
-            <div class="auth-form__controls">
-                <!-- <button class="btn btn--normal auth-form__control-back">
-                     TRỞ LẠI
-                </button> -->
-                <button type="submit" class="btn btn--primary">ĐĂNG KÝ</button>
-            </div>
-        </form>
-        </div>
-
-        <div class="auth-form__socials">
-            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
-                <i class=" auth-form__socials-icon fab fa-facebook-square"></i>
-                <span class="auth-form__socials-tittle">Kết nối với Facebook</span>
-            </a>
-            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
-                <i class=" auth-form__socials-icon fab fa-google"></i>
-                <span class="auth-form__socials-tittle">Kết nối với Google</span>
-            </a>
-        </div>
+    <div class="form-controls">
+        <button class="btn btn--normal form-control-back">
+            <a href="index.php" style="text-decoration: none;">TRỞ LẠI</a> 
+        </button>
+        <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
     </div>
+
+    </form>
+
+  </div>
     
     <script>
         const register= document.getElementById("register")
@@ -173,5 +163,50 @@
             }
         }
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        // Mong muốn của chúng ta
+        Validator({
+            form: '#register',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+            Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+            Validator.isRequired('#phone'),
+            Validator.isRequired('input[name="gender"]'),
+            Validator.isRequired('#address'),
+            Validator.isRequired('#date'),
+            Validator.isRequired('#email'),
+            Validator.isEmail('#email'),
+            Validator.isRequired('#password'),
+            Validator.isRequired('#password-confirmation'),
+            Validator.isConfirmed('#password-confirmation', function () {
+            return document.querySelector('#register #password').value;
+            }, 'Mật khẩu nhập lại không chính xác')
+            ],
+            onSubmit: function (data) {
+                // Call API
+                console.log(data);
+            }
+        });
+
+
+        Validator({
+            form: '#login',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+            Validator.isEmail('#email'),
+            Validator.minLength('#password', 6),
+            ],
+            onSubmit: function (data) {
+            // Call API
+            console.log(data);
+            }
+        });
+        });
+    </script>
+    <script src="validation.js"></script>
 </body>
 </html>

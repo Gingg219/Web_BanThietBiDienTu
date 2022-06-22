@@ -678,7 +678,7 @@
         }
     </script>
 
-    <!-- Images as Indicators     -->
+    <!-- Images as Indicators -->
     <script>
         function currentDiv(n) {
             showDivs(slideIndex = n);
