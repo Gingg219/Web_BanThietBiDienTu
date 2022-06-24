@@ -142,7 +142,7 @@
     </form>
 
   </div>
-    
+    <!-- show/hide-Login/register -->
     <script>
         const register= document.getElementById("register")
         const showRegister = document.getElementById("showRegister")
@@ -164,9 +164,9 @@
         }
     </script>
 
+    <!-- Validation form login/register  -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-        // Mong muốn của chúng ta
         Validator({
             form: '#register',
             formGroupSelector: '.form-group',
@@ -197,12 +197,14 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
+            Validator.isRequired('#email'),
             Validator.isEmail('#email'),
+            Validator.isRequired('#password'),
             Validator.minLength('#password', 6),
             ],
             onSubmit: function (data) {
-            // Call API
-            console.log(data);
+                // Call API
+                console.log(data);
             }
         });
         });

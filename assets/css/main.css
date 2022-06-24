@@ -1333,9 +1333,9 @@
                 border-radius: 1rem;
             }
             .btn-show-more:hover {
-                border: 1px solid #D70018!important;
-                background: #FEF2F2!important;
-                color: #D70018!important;
+                border: 1px solid var(--primary-color)!important;
+                background: #f2fefd!important;
+                color: var(--primary-color)!important;
             }
             .btn-show-more__icon {
                 margin-left: 10px;
@@ -1370,7 +1370,7 @@
                 align-items: center;
                 padding: 15px 15px 15px 15px;
                 border-bottom: 0;
-                background: #D70018;
+                background: var(--primary-color);
             }
             .modal-title {
                 width: calc(100% - (18px + 5px));
@@ -1388,6 +1388,7 @@
                 text-shadow: none;
                 color: #ffffff;
                 opacity: 1;
+                padding: 5px;
             }
             .close-icon {
                 margin-right: 5px;
@@ -1449,7 +1450,7 @@
                 padding: 10px 15px;
                 border: 0;
                 border-radius: 1rem;
-                background: #D70018;
+                background: var(--primary-color);
                 font-size: 14px;
                 font-weight: 700;
                 line-height: 1;
@@ -1729,14 +1730,14 @@ body.hidden {
     border-radius: 1rem;
 }
 #showMoreInfo:hover {
-    border: 1px solid #D70018!important;
-    background: #FEF2F2!important;
-    color: #D70018!important;
+    border: 1px solid var(--primary-color)!important;
+    background: #f2fefd!important;
+    color: var(--primary-color)!important;
 }
-.demo {
+.modal--hide {
     display: none !important;
 }
-@keyframes mobileSearchSideIn {
+@keyframes technicalInfoSideIn {
     from {
         opacity: 0;
         transform: translateY(-10px);
@@ -1745,9 +1746,9 @@ body.hidden {
         transform: translateY(0);
     }
 }
-.demo.hideShow  {
+.modal--hide.toggleHideShow  {
     display: block !important;
-    animation: mobileSearchSideIn linear 0.2s;
+    animation: technicalInfoSideIn linear 0.2s;
 }
 .endShow {display: none !important;}
 

@@ -57,27 +57,27 @@
                 <div class="l-4 c-12 ">
                     <div class="detail-product__box-left mb-3">
                         <div class="slides-wrap">
-                            <img class="mySlides" src="<?php echo $each_product['image'] ?>" style="width:100%">
-                            <img class="mySlides" src="<?php echo $each_product['image'] ?>" style="width:100%">
-                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" style="width:100%">
+                            <img class="mySlides" src="<?php echo $each_product['image'] ?>">
+                            <img class="mySlides" src="<?php echo $each_product['image'] ?>">
+                            <img class="mySlides" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg">
                         </div>
 
                         <div class="swiper-wrapper">
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" onclick="currentDiv(1)">
                             </div>
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" onclick="currentDiv(2)">
                             </div>
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" onclick="currentDiv(3)">
                             </div>
                           </div>
                     </div>
                 </div>
                 <div class="l-4 c-12">
                     <div class="detail-product__box-center mb-3">
-                        <!-- Box-price -->
+                    <!-- Box-price -->
                     <div class="box-info mb-2">
                         <div class="box-info__box-price">
                             <p class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</p>
@@ -267,12 +267,12 @@
                                         Thông tin mới nhất về điện thoại
                                     </strong>
                                 </span>
-                            </p>
+                            </p> 
                             <p>
                                 Những thông tin mới nhất về các dòng vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc điện thoại này là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật!<span id="dots">...</span>
                             </p>
                             <span id="more">
-                            <?php echo nl2br($each_product['description']) ?>
+                                <?php echo nl2br($each_product['description']) ?>
                             </span>
                             <button onclick="myFunction()" id="showMoreInfo">Xem thêm</button>
                         </div>
@@ -342,17 +342,17 @@
                             </table>
                 
                             <div class="box-btn-show-more">
-                                <a href="#" class="btn-show-more" id="show">
+                                <a href="#" class="btn-show-more" id="showTechnical">
                                     Xem cấu hình chi tiết
                                     <i class="btn-show-more__icon fa-solid fa-angle-down"></i>
                                 </a>
                             </div>
-                            <div class="modal modal-body__overlay modal-technical-more-info demo" id="endShow">
+                            <div class="modal modal-body__overlay modal-technical-more-info modal--hide" id="endShow">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h4 class="modal-title">Thông số kỹ thuật</h4>
-                                            <botton type="botton" class="close">
+                                            <botton type="botton" class="close" id="headerHideTechInfo">
                                                 <i class="close-icon fa-solid fa-xmark"></i>
                                                 Đóng
                                             </botton>
@@ -644,7 +644,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <a href="#" class="btn-close">Đóng</a>
+                                            <a href="#" class="btn-close" id="hideTechnicalInfo">Đóng</a>
                                         </div>
                                     </div>
                                 </div>
@@ -703,23 +703,44 @@
 
     <!-- Show Technical Info -->
     <script>
-        const show = document.getElementById("show")
-        const demo = document.querySelector(".demo");
+        const showTechnical = document.getElementById("showTechnical")
+        const modalHide = document.querySelector(".modal--hide");
         const body = document.querySelector('body')
         const endShow = document.querySelector(".modal-body__overlay")
-        
-        if(show) {
-            show.onclick = (e) => {
+        const hideTechnicalInfo = document.getElementById("hideTechnicalInfo")
+        const headerHideTechInfo = document.getElementById("headerHideTechInfo")
+
+        if(showTechnical) {
+            showTechnical.onclick = (e) => {
                 e.preventDefault()
-                if(demo) {
-                    demo.classList.toggle("hideShow")
-                    body.classList.add('hidden')
+                if(modalHide) {
+                    modalHide.classList.toggle("toggleHideShow")
+                    body.style.overflow = "hidden"
                 }
             }
         }
+        if(hideTechnicalInfo) {
+            hideTechnicalInfo.onclick = (e) => {
+                e.preventDefault()
+                if(modalHide) {
+                    modalHide.classList.toggle("toggleHideShow")
+                    body.style.overflow = "inherit"
+                }
+            }
+        }
+        if(headerHideTechInfo) {
+            headerHideTechInfo.onclick = (e) => {
+                e.preventDefault()
+                if(modalHide) {
+                    modalHide.classList.toggle("toggleHideShow")
+                    body.style.overflow = "inherit"
+                }
+            }
+        }
+
     </script>
 
-    <!-- Show more, Show less btn -->
+    <!-- Show more describe, Show less describe btn -->
     <script>
         function myFunction() {
         var dots = document.getElementById("dots");
@@ -737,5 +758,7 @@
         }
         }
     </script>
+
+    
 </body>
 </html>
