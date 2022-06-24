@@ -14,7 +14,7 @@
                             </p>
                             <p class="mb-1">
                                 <a class="footer-item-link text-decoration-none" href="">
-                                    <span style="color: #d70018;">Gặp trực tiếp cửa hàng gần nhất (Zalo hoặc gọi điện)</span>
+                                    <span>Gặp trực tiếp cửa hàng gần nhất (Zalo hoặc gọi điện)</span>
                                 </a>
                             </p>
                         </li>

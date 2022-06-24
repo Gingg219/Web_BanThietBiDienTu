@@ -31,8 +31,8 @@
     <?php require_once 'header.php'; ?>
 <!-- End: Header  -->
     
-<div class="main">
-    <form action="" method="POST" class="form" id="register" style="display: none">
+<div class="main-form">
+    <form action="" method="POST" class="form-container" id="register" style="display: none">
       <div class="form-header">
           <h3 class="form-heading">Đăng Ký</h3>
           <span class="form-switch-btn" id="showLogin">Đăng Nhập</span>
@@ -104,7 +104,7 @@
     </div>
     </form>
 
-    <form action="" method="POST" class="form" id="login" >
+    <form action="" method="POST" class="form-container" id="login" >
         <div class="form-header">
             <h3 class="form-heading">Đăng Nhập</h3>
             <span class="form-switch-btn" id="showRegister">Đăng Ký</span>
@@ -207,6 +207,6 @@
         });
         });
     </script>
-    <script src="validation.js"></script>
+    <script src="./Javascript/validation.js"></script>
 </body>
 </html>

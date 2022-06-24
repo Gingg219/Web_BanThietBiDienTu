@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/css/validation.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
@@ -104,32 +105,35 @@
         </div>
         <?php endforeach ?>
 
-        <div class="auth-form block-info">
-        <div class="auth-form__container">
-            <div class="auth-form__header">
-                <strong style="font-size: 1.6rem; padding: 1rem 0">Thông tin khách hàng</strong>
-            </div>
+        <div class="main-form client-info-notlog">
+            <div class="form-container client-info-notlog__container">
+                <div class="form-header">
+                    <strong style="font-size: 1.6rem; padding: 1rem 0">Thông tin khách hàng</strong>
+                </div>
 
-            <?php
-            if(isset($_SESSION['id'])){
-                $id = $_SESSION['id'];
-                $result =(new data)->find_cus($id);
-                $each_cus = mysqli_fetch_array($result);}
-                ?>
-            <div class="auth-form__form">
-                <form action="process_checkout.php" method="POST">
-                <div class="auth-form__group">
-                    <input type="text" name="name" placeholder="Name..." class="auth-form__input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['name']; } ?>">
-                </div>
-                <div class="auth-form__group">
-                    <input type="number" name="phone" placeholder="Phone number..." class="auth-form__input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['phone_number']; } ?>">
-                </div>
-                <div class="auth-form__group">
-                    <input type="text" name="add" placeholder="Address..." class="auth-form__input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['address']; } ?>">
+                <?php
+                if(isset($_SESSION['id'])){
+                    $id = $_SESSION['id'];
+                    $result =(new data)->find_cus($id);
+                    $each_cus = mysqli_fetch_array($result);}
+                    ?>
+                <div class="form-info-client">
+                    <form action="process_checkout.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder=" " class="form-input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['name']; } ?>">
+                        <label for="email" class="form-label">Email...</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="phone" placeholder=" " class="form-input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['phone_number']; } ?>">
+                        <label for="phone" class="form-label">Phone number...</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="address" placeholder=" " class="form-input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['address']; } ?>">
+                        <label for="address" class="form-label">Address...</label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
         <div class="cart-bottom-bar">
             <div class="total-box">
@@ -139,7 +143,7 @@
                 </div>
             </div>
             <div class="btn-submit mt-2">
-                <button type="submit" class="btn btn--primary">Tiến hành đặt hàng</button>
+                <button type="submit" class="btn btn--primary btn--order">Tiến hành đặt hàng</button>
                 <a href="index.php" class="choose-more-products text-decoration-none mt-2">Chọn thêm sản phẩm khác</a>
             </div>
         </div>

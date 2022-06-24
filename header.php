@@ -14,7 +14,7 @@
                 <label for="header-mobile-search" class="header-search-overlay"></label>
 
                 <div class="header-logo ">
-                    <a href="index.php"><img src="./assets/img/logomain.png" alt="" class="header-logo__img"></a>
+                    <a href="index.php"><img src="./assets/img/Wstore.png" alt="" class="header-logo__img"></a>
                 </div>
 
                 <ul class="header__menu-list">

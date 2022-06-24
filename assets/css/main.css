@@ -485,7 +485,7 @@
                 border-radius: 1rem;
                 overflow: hidden;
                 padding: 10px;
-                background: linear-gradient(to bottom, #2D0798, #C114E0);
+                background: linear-gradient(to bottom, #00DBDE, #FC00FF);
             }
             .box-products__list {
                 display: flex;
@@ -760,6 +760,12 @@
             color: var(--primary-color);
             text-decoration:underline;
         }
+        .footer-item-link span {
+            color: var(--primary-color);
+        }
+        .footer-item-link span:hover {
+            color: var(--secondary-color);
+        }
         .footer__bottom {
             min-height: 200px;
             background-color: #f5f5f5;
@@ -1022,7 +1028,7 @@
                 cursor: pointer;
             }
             .active {
-                border: 1px solid #D70018!important;
+                border: 1px solid var(--primary-color)!important;
                 outline: none;
             }
             .disable {
@@ -1034,7 +1040,7 @@
                 width: 15px;
                 height: 10px;
                 border-radius: 0 0 0.5rem 0;
-                background: #D70018;
+                background: var(--primary-color);
                 background-size: 50%;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -1161,8 +1167,13 @@
                 text-align: center;
                 text-decoration: none;
                 border-radius: 1rem;
-                background: linear-gradient(#f52f32, #e11b1e);
-                border: solid 1px #e11b1e;
+                background: linear-gradient(var(--primary-color), var(--secondary-color));
+                border: solid 1px var(--primary-color);
+                
+            }
+            .action-botton:hover {
+                background-color: rgba(238, 238, 238, 0.25);
+                text-decoration: none;
             }
             .box-promotion-more {
                 width: 100%;
@@ -1640,6 +1651,14 @@
             font-size: 1.4rem;
             font-weight: 400;
         }
+        .client-info-notlog {
+            background: #fff !important;
+            min-height: unset !important;
+        }
+        .client-info-notlog__container {
+            margin-top: 0 !important;
+            margin-bottom: 10px !important;
+        }
         /* ........bottom-bar........ */
             .cart-bottom-bar {
                 margin: auto;
@@ -1678,13 +1697,16 @@
                 font-size: 1.8rem;
             }
             .btn-submit .choose-more-products {
-                color: #dc3545;
-                border: 1px solid #dc3545;
+                color: var(--primary-color);
+                border: 1px solid var(--secondary-color);
                 border-radius: 4px;
             }
             .btn-submit .choose-more-products:hover {
-                background-color: #dc3545;
+                background-color: var(--secondary-color);
                 color: var(--white-color);
+            }
+            .btn--order:hover {
+                background-color: var(--secondary-color) !important;
             }
 
 /* -------------------------CSS JS------------------------- */

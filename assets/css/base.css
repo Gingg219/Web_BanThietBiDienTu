@@ -1,6 +1,8 @@
 :root {
-    --primary-color: #d70018;
-    --secondary-color:#dd3c4e;
+    /* --primary-color: #d70018; */
+    --primary-color: #0093E9;
+    --secondary-color:#80D0C7;
+    /* --secondary-color:#dd3c4e; */
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
@@ -223,6 +225,6 @@ html {
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.4;
-    color: #D70018;
+    color: var(--primary-color);
     margin-left: 10px !important;
 }

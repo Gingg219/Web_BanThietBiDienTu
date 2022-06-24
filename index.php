@@ -483,10 +483,6 @@
         include ('footer.php')
     ?>
 
-    <?php 
-        include('login-register.php')
-    ?>
-
     <!-- home-slide -->
     <script>
         var slideIndex = 1;
