@@ -19,7 +19,7 @@
 
                 <ul class="header__menu-list">
                     <div class="user__moblie-info">
-                        <img src="./assets/img/avatar.png" alt="" class="navbar__user-img">
+                        <img src="./assets/img/Wstore.png" alt="" class="navbar__user-img">
                         <span class="navbar__user-name">Tượng Văn Trưng</span>
                     </div>
                     
@@ -66,7 +66,7 @@
                             <p class="">Cửa hàng <br />gần bạn</p>
                         </div>
                     </a>
-                    <a href="" class="about-item about-3">
+                    <a href="order_info.php" class="about-item about-3">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-truck"></i>
                         </div>
@@ -95,18 +95,39 @@
                             <p class="">Giỏ<br />hàng</p>
                         </div>
                     </a>
-                    <a href="login_register.php" class="about-item about-5" id="loginForm">
+                    <!-- <a href="login_register.php" class="about-item about-5" id="loginForm">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="about-item__content"><?php if(isset($_SESSION['name'])){ echo $_SESSION['name'];}?></div>
+                    </a> -->
+
+                    <a href="user_info.php" class="about-item about-5">
+                        <div class="user-avatar">
+                        </div>
+                        <span>TuongVanTrung</span>
                     </a>
-                    <a href="process_sign_out.php" class="about-item about-5" id="loginForm">
+                    
+                    <!-- <ul class="navbar__user-menu">
+                        <li class="navbar__user-item">
+                            <a href="">Tài khoản của tôi</a>
+                        </li>
+                        <li class="navbar__user-item">
+                            <a href="">Địa chỉ của tôi</a>
+                        </li>
+                        <li class="navbar__user-item">
+                            <a href="">Đơn mua</a>
+                        </li>
+                        <li class="navbar__user-item navbar__user-item--separate">
+                            <a href="">Đăng xuất</a>
+                            </li>
+                    </ul> -->
+            <!-- <a href="process_sign_out.php" class="about-item about-5" id="loginForm">
                         <div class="about-item__icon">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         </div>
                         <div class="about-item__content"></div>
-                    </a>
+                    </a> -->
                 </div>
     
                 <div class="header-cart">

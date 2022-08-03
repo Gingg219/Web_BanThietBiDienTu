@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhonesShop</title>
-    <link rel="icon" href="./assets/img/logomain.png" type="image/x-icon" />
+    <link rel="icon" href="./assets/img/Wstore.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/supplier.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
 <body>
@@ -84,26 +85,26 @@
                             <div class="row">
                                 <nav class="box-products mb-3">
                                     <ul class="box-products__list list-unstyled">
-                                            <?php
-                                                require_once 'admin/control.php';
-                                                $products_sale=(new data)->se_products_sale();
-                                                foreach($products_sale as $each_sale):
-                                            ?>
-                                            <li class="box-products__item">
-                                                <a class="home-product-item" href="detail_products.php?id=<?php echo $each_sale['id'] ?>">
-                                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_sale['image'] ?>);"></div>
-                                                    <h4 class="home-product-item__name"><?php echo $each_sale['name'] ?></h4>
-                                                    <div class="home-product-item__price">
-                                                        <span class="price-old"><?php echo $each_sale['price'] ?></span>
-                                                        <span class="price-current"><?php echo number_format($each_sale['price_sale']) ?> đ</span>
-                                                    </div>
-                                                    
-                                                    <div class="home-product-item__favorite">
-                                                        <i class="fas fa-check"></i>
-                                                        <Span>Deal Shock</Span>
-                                                    </div>
-                                                </a>
-                                            </li>
+                                        <?php
+                                            require_once 'admin/control.php';
+                                            $products_sale=(new data)->se_products_sale();
+                                            foreach($products_sale as $each_sale):
+                                        ?>
+                                        <li class="box-products__item">
+                                            <a class="home-product-item" href="detail_products.php?id=<?php echo $each_sale['id'] ?>">
+                                                <div class="home-product-item__img" style="background-image: url(<?php echo $each_sale['image'] ?>);"></div>
+                                                <h4 class="home-product-item__name"><?php echo $each_sale['name'] ?></h4>
+                                                <div class="home-product-item__price">
+                                                    <span class="price-old"><?php echo $each_sale['price'] ?></span>
+                                                    <span class="price-current"><?php echo number_format($each_sale['price_sale']) ?> đ</span>
+                                                </div>
+                                                
+                                                <div class="home-product-item__favorite">
+                                                    <i class="fas fa-check"></i>
+                                                    <Span>Deal Shock</Span>
+                                                </div>
+                                            </a>
+                                        </li>
                                         <?php endforeach ?>
                                     </ul>
                                 </nav>

@@ -1,0 +1,100 @@
+/* -------------------------Page Mobile CSS------------------------- */
+    /* +++++++++++Page-Mobile-Header+++++++++++ */
+    .box-header-menu {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        float: left;
+        margin: 0 15px 0 0;
+        position: relative;
+    }
+    .box-header-menu__wrap {
+        background-color: rgba(238, 238, 238, 0.25);
+        padding: 13px;
+    }
+    .header-menu__icon {
+        color: var(--white-color);
+    }
+
+    .box-list-item__mobile {
+        min-width: 230px;
+        position: absolute;
+        top: -100%;
+        left: -176px;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .box-header-menu:hover > .box-list-item__mobile {
+        visibility: visible;
+        opacity: 1;
+        top:100%;
+        transition: all 0.5s ease-in-out;
+    }
+
+/* +++++++++++Page-Mobile-container+++++++++++ */
+    .item-subcate {
+        height: 34px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        float: left;
+        margin: 0 1rem 1rem 0;
+        padding: 0.5rem 1rem;
+        border: 1px solid #E5E7EB;
+        border-radius: 1rem;
+        background: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none!important;
+        color: #444444;
+        overflow: hidden;
+        position: relative;
+    }
+    .icons-subcate {
+        height: 15px;
+    }
+    .box-title .box-title__title {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 22px;
+        color: #444444;
+    }
+    .block-filter {
+        font-size: 1.2rem;
+    }
+    .item-filter {
+        height: 34px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        float: left;
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid #E5E7EB;
+        border-radius: 1rem;
+        background: #F3F4F6;
+        color: #444444;
+        text-decoration: none;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    }
+    .item-filter > i {
+        margin-right: 5px;
+    }

@@ -58,7 +58,7 @@ function Validator(options) {
         // Khi submit formElement
 
         formElement.onsubmit = function (e) {
-            e.preventDefault();
+            e.preventDefault(); 
 
             var isFormValid = true;
 
