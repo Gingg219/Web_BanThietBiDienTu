@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(isset($_SESSION['name'])){
-        header('location:index.php');
-    }
+    // session_start();
+    // if(isset($_SESSION['name'])){
+    //     header('location:index.php');
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@
 <!-- End: Header  -->
     
 <div class="main-form">
-    <form action="" method="POST" class="form-container" id="register" style="display: none">
+    <form action="process_signup.php" method="POST" class="form-container" id="register" style="display: none">
       <div class="form-header">
           <h3 class="form-heading">Đăng Ký</h3>
           <span class="form-switch-btn" id="showLogin">Đăng Nhập</span>
@@ -53,7 +53,7 @@
       </div>
 
       <div class="form-group gender">
-              <input type="radio" name="gender" value="male" class="form-input"> <span>Male</span>
+              <input type="radio" name="gender" value="male" class="form-input" checked> <span>Male</span>
               <input type="radio" name="gender" value="female" class="form-input"><span>Female</span>
               <input type="radio" name="gender" value="other" class="form-input"><span>Other</span>
           <span class="form-message"></span>
@@ -104,7 +104,7 @@
     </div>
     </form>
 
-    <form action="" method="POST" class="form-container" id="login" >
+    <form action="process_signing.php" method="POST" class="form-container" id="login" >
         <div class="form-header">
             <h3 class="form-heading">Đăng Nhập</h3>
             <span class="form-switch-btn" id="showRegister">Đăng Ký</span>
@@ -130,14 +130,14 @@
             <span class="form-help-separate"></span>
             <a href="" class="form-help-link">Cần trợ giúp?</a>
         </div>
-    </div>
+        </div>
 
-    <div class="form-controls">
-        <button class="btn btn--normal form-control-back">
-            <a href="index.php" style="text-decoration: none;">TRỞ LẠI</a> 
-        </button>
-        <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
-    </div>
+        <div class="form-controls">
+            <button class="btn btn--normal form-control-back">
+                <a href="index.php" style="text-decoration: none;">TRỞ LẠI</a> 
+            </button>
+            <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
+        </div>
 
     </form>
 
@@ -185,10 +185,6 @@
             return document.querySelector('#register #password').value;
             }, 'Mật khẩu nhập lại không chính xác')
             ],
-            onSubmit: function (data) {
-                // Call API
-                console.log(data);
-            }
         });
 
 
@@ -202,10 +198,6 @@
             Validator.isRequired('#password'),
             Validator.minLength('#password', 6),
             ],
-            onSubmit: function (data) {
-                // Call API
-                console.log(data);
-            }
         });
         });
     </script>

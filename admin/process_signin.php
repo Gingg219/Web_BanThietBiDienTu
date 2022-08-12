@@ -12,7 +12,7 @@ if(mysqli_num_rows($result) == 1){
 	session_start();
 
 	$_SESSION['id'] = $each['id'];
-	$_SESSION['name'] = $each['name'];
+	$_SESSION['name'] = 'Admin'.'-'.$each['name'];
 	$_SESSION['level'] = $each['level'];
 
 	header('location:root/index.php');

@@ -45,6 +45,21 @@ class data{
         return($result);
         mysqli_close($conn);
     }
+    public function store_cus_client($id,$name,$phone_number,$gender,$address,$date,$email){
+        global $conn;
+        $sql="update customers
+        set
+        name='$name',
+        phone_number='$phone_number',
+        gender='$gender',
+        address='$address',
+        date='$date',
+        email='$email'
+        where id='$id'";
+        $result=mysqli_query($conn,$sql);
+        return($result);
+        mysqli_close($conn);
+    }
     public function del_cus($id){
         global $conn;
         $sql="delete from customers where id='$id'";
@@ -559,9 +574,28 @@ public function se_users($search='',$skip_page){
         unset($_SESSION['cart'][$id]);
     }
     // Order
-    public function se_orders(){
+    public function find_orders($id){
         global $conn;
-        $sql="SELECT * FROM orders";
+        $sql="SELECT * FROM orders WHERE id ='$id'";
+        $result=mysqli_query($conn,$sql);
+        return($result);
+        mysqli_close($conn);
+    }
+    public function count_order($search=''){
+        global $conn;
+        $sql="SELECT count(*) as total_orders from orders
+        where receiver_name like '%$search%'";
+        $run=mysqli_query($conn,$sql);
+        $result=mysqli_fetch_array($run);
+        $all_product=$result['total_orders'];
+        return($all_product);
+        mysqli_close($conn);;
+    }
+    public function search_orders($search='',$skip_page){
+        global $conn;
+        $sql="SELECT * from orders
+        where receiver_name like '%$search%'
+        limit 5 offset $skip_page";
         $result=mysqli_query($conn,$sql);
         return($result);
         mysqli_close($conn);

@@ -1,5 +1,6 @@
 <?php 
 session_start();
+ require 'check_login.php';
 // unset($_SESSION['cart']);
 $id = $_GET['id'];
 

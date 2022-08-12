@@ -11,6 +11,7 @@
 <body>
     <?php 
     $root = $_SERVER['DOCUMENT_ROOT'];
+    require_once ($root."/admin/check_admin_login.php");
     require_once ($root."/admin/menu.php"); 
     ?>
     <div class="info">

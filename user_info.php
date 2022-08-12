@@ -1,3 +1,6 @@
+<?php
+ require 'check_login.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +52,7 @@
                                 <img class="user-avt" src="./assets/img/noAvatar.jpg" alt="">
                             </div>
                             <div class="header-info">
-                                <div class="info-name">TuongVanTrung</div>
+                                <div class="info-name"><?php echo $_SESSION['name']; ?></div>
                                 <div class="info-fix">
                                     <a href="">
                                         <i class="fa-solid fa-pen"></i>    
@@ -80,6 +83,12 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                    require 'admin/control.php';
+                    $id=$_SESSION['id'];
+                    $result=(new data)->find_cus($id);
+                    $each=mysqli_fetch_array($result);
+                ?>
                 <div class="info-shown">
                     <div class="info-user-shown">
                         <div class="info-shown__header">
@@ -88,24 +97,29 @@
                         </div>
                         <div class="info-shown__body">
                             <div class="info-shown__information">
-                                <form action="">
+                                <form action="process_update_cus.php" method="POST">
                                     <div class="info-shown__item">
-                                        <div class="info-shown__item--left">Tên đăng nhập</div>
+                                        <div class="info-shown__item--left">Tên</div>
                                         <div class="info-shown__item--right">
-                                            <input type="text">
+                                            <input type="text" name="name" value="<?php echo $each['name']; ?>">
                                         </div>
                                     </div>
                                     <div class="info-shown__item">
                                         <div class="info-shown__item--left">Email</div>
                                         <div class="info-shown__item--right">
-                                            <input type="email">
+                                            <input type="email" name="email" value="<?php echo $each['email']; ?>">
                                         </div>
                                     </div>
                                     <div class="info-shown__item">
                                         <div class="info-shown__item--left">Số điện thoại</div>
                                         <div class="info-shown__item--right">
-                                            <input type="text">
-                                            <button class="info-fix-btn">Sửa</button>
+                                            <input type="text" name="phone_number" value="<?php echo '0'.$each['phone_number']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="info-shown__item">
+                                        <div class="info-shown__item--left">Địa chỉ</div>
+                                        <div class="info-shown__item--right">
+                                            <input type="text" name="address" value="<?php echo $each['address']; ?>">
                                         </div>
                                     </div>
                                     <div class="info-shown__item">
@@ -113,17 +127,17 @@
                                             <label for="">Giới tính</label>
                                         </div>
                                         <div class="info-shown__item--right-gender">
-                                            <input type="radio" name="gender" checked>Nam
-                                            <input type="radio" name="gender">Nữ
-                                            <input type="radio" name="gender">Khác
-                                        </div>
+                                            <input type="radio" name="gender" value="male" <?php if ($each['gender']=='male') echo 'checked'; ?>>Nam
+                                            <input type="radio" name="gender" value="female"<?php if ($each['gender']=='female') echo 'checked'; ?>>Nữ
+                                            <input type="radio" name="gender" value="other"<?php if ($each['gender']=='other') echo 'checked'; ?>>Khác
+                                        </div>  
                                     </div>
                                     <div class="info-shown__item">
                                         <div class="info-shown__item--left">Ngày sinh</div>
-                                        <div class="info-shown__item--right"><input type="date"></div>
+                                        <div class="info-shown__item--right"><input type="date" name="date" value="<?php echo $each['date']; ?>"></div>
                                     </div>
                                     <div class="info-shown__item">
-                                        <button class=" info-save-fixed-btn btn btn--primary">Lưu</button>
+                                        <button type="submit" class=" info-save-fixed-btn btn btn--primary">Lưu</button>
                                     </div>
                                 </form>
                             </div>

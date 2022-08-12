@@ -1,10 +1,10 @@
 <?php 
 require_once 'admin/control.php';
-if(empty($_POST['name']) || empty($_POST['add']) || empty($_POST['email']
-    )|| empty($_POST['pass1'])|| empty($_POST['gender'])|| empty($_POST['date']) ){
-        header('location:form_insert.php?error=Must be filled in completely');
-        exit();
-    }
+// if(empty($_POST['name']) || empty($_POST['add']) || empty($_POST['email']
+//     )|| empty($_POST['pass1'])|| empty($_POST['gender'])|| empty($_POST['date']) ){
+//         header('location:form_insert.php?error=Must be filled in completely');
+//         exit();
+//     }
 $name =addslashes($_POST['name']);
 $email =addslashes($_POST['email']);
 $password1 =addslashes($_POST['pass1']);

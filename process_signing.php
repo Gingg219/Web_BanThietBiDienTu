@@ -1,7 +1,7 @@
 <?php 
 
 $email = $_POST['email'];
-$pass = $_POST['pass'];
+$pass = $_POST['password'];
 // if(isset($_POST['remember'])){
 // 	$remember = true;
 // } else {

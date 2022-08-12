@@ -1,7 +1,6 @@
-<?php 
-        session_start();
-
-        ?>
+<?php
+ require 'check_login.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,36 +118,36 @@
                     $each_cus = mysqli_fetch_array($result);}
                     ?>
                 <div class="form-info-client">
-                    <form action="process_checkout.php" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder=" " class="form-input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['name']; } ?>">
-                        <label for="email" class="form-label">Email...</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="phone" placeholder=" " class="form-input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['phone_number']; } ?>">
-                        <label for="phone" class="form-label">Phone number...</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="address" placeholder=" " class="form-input" value="<?php if(isset($_SESSION['id'])){ echo $each_cus['address']; } ?>">
-                        <label for="address" class="form-label">Address...</label>
+        <form action="process_checkout.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder=" " class="form-input" value="<?php  echo $each_cus['name'];  ?>">
+                            <label for="email" class="form-label">Name...</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="phone" placeholder=" " class="form-input" value="<?php  echo $each_cus['phone_number'];  ?>">
+                            <label for="phone" class="form-label">Phone number...</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="address" placeholder=" " class="form-input" value="<?php  echo $each_cus['address']; ?>">
+                            <label for="address" class="form-label">Address...</label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="cart-bottom-bar">
-            <div class="total-box">
-                <p class="title-temp">Tổng tiền tạm tính:</p>
-                <div class="price">
-                    <p class="total"><?php echo number_format($sum) ?> ₫</p>
+            <div class="cart-bottom-bar">
+                <div class="total-box">
+                    <p class="title-temp">Tổng tiền tạm tính:</p>
+                    <div class="price">
+                        <p class="total"><?php echo number_format($sum) ?> ₫</p>
+                    </div>
+                </div>
+                <div class="btn-submit mt-2">
+                    <button type="submit" class="btn btn--primary btn--order">Tiến hành đặt hàng</button>
+                    <a href="index.php" class="choose-more-products text-decoration-none mt-2">Chọn thêm sản phẩm khác</a>
                 </div>
             </div>
-            <div class="btn-submit mt-2">
-                <button type="submit" class="btn btn--primary btn--order">Tiến hành đặt hàng</button>
-                <a href="index.php" class="choose-more-products text-decoration-none mt-2">Chọn thêm sản phẩm khác</a>
             </div>
-        </div>
-    </div>
-    </form>
+        </form>
 </body>
 </html>

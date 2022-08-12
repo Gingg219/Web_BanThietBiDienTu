@@ -1,3 +1,11 @@
+<?php session_start(); ?>
+
+            <?php
+                    if(isset($_GET['success'])){
+            ?>
+                 echo "<script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>');</script>";
+            <?php } ?>
+
 <!-- Begin: Header -->
     <div class="header">
         <div class="grid wide">
@@ -95,17 +103,18 @@
                             <p class="">Giỏ<br />hàng</p>
                         </div>
                     </a>
-                    <!-- <a href="login_register.php" class="about-item about-5" id="loginForm">
+                    
+                    <a href="login_register.php" class="about-item about-5" id="loginForm" style="<?php if(isset($_SESSION['name'])){echo'display: none;';}?>">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <div class="about-item__content"><?php if(isset($_SESSION['name'])){ echo $_SESSION['name'];}?></div>
-                    </a> -->
+                        <div class="about-item__content"></div>
+                    </a>
 
-                    <a href="user_info.php" class="about-item about-5">
+                    <a href="user_info.php" class="about-item about-5" style="<?php if(!isset($_SESSION['name'])){echo'display: none;';}?>">
                         <div class="user-avatar">
                         </div>
-                        <span>TuongVanTrung</span>
+                        <span><?php echo $_SESSION['name']; ?></span>
                     </a>
                     
                     <!-- <ul class="navbar__user-menu">
@@ -119,7 +128,7 @@
                             <a href="">Đơn mua</a>
                         </li>
                         <li class="navbar__user-item navbar__user-item--separate">
-                            <a href="">Đăng xuất</a>
+                            <a href="process_checkout.php">Đăng xuất</a>
                             </li>
                     </ul> -->
             <!-- <a href="process_sign_out.php" class="about-item about-5" id="loginForm">
