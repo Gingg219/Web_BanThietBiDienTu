@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php
  require 'check_login.php';
 ?>
@@ -69,7 +71,7 @@
                                 </a>
                             </div>
                             <div>
-                                <a class="control-body__item control-body__item--active" href="">
+                                <a class="control-body__item control-body__item--active" href="#">
                                     <div class="control-body__item--icon"><i class="fa-solid fa-receipt"></i></div>
                                     <div>Đơn hàng</div>
                                 </a>
@@ -85,7 +87,7 @@
                 </div>
                 <div class="info-shown">
                     <div class="info-order-shown">
-                        <div class="shown-order__state">
+                        <!-- <div class="shown-order__state">
                             <a class="order-state__link order-state__link--active" href="">
                                 <span>Tất cả</span>
                             </a>
@@ -104,15 +106,112 @@
                             <a class="order-state__link" href="">
                                 <span>Đã Hủy</span>
                             </a>
-                        </div>
+                        </div> -->
                         <div class="shown-order__search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Tìm kiếm theo Tên Shop, ID đơn hàng hoặc Tên Sản phẩm">
                         </div>
+
                         <div class="shown-order__information">
                             <div class="shown-order__information-wrap">
-                                <div class="shown-order__information-image"></div>
-                                <div class="shown-order__information-text">Chưa có đơn hàng</div>
+
+                                <!-- Nothing in orders -->
+                                <!-- <div class="nothing-in-orders">
+                                    <div class="shown-order__information-image"></div>
+                                    <div class="shown-order__information-text">Chưa có đơn hàng</div>
+                                </div> -->
+
+                                <!-- Have orders -->
+                                <div class="have-order-in-orders">
+                                    <div class="order-state-wrap">
+                                        <span>
+                                            Trạng thái đơn hàng: 
+                                        </span>
+                                        <span class="order-state">
+                                            Đã giao
+                                        </span>
+                                    </div>
+                                    <div class="order-information-container">
+                                        <div class="order-details">
+                                            <div class="order-information">
+                                                <div class="order-information-wrap">
+                                                    <div class="order-information__img"></div>
+                                                    <div class="order-information-wrap__wrap">
+                                                        <h4 class="order-information__name">Xiaomi 11T</h4>
+                                                        <span>Phân loại hàng: 256 GB</span>
+                                                        <div class="order-information__amount">
+                                                            <i class="fa-solid fa-xmark"></i>
+                                                            <span>1</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price">
+                                                <span class="price-old">1.900.000 ₫</span>
+                                                <span class="price-current">1.880.000 ₫</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-information-container">
+                                        <div class="order-details">
+                                            <div class="order-information">
+                                                <div class="order-information-wrap">
+                                                    <div class="order-information__img"></div>
+                                                    <div class="order-information-wrap__wrap">
+                                                        <h4 class="order-information__name">Xiaomi 11T</h4>
+                                                        <span>Phân loại hàng: 256 GB</span>
+                                                        <div class="order-information__amount">
+                                                            <i class="fa-solid fa-xmark"></i>
+                                                            <span>1</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price">
+                                                <span class="price-old">90.000 ₫</span>
+                                                <span class="price-current">80.000 ₫</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-information-container">
+                                        <div class="order-details">
+                                            <div class="order-information">
+                                                <div class="order-information-wrap">
+                                                    <div class="order-information__img"></div>
+                                                    <div class="order-information-wrap__wrap">
+                                                        <h4 class="order-information__name">Xiaomi 11T</h4>
+                                                        <span>Phân loại hàng: 256 GB</span>
+                                                        <div class="order-information__amount">
+                                                            <i class="fa-solid fa-xmark"></i>
+                                                            <span>1</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-price">
+                                                <span class="price-old">90.000 ₫</span>
+                                                <span class="price-current">80.000 ₫</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-footer">
+                                        <div class="order-footer-wrap">
+                                            <div class="total-payment">
+                                                <div>
+                                                    <img src="././assets/img/Wstore.png">Tổng số tiền:
+                                                </div>
+                                                <span>200.000 ₫</span></div>
+                                            <p>Tên khách hàng: <span>TuongVanTrung</span></p>
+                                            <p>Số điện thoại: <span>023912321</span></p>
+                                            <p>Địa chỉ: <span>Hà nội</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="re-order">
+                                        <div class="btn btn--primary">
+                                            Mua lại
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

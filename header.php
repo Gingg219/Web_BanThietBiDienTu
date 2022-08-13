@@ -1,10 +1,9 @@
-<?php session_start(); ?>
 
-            <?php
-                    if(isset($_GET['success'])){
-            ?>
-                 echo "<script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>');</script>";
-            <?php } ?>
+<?php
+        if(isset($_GET['success'])){
+?>
+        echo "<script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>');</script>";
+<?php } ?>
 
 <!-- Begin: Header -->
     <div class="header">
@@ -104,34 +103,32 @@
                         </div>
                     </a>
                     
-                    <a href="login_register.php" class="about-item about-5" id="loginForm" style="<?php if(isset($_SESSION['name'])){echo'display: none;';}?>">
+                    <!-- <a href="login_register.php" class="about-item about-5" id="loginForm" style="<?php if(isset($_SESSION['name'])){echo'display: none;';}?>">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="about-item__content"></div>
-                    </a>
+                    </a> -->
 
-                    <a href="user_info.php" class="about-item about-5" style="<?php if(!isset($_SESSION['name'])){echo'display: none;';}?>">
-                        <div class="user-avatar">
-                        </div>
+                    <div class="about-item about-5" style="<?php if(!isset($_SESSION['name'])){echo'display: none;';}?>">
+                        <div class="user-avatar"></div>
                         <span><?php echo $_SESSION['name']; ?></span>
-                    </a>
-                    
-                    <!-- <ul class="navbar__user-menu">
-                        <li class="navbar__user-item">
-                            <a href="">Tài khoản của tôi</a>
-                        </li>
-                        <li class="navbar__user-item">
-                            <a href="">Địa chỉ của tôi</a>
-                        </li>
-                        <li class="navbar__user-item">
-                            <a href="">Đơn mua</a>
-                        </li>
-                        <li class="navbar__user-item navbar__user-item--separate">
-                            <a href="process_checkout.php">Đăng xuất</a>
+                        <ul class="navbar__user-menu">
+                            <li class="navbar__user-item">
+                                <a href="user_info.php">Tài khoản của tôi</a>
                             </li>
-                    </ul> -->
-            <!-- <a href="process_sign_out.php" class="about-item about-5" id="loginForm">
+                            <li class="navbar__user-item">
+                                <a href="order_info.php">Đơn mua</a>
+                            </li>
+                            <li class="navbar__user-item navbar__user-item--separate">
+                                <a href="process_sign_out.php">Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <!-- <a href="process_sign_out.php" class="about-item about-5" id="loginForm">
                         <div class="about-item__icon">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         </div>

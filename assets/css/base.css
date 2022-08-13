@@ -134,7 +134,7 @@ html {
 
 /* button style */
 .btn {
-    /* min-width: 124px; */
+    min-width: 124px;
     height: 44px;
     text-decoration: none;
     border: none;
@@ -214,7 +214,7 @@ html {
 /* Prices */
 .price-old  {
     display: inline-block;
-    margin: 0 0 10px 10px!important;
+    /* margin: 0 0 10px 10px!important; */
     font-size: 1.4rem;
     text-decoration: line-through;
     color: #707070;

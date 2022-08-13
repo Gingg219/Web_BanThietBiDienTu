@@ -89,9 +89,6 @@
         font-size: 1.5rem;
         font-weight: 700;
     }
-    .product-item__info-detail > .product-item__price > .price-old {
-        margin: 0 !important;
-    }
     .onsale {
         padding: 3px 5px;
         background: var(--primary-color);
