@@ -41,9 +41,6 @@ html {
 .text-decoration-none {
     text-decoration: none !important;
 }
-.text-primary-color {
-    color: #d70018;
-}
 /* Margin-top */
 .mt-2 {
     margin-top: 10px !important;

@@ -103,12 +103,11 @@
                         </div>
                     </a>
                     
-                    <!-- <a href="login_register.php" class="about-item about-5" id="loginForm" style="<?php if(isset($_SESSION['name'])){echo'display: none;';}?>">
+                    <a href="login_register.php" class="about-item about-5" id="loginForm" style="<?php if(isset($_SESSION['name'])){echo'display: none;';}?>">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <div class="about-item__content"></div>
-                    </a> -->
+                    </a>
 
                     <div class="about-item about-5" style="<?php if(!isset($_SESSION['name'])){echo'display: none;';}?>">
                         <div class="user-avatar"></div>
