@@ -31,16 +31,16 @@
                     </div>
                     
                     <li class="header__menu-item">
-                        <a href="">Tài khoản của tôi</a>
+                        <a href="user_info.php">Tài khoản của tôi</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="">Địa chỉ của tôi</a>
+                        <a href="order_info.php">Đơn hàng</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="">Đơn mua</a>
+                        <a href="password_control.php">Đổi mật khẩu</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="">Đăng xuất</a>
+                        <a href="process_signing.php">Đăng xuất</a>
                     </li>
                 </ul>
 

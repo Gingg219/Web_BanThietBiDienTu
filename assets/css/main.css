@@ -210,22 +210,22 @@
         opacity: 1;
     }
     /* ........User Info........ */
-        /* .navbar__user-img {
+        .navbar__user-img {
             width: 22px;
             height: 22px;
             border-radius: 50%;
             border: 1px solid rgba(0, 0, 0, 0.1);
-        } */
+        }
 
-        /* .navbar__user-name {
-            margin-left: 4px;
-            font-size: 1.4rem;
+        .navbar__user-name {
+            margin-left: 10px;
+            font-size: 1.6rem;
             font-weight: 400;
-        } */
+        }
 
-        /* .navbar__user:hover .navbar__user-menu {
+        .navbar__user:hover .navbar__user-menu {
             display: block;
-        } */
+        }
 
         .navbar__user-menu {
             position: absolute;
@@ -287,11 +287,11 @@
             background-color: #fafafa;
         }
 
-        /* .user__moblie-info {
+        .user__moblie-info {
             display: flex;
-            padding: 20px 0 10px 0;
+            padding: 20px 6px 10px 6px;
             border-bottom: 1px solid var(--primary-color) ;
-        }         */
+        }        
 /* +++++++++++Container+++++++++++ */
 .app-container {
     border-radius: 2px;
