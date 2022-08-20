@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col">
                         <!-- Block-filter -->
-                        <div class="block-filter">
+                        <div class="block-filter-subcate">
                             <div class="filter__block-list-subcate">
                                 <div class="box-list-subcate">
                                     <div class="list-subcate">
@@ -80,66 +80,14 @@
                     </div>
 
                     <!-- Swiper-block  -->
-                    <div class="grid wide">
-                        <div class="col">
-                            <div class="row">
-                                <nav class="box-products mb-3">
-                                    <ul class="box-products__list list-unstyled">
-                                        <?php
-                                            require_once 'admin/control.php';
-                                            $products_sale=(new data)->se_products_sale();
-                                            foreach($products_sale as $each_sale):
-                                        ?>
-                                        <li class="box-products__item">
-                                            <a class="home-product-item" href="detail_products.php?id=<?php echo $each_sale['id'] ?>">
-                                                <div class="home-product-item__img" style="background-image: url(<?php echo $each_sale['image'] ?>);"></div>
-                                                <h4 class="home-product-item__name"><?php echo $each_sale['name'] ?></h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="price-old"><?php echo $each_sale['price'] ?></span>
-                                                    <span class="price-current"><?php echo number_format($each_sale['price_sale']) ?> đ</span>
-                                                </div>
-                                                
-                                                <div class="home-product-item__favorite">
-                                                    <i class="fas fa-check"></i>
-                                                    <Span>Deal Shock</Span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <?php endforeach ?>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        include('swiper_block.php');
+                    ?>
                     
-                    <div class="col" style="width: 100%">
-                        <div class="block-filter">
-                            <div class="filter__block-list-sort">
-                                <div class="box-title">
-                                    <p class="box-title__title">Săp xếp theo</p>
-                                </div>
-                                <div class="box-list-filter">
-                                    <div class="list-filter">
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-arrow-up-wide-short"></i>Giá cao
-                                        </a>
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-arrow-down-short-wide"></i>Giá thấp
-                                        </a>
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-percent"></i>Khuyến mãi
-                                        </a>
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-percent"></i>Trả góp 0%
-                                        </a>
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-eye"></i>Xem nhiều
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- fillter_block -->
+                    <?php
+                        include('filter_block.php');
+                    ?>
 
                     <div class="home-product" style="width: 100%">
                         <!-- grip -> row -> column -->
@@ -166,7 +114,7 @@
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_tablet['image'] ?>);"></div>
                                         <h4 class="home-product-item__name"><?php echo $each_tablet['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo $each_tablet['price'] ?></span>
+                                            <span class="price-old"><?php echo number_format($each_tablet['price']) ?></span>
                                             <span class="price-current"><?php echo number_format($each_tablet['price_sale']) ?> đ</span>
                                         </div>
                                         <div class="home-product-item__action">

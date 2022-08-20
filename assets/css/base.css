@@ -168,6 +168,11 @@ html {
     background-color: #c3c3c3;
 }
 
+.btn--active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 /* Block-Breadcumbs */
 .block-breadcrumbs {
     width: 100%;

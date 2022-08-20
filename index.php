@@ -125,7 +125,7 @@
                                             </div>
                                         </li>
                                         <li class="item-menu">
-                                            <a class="item-menu__link" href="">
+                                            <a class="item-menu__link" href="headphone.php">
                                                 <i class="item-menu__icon fa-solid fa-headphones"></i>
                                                 <span>Âm thanh</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
@@ -143,7 +143,7 @@
                                             </div>
                                         </li>
                                         <li class="item-menu">
-                                            <a class="item-menu__link" href="">
+                                            <a class="item-menu__link" href="smartwatch.php">
                                                 <i class="item-menu__icon fa-solid fa-clock"></i>
                                                 <span>Đồng hồ</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
@@ -243,34 +243,9 @@
             </div>
             
             <!-- Swiper-block  -->
-            <div class="col">
-                <div class="row">
-                    <nav class="box-products">
-                        <ul class="box-products__list list-unstyled">
-                        <?php
-                                $products_sale=(new data)->se_products_sale();
-                                foreach($products_sale as $each_sale):
-                            ?>
-                            <li class="box-products__item">
-                                <a class="home-product-item" href="detail_products.php?id=<?php echo $each_sale['id'] ?>">
-                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_sale['image'] ?>);"></div>
-                                    <h4 class="home-product-item__name"><?php echo $each_sale['name'] ?></h4>
-                                    <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_sale['price'] ?></span>
-                                        <span class="price-current"><?php echo number_format($each_sale['price_sale']); ?> đ</span>
-                                    </div>
-                                    
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Deal Shock</Span>
-                                    </div>
-                                </a>
-                            </li>
-                        <?php endforeach ?>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            <?php
+                include('swiper_block.php');
+            ?>
             
             <!-- Mobile-tablet-category -->
             <nav class="mobile-tablet-category">
@@ -372,7 +347,7 @@
                                     <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone_index['image']?>);"></div>
                                     <h4 class="home-product-item__name"><?php echo $each_smartphone_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_smartphone_index['price']?> đ</span>
+                                        <span class="price-old"><?php echo number_format($each_smartphone_index['price'])?> đ</span>
                                         <span class="price-current"><?php echo number_format($each_smartphone_index['price_sale']);?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">
@@ -424,7 +399,7 @@
                                     <div class="home-product-item__img" style="background-image: url(<?php echo $each_tablet_index['image']?>);"></div>
                                     <h4 class="home-product-item__name"><?php echo $each_tablet_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_tablet_index['price']?> đ</span>
+                                        <span class="price-old"><?php echo number_format($each_tablet_index['price'])?> đ</span>
                                         <span class="price-current"><?php echo number_format($each_tablet_index['price_sale']);?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">
@@ -476,7 +451,7 @@
                                     <div class="home-product-item__img" style="background-image: url(<?php echo $each_laptop_index['image']?>);"></div>
                                     <h4 class="home-product-item__name"><?php echo $each_laptop_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_laptop_index['price']?> đ</span>
+                                        <span class="price-old"><?php echo number_format($each_laptop_index['price'])?> đ</span>
                                         <span class="price-current"><?php echo number_format($each_laptop_index['price_sale'])?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">
@@ -528,7 +503,7 @@
                                     <div class="home-product-item__img" style="background-image: url(<?php echo $each_headphone_index['image']?>);"></div>
                                     <h4 class="home-product-item__name"><?php echo $each_headphone_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_headphone_index['price']?> đ</span>
+                                        <span class="price-old"><?php echo number_format($each_headphone_index['price'])?> đ</span>
                                         <span class="price-current"><?php echo number_format($each_headphone_index['price_sale'])?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">
@@ -580,7 +555,7 @@
                                     <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartwatch_index['image']?>);"></div>
                                     <h4 class="home-product-item__name"><?php echo $each_smartwatch_index['name']?></h4>
                                     <div class="home-product-item__price">
-                                        <span class="price-old"><?php echo $each_smartwatch_index['price']?> đ</span>
+                                        <span class="price-old"><?php echo number_format($each_smartwatch_index['price'])?> đ</span>
                                         <span class="price-current"><?php echo number_format($each_smartwatch_index['price_sale'])?> đ</span>
                                     </div>
                                     <div class="home-product-item__action">

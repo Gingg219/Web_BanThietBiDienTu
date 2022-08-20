@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // Đối tượng `Validator`
 function Validator(options) {
     function getParent(element, selector) {

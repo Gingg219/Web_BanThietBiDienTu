@@ -271,13 +271,6 @@
                         </div>
                         <div class="blog-content">
                             <p>
-                                <span>
-                                    <strong>
-                                        Thông tin mới nhất về điện thoại
-                                    </strong>
-                                </span>
-                            </p> 
-                            <p>
                                 Những thông tin mới nhất về các dòng vừa ra mắt luôn mang được sự mong chờ và nhiều sự háo hức của người hâm mộ. Có thể nói rằng chiếc điện thoại này là dòng smartphone kích thước nhỏ, mang đến sự cơ động nhưng sở hữu cấu hình mạnh mẽ. Song liệu thế hệ thứ 3 có những điểm nào nổi bật!<span id="dots">...</span>
                             </p>
                             <span id="more">
@@ -699,17 +692,13 @@
         function showDivs(n) {
             var i;
             var x = document.getElementsByClassName("mySlides");
-            // var dots = document.getElementsByClassName("demo");
             if (n > x.length) {slideIndex = 1}
             if (n < 1) {slideIndex = x.length}
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
-            // for (i = 0; i < dots.length; i++) {
-            //     dots[i].className = dots[i].className.replace("opacity-off", "");
-            // }
+
             x[slideIndex-1].style.display = "block";
-            // dots[slideIndex-1].className += "opacity-off";
         }
     </script>
 
@@ -755,19 +744,19 @@
     <!-- Show more describe, Show less describe btn -->
     <script>
         function myFunction() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("showMoreInfo");
-        
-        if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML = "Xem thêm"; 
-            moreText.style.display = "none";
-        } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Ẩn đi"; 
-            moreText.style.display = "inline";
-        }
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("showMoreInfo");
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Xem thêm"; 
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Ẩn đi"; 
+                moreText.style.display = "inline";
+            }
         }
     </script>
 
