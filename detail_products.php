@@ -1,3 +1,8 @@
+<?php
+    if(empty($_GET['id'])){
+        header('location:index.php?success=Lại em yêu khoa học rồi :D');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +25,9 @@
         include('header.php')
     ?>
 
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="krhzOEGc"></script>
+    
     <!-- Block-breadcrumbs -->
     <div class="block-breadcrumbs">
         <div class="grid wide">
@@ -276,6 +284,9 @@
                                 <?php echo nl2br($each_product['description']) ?>
                             </span>
                             <button onclick="myFunction()" id="showMoreInfo">Xem thêm</button>
+                        </div>
+                        <div class="fb-comments box-outstanding-features" data-href="http://wstore.test/index.php" data-width="100%" data-numposts="5">
+
                         </div>
                     </div> 
                 </div>

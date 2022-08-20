@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhonesShop</title>
+    <title>LaptopsShop</title>
     <link rel="icon" href="./assets/img/Wstore.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -162,11 +162,6 @@
                             <div class="row sm-gutter">
                             <!-- product item -->
                             <?php
-                                    $catalog='';
-                                    if(isset($_GET['catalog'])){
-                                        $catalog=$_GET['catalog'];
-                                    }
-                                    if($catalog==''){
                                         $search='';
                                         if(isset($_GET['search'])){
                                             $search=$_GET['search'];
@@ -175,27 +170,12 @@
                                         if(isset($_GET['page'])){
                                             $page=$_GET['page'];
                                         }
-                                        $all_product=(new data)->count_paging_laptop($search);
+                                        $all_product=(new data)->count_paging_laptop1($search);
                                         $all_page=ceil($all_product/20);
                                         $skip_page=20*($page-1);
-                                        $se_laptops=(new data)->paging_laptop($skip_page);
-                                    }
-                                    else{
-                                        $search='';
-                                        if(isset($_GET['search'])){
-                                            $search=$_GET['search'];
-                                        }
-                                        $page=1;
-                                        if(isset($_GET['page'])){
-                                            $page=$_GET['page'];
-                                        }
-                                        $all_product=(new data)->count_search_laptop($catalog);
-                                        $all_page=ceil($all_product/2);
-                                        $skip_page=2*($page-1);
-                                        $se_laptops=(new data)->paging_search_laptop($catalog,$skip_page);
-                                    }
-                                ?>
-                                <?php foreach($se_laptops as $each_laptop): ?>
+                                        $se_laptops=(new data)->paging_laptop($skip_page,$search);
+                                        
+                                        foreach($se_laptops as $each_laptop): ?>
                                 <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="detail_products.php?id=<?php echo $each_laptop['id'] ?>">
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_laptop['image'] ?>);"></div>

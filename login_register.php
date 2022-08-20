@@ -41,7 +41,7 @@
       <div class="spacer"></div>
 
       <div class="form-group">
-          <input id="fullname" name="fullname" type="text" placeholder=" " class="form-input">
+          <input id="fullname" name="name" type="text" placeholder=" " class="form-input">
           <label for="fullname" class="form-label">Name...</label>
           <span class="form-message"></span>
       </div>
@@ -83,7 +83,7 @@
       </div>
 
       <div class="form-group">
-        <input id="password-confirmation" name="password-confirmation" placeholder=" " type="password" class="form-input">
+        <input id="password-confirmation" name="password_confirmation" placeholder=" " type="password" class="form-input">
         <label for="password-confirmation" class="form-label">Password confirmation...</label>
         <span class="form-message"></span>
       </div>

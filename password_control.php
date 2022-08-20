@@ -59,23 +59,23 @@
                             <p>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</p>
                         </div>
                         <div class="password-control__change">
-                            <form action="" method="POST">
+                            <form action="process_pass.php" method="POST">
                                 <div class="info-shown__item">
                                     <div class="info-shown__item--left">Mật Khẩu Hiện Tại</div>
                                     <div class="info-shown__item--right">
-                                        <input type="password" name="current-password" value="">
+                                        <input type="password" name="password" value="">
                                     </div>
                                 </div>
                                 <div class="info-shown__item">
                                     <div class="info-shown__item--left">Mật Khẩu Mới</div>
                                     <div class="info-shown__item--right">
-                                        <input type="password" name="new-password" value="">
+                                        <input type="password" name="new_password" value="">
                                     </div>
                                 </div>
                                 <div class="info-shown__item">
                                     <div class="info-shown__item--left">Xác Nhận Mật Khẩu</div>
                                     <div class="info-shown__item--right">
-                                        <input type="password" name="confirm-password" value="">
+                                        <input type="password" name="confirm_password" value="">
                                     </div>
                                 </div>
                                 <div class="info-shown__item">

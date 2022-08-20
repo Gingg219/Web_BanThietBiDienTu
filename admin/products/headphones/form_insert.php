@@ -16,27 +16,19 @@
             <div class="info">
             <?php
                     require_once ($root."/admin/control.php");
-                    $id=$_GET['up']; 
-                    $result=(new data())->find_products($id);
-                    $each=mysqli_fetch_array($result);
-                    $manufacturers=(new data)->se_manuf_tablets();
+                    $result=(new data)->se_manuf_headphones();
                     $colors=(new data)->se_colors();
                 ?>
                 <div class="form">
-                    <form method="POST" action="process_update.php" >
+                    <form method="POST" action="process_insert.php" >
                         <table>
-                            <input type="hidden" name="id" value="<?php echo $id ?>">
                             <tr>
                                 <td>Manufacturers</td>
                                 <td>
                                     <select name="id_manufacturers">
-                                         <?php foreach($manufacturers as $manuf) : ?>
-                                        <option value="<?php echo $manuf['id'] ?>" 
-                                        <?php if($each['id_manufacturers']==$manuf['id'])
-                                            echo "selected"
-                                        ?>
-                                        >
-                                        <?php echo $manuf['name'] ?>
+                                         <?php foreach($result as $each) : ?>
+                                        <option value="<?php echo $each['id'] ?>">
+                                            <?php echo $each['name'] ?>
                                         </option>
                                         <?php endforeach?>
                                     </select>
@@ -45,13 +37,13 @@
                             <tr>
                                 <td>Name</td>
                                 <td>
-                                    <input type="text" name="name"  value="<?php echo $each['name'] ?>">
+                                    <input type="text" name="name" >
                                 </td>
                             </tr>
                             <tr>
                                 <td>Description</td>
                                 <td>
-                                    <textarea name="des"><?php echo $each['description'] ?></textarea>
+                                    <textarea name="des"></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -59,11 +51,7 @@
                                 <td>
                                 <select name="id_color">
                                          <?php foreach($colors as $color) : ?>
-                                        <option value="<?php echo $color['id'] ?>"
-                                        <?php if($each['id_color']==$color['id'])
-                                            echo "selected"
-                                        ?>
-                                        >
+                                        <option value="<?php echo $color['id'] ?>">
                                             <?php echo $color['name'] ?>
                                         </option>
                                         <?php endforeach?>
@@ -73,30 +61,30 @@
                             <tr>
                                 <td>Price</td>
                                 <td>
-                                    <input type="number" name="price" value="<?php echo $each['price'] ?>">
+                                    <input type="number" name="price">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Price_sale</td>
                                 <td>
-                                    <input type="number" name="price_sale" value="<?php echo $each['price_sale'] ?>">
+                                    <input type="number" name="price_sale">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Image</td>
                                 <td>
-                                    <input type="text" name="image" value="<?php echo $each['image'] ?>">
+                                    <input type="text" name="image">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Quantity</td>
                                 <td>
-                                    <input type="number" name="quantity" value="<?php echo $each['quantity'] ?>">
+                                    <input type="number" name="quantity">
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <button type="submit">UPDATE</button>
+                                    <button type="submit">ADD</button>
                                 </td>
                             </tr>
                         </table>

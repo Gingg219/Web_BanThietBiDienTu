@@ -19,7 +19,7 @@
                     $id=$_GET['up']; 
                     $result=(new data())->find_products($id);
                     $each=mysqli_fetch_array($result);
-                    $manufacturers=(new data)->se_manuf_tablets();
+                    $manufacturers=(new data)->se_manuf_smartwatch();
                     $colors=(new data)->se_colors();
                 ?>
                 <div class="form">

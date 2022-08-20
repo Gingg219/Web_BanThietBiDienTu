@@ -8,6 +8,7 @@ require '../check_admin_login.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Bills</title>
+    <link rel="icon" href="/assets/img/Wstore.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/8c12853810.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>

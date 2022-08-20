@@ -7,9 +7,9 @@ require_once 'admin/control.php';
 //     }
 $name =addslashes($_POST['name']);
 $email =addslashes($_POST['email']);
-$password1 =addslashes($_POST['pass1']);
+$password =addslashes($_POST['password_confirmation']);
 $phone_number =addslashes($_POST['phone']);
-$address =addslashes( $_POST['add']);
+$address =addslashes( $_POST['address']);
 $date=addslashes($_POST['date']);
 $gender=addslashes($_POST['gender']);
 
@@ -25,7 +25,7 @@ if($number_rows == 1){
 	exit;
 }
 
-$sql =(new data)->create_cus($name,$phone_number,$gender,$address,$date,$email,$pass1);
+$sql =(new data)->create_cus($name,$phone_number,$gender,$address,$date,$email,$password);
 $sql = "select id from customers
 where email = '$email'";
 $result = mysqli_query($conn,$sql);

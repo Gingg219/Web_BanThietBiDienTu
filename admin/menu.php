@@ -14,6 +14,8 @@
                         <li><a href="/admin/products/smartphones">Phone</a></li>
                         <li><a href="/admin/products/tablets">Tablet</a></li>
                         <li><a href="/admin/products/laptops">Laptop</a></li>
+                        <li><a href="/admin/products/headphones">Headphones</a></li>
+                        <li><a href="/admin/products/smartwatches">Smartwatches</a></li>
                     </ul>
                 </li>
                 <li><a href="/admin/customers"><i class="fa-solid fa-user"></i>Customers</a></li>

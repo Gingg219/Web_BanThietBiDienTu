@@ -81,95 +81,76 @@
                         <div class="shown-order__information">
                             <div class="shown-order__information-wrap">
 
-                                <!-- Nothing in orders -->
-                                <!-- <div class="nothing-in-orders">
-                                    <div class="shown-order__information-image"></div>
-                                    <div class="shown-order__information-text">Chưa có đơn hàng</div>
-                                </div> -->
-
                                 <!-- Have orders -->
+                                <?php
+                                    require_once 'admin/control.php';
+                                    $id_cus=$_SESSION['id'];
+                                    $result=(new data)->se_orders($id_cus);
+                                    $count=mysqli_num_rows($result);
+                                    if($count===0){
+                                        echo '<!-- Nothing in orders -->
+                                                <div class="nothing-in-orders">
+                                                    <div class="shown-order__information-image"></div>
+                                                    <div class="shown-order__information-text">Chưa có đơn hàng</div>
+                                                </div>';
+                                    }
+                                    foreach($result as $each):
+                                ?>
                                 <div class="have-order-in-orders">
                                     <div class="order-state-wrap">
                                         <span>
                                             Trạng thái đơn hàng: 
                                         </span>
-                                        <span class="order-state">
-                                            Đã giao
-                                        </span>
+                                        <?php
+                                            switch ($each['status']) {
+                                                case '0':
+                                                    echo '<span class="order-state">Chờ duyệt</span>';
+                                                    break;
+                                                case '1':
+                                                    echo '<span class="order-state">Đã duyệt </span>';
+                                                    break;
+                                                case '2':
+                                                    echo '<span class="order-state">Đã huỷ</span>';
+                                                    break;
+                                                }
+                                        ?>
                                     </div>
+                                    <?php
+                                        $detail=(new data)->detail_orders($each['id']);
+                                        foreach($detail as $each1):
+                                    ?>
                                     <div class="order-information-container">
                                         <div class="order-details">
                                             <div class="order-information">
                                                 <div class="order-information-wrap">
-                                                    <div class="order-information__img"></div>
+                                                    <div class="order-information__img"><img class="order-information__img" src="<?php echo $each1['image'] ?>" alt=""></div>
                                                     <div class="order-information-wrap__wrap">
-                                                        <h4 class="order-information__name">Xiaomi 11T</h4>
-                                                        <span>Phân loại hàng: 256 GB</span>
+                                                        <h4 class="order-information__name"><?php echo $each1['name'] ?></h4>
+                                                        <!-- <span>Phân loại hàng: 256 GB</span> -->
                                                         <div class="order-information__amount">
                                                             <i class="fa-solid fa-xmark"></i>
-                                                            <span>1</span>
+                                                            <span><?php echo $each1['quantity'] ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="order-price">
-                                                <span class="price-old">1.900.000 ₫</span>
-                                                <span class="price-current">1.880.000 ₫</span>
+                                                <span class="price-old"><?php echo number_format($each1['price']) ?> ₫</span>
+                                                <span class="price-current"><?php echo number_format($each1['price_sale']) ?> ₫</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="order-information-container">
-                                        <div class="order-details">
-                                            <div class="order-information">
-                                                <div class="order-information-wrap">
-                                                    <div class="order-information__img"></div>
-                                                    <div class="order-information-wrap__wrap">
-                                                        <h4 class="order-information__name">Xiaomi 11T</h4>
-                                                        <span>Phân loại hàng: 256 GB</span>
-                                                        <div class="order-information__amount">
-                                                            <i class="fa-solid fa-xmark"></i>
-                                                            <span>1</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="order-price">
-                                                <span class="price-old">90.000 ₫</span>
-                                                <span class="price-current">80.000 ₫</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="order-information-container">
-                                        <div class="order-details">
-                                            <div class="order-information">
-                                                <div class="order-information-wrap">
-                                                    <div class="order-information__img"></div>
-                                                    <div class="order-information-wrap__wrap">
-                                                        <h4 class="order-information__name">Xiaomi 11T</h4>
-                                                        <span>Phân loại hàng: 256 GB</span>
-                                                        <div class="order-information__amount">
-                                                            <i class="fa-solid fa-xmark"></i>
-                                                            <span>1</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="order-price">
-                                                <span class="price-old">90.000 ₫</span>
-                                                <span class="price-current">80.000 ₫</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach ?>
                                     <div class="order-footer">
                                         <div class="order-footer-wrap">
                                             <div class="total-payment">
                                                 <div>
                                                     <img src="././assets/img/Wstore.png">Tổng số tiền:
                                                 </div>
-                                                <span>200.000 ₫</span></div>
-                                            <p>Tên khách hàng: <span>TuongVanTrung</span></p>
-                                            <p>Số điện thoại: <span>023912321</span></p>
-                                            <p>Địa chỉ: <span>Hà nội</span></p>
+                                                <span><?php echo number_format($each['total_current']).' đ' ?></span></div>
+                                            <p>Tên khách hàng: <span><?php echo $each['receiver_name'] ?></span></p>
+                                            <p>Số điện thoại: <span>0<?php echo $each['receiver_phone'] ?></span></p>
+                                            <p>Địa chỉ: <span><?php echo $each['receiver_address'] ?></span></p>
                                         </div>
                                     </div>
                                     <div class="re-order">
@@ -178,6 +159,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>

@@ -172,11 +172,6 @@
                             <div class="row sm-gutter">
                             <!-- product item -->
                             <?php
-                                    $catalog='';
-                                    if(isset($_GET['catalog'])){
-                                        $catalog=$_GET['catalog'];
-                                    }
-                                    if($catalog==''){
                                         $search='';
                                         if(isset($_GET['search'])){
                                             $search=$_GET['search'];
@@ -185,27 +180,11 @@
                                         if(isset($_GET['page'])){
                                             $page=$_GET['page'];
                                         }
-                                        $all_product=(new data)->count_paging_smartphone($search);
+                                        $all_product=(new data)->count_paging_smartphone1($search);
                                         $all_page=ceil($all_product/20);
                                         $skip_page=20*($page-1);
-                                        $se_smartphones=(new data)->paging_mobile($skip_page);
-                                        
-                                    }
-                                    else{
-                                        $search='';
-                                        if(isset($_GET['search'])){
-                                            $search=$_GET['search'];
-                                        }
-                                        $page=1;
-                                        if(isset($_GET['page'])){
-                                            $page=$_GET['page'];
-                                        }
-                                        $all_product=(new data)->count_search_mobile($catalog);
-                                        $all_page=ceil($all_product/20);
-                                        $skip_page=20*($page-1);
-                                        $se_smartphones=(new data)->paging_search_mobile($catalog,$skip_page);
-                                    }
-                                    
+                                        $se_smartphones=(new data)->paging_mobile($skip_page,$search);
+
                                 foreach($se_smartphones as $each_smartphone): ?>
                                 <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="detail_products.php?id=<?php echo $each_smartphone['id'] ?>">

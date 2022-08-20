@@ -15,6 +15,8 @@
 </head>
 <body>
     <?php 
+    $root = $_SERVER['DOCUMENT_ROOT'];
+    require_once ($root."/admin/check_admin_login.php");
     require_once ($root."/admin/menu.php"); 
     ?>
     <div class="info">
@@ -29,14 +31,14 @@
                     if(isset($_GET['page'])){
                         $page=$_GET['page'];
                     }
-                    $all_product=(new data)->count_paging_laptop($search);
+                    $all_product=(new data)->count_paging_headphone($search);
                     $all_page=ceil($all_product/4);
                     $skip_page=4*($page-1);
-                    $laptops=(new data)->search_paging_laptop($search,$skip_page);
+                    $result=(new data)->search_paging_headphone($search,$skip_page);
                 ?>
                     <div class="add_new">
                         <a href="form_insert.php">ADD NEW</a>
-                        <span>Total: <?php echo $all_product?></span>
+                        <span>Total:</span>
                     </div>
                     <div>
                         <table class="tb_views">
@@ -51,7 +53,7 @@
                                 <th></th>
                             </tr>
                             <?php 
-                                foreach($laptops as $each):
+                                foreach($result as $each):
                             ?>
                             <tr>
                                 <td><?php echo $each['id']?></td>

@@ -145,21 +145,27 @@
                                 </div>
                                 <div class="box-list-filter">
                                     <div class="list-filter">
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-arrow-up-wide-short"></i>Giá cao
+                                        <form method="POST">
+                                            <input type="hidden" name="sale" value="2">
+                                            <button class="item-filter" type="submit" name="sub">
+                                                <i class="fa-solid fa-arrow-down-short-wide"></i>Giá thấp - cao
+                                            </button>
+                                        </form>
+                                        <form method="POST">
+                                            <input type="hidden" name="sale" value="1">
+                                            <button class="item-filter" type="submit" name="sub">
+                                                <i class="fa-solid fa-arrow-up-wide-short"></i>Giá cao - thấp
+                                            </button>
+                                        </form>
+                                        <a class="item-filter pagination-item--active" href="#">
+                                            <i class="fa-solid fa-percent "></i>Khuyến mãi
                                         </a>
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-arrow-down-short-wide"></i>Giá thấp
-                                        </a>
-                                        <a class="item-filter" href="">
-                                            <i class="fa-solid fa-percent"></i>Khuyến mãi
-                                        </a>
-                                        <a class="item-filter" href="">
+                                        <!-- <a class="item-filter" href="">
                                             <i class="fa-solid fa-percent"></i>Trả góp 0%
                                         </a>
                                         <a class="item-filter" href="">
                                             <i class="fa-solid fa-eye"></i>Xem nhiều
-                                        </a>
+                                        </a> -->
                                     </div>
                                 </div>
                             </div>
@@ -173,26 +179,63 @@
                             <!-- product item -->
                             <?php
                                     require_once 'admin/control.php';
+                                    $catalog='';
+                                    $check='';
                                     if(isset($_GET['search'])){
                                         $search=$_GET['search'];
+                                    }
+                                    if(isset($_POST['sale'])){
+                                        $check=$_POST['sale'];
                                     }
                                     $page=1;
                                         if(isset($_GET['page'])){
                                             $page=$_GET['page'];
                                         }
                                         $all_product=(new data)->count_product($search);
-                                        $all_page=ceil($all_product/20);
-                                        $skip_page=20*($page-1);
-                                        $se_products=(new data)->search_product($search,$skip_page);
+                                        $all_page=ceil($all_product/10);
+                                        $skip_page=10*($page-1);
+                                        switch ($check) {
+                                            case '1':
+                                                $sql="SELECT products.*,
+                                                (products.price-products.price_sale) as sale 
+                                                FROM products INNER JOIN manufacturers On
+                                                products.id_manufacturers=manufacturers.id
+                                                WHERE
+                                                products.name like '%$search%' or  manufacturers.name like '%$search%'
+                                                order by products.price_sale desc
+                                                limit 10 offset $skip_page";
+                                                break;
+                                            case '2':
+                                                $sql="SELECT products.*,
+                                                (products.price-products.price_sale) as sale 
+                                                FROM products INNER JOIN manufacturers On
+                                                products.id_manufacturers=manufacturers.id
+                                                WHERE
+                                                products.name like '%$search%' or  manufacturers.name like '%$search%'
+                                                order by products.price_sale asc
+                                                limit 10 offset $skip_page";
+                                                break;
+                                            default:
+                                                $sql="SELECT products.*,
+                                                (products.price-products.price_sale) as sale 
+                                                FROM products INNER JOIN manufacturers On
+                                                products.id_manufacturers=manufacturers.id
+                                                WHERE
+                                                products.name like '%$search%' or  manufacturers.name like '%$search%'
+                                                order by sale desc
+                                                limit 10 offset $skip_page";
+                                            }
+                                        
+                                        $se_products=mysqli_query($conn,$sql);
                                 ?>
                                 <?php foreach($se_products as $each_product): ?>
                                 <div class="col l-2-4 m-4 c-6">
-                                    <a class="home-product-item" href="#">
+                                    <a class="home-product-item" href="detail_products.php?id=<?php echo $each_product['id'] ?>">
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_product['image'] ?>);"></div>
                                         <h4 class="home-product-item__name"><?php echo $each_product['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo $each_product['price'] ?></span>
-                                            <span class="price-current"><?php echo $each_product['price_sale'] ?></span>
+                                            <span class="price-old"><?php echo number_format($each_product['price']) ?> đ</span>
+                                            <span class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <div class="home-product-item__rating">
@@ -204,10 +247,10 @@
                                             </div>
                                             <span class="home-product-item__sold">88 đã bán</span>
                                         </div>
-                                        <div class="home-product-item__favorite">
+                                        <!-- <div class="home-product-item__favorite">
                                             <i class="fas fa-check"></i>
                                             <Span>Yêu thích</Span>
-                                        </div>
+                                        </div> -->
                                     </a>
                                 </div>
                                 <?php endforeach?>

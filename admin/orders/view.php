@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Bills</title>
+    <title>Bills</title>
     <script src="https://kit.fontawesome.com/8c12853810.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
@@ -30,15 +30,7 @@
 
                             $sum=0;
                             $id_order = $_GET['id'];
-                            $sql = "select 
-                            order_product.*,
-                            products.name,
-                            products.image,
-                            products.price_sale
-                            from order_product
-                            join products on products.id = order_product.id_product
-                            where id_order = '$id_order'";
-                            $result = mysqli_query($conn,$sql);
+                            $result=(new data)->detail_orders($id_order);
                             foreach($result as $each):
                         ?>
                         <tr>

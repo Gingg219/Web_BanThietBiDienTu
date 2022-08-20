@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TabletsShop</title>
+    <title>SmartWatches</title>
     <link rel="icon" href="./assets/img/Wstore.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -155,19 +155,19 @@
                                         if(isset($_GET['page'])){
                                             $page=$_GET['page'];
                                         }
-                                        $all_product=(new data)->count_paging_tablet1($search);
+                                        $all_product=(new data)->count_paging_smartwatch1($search);
                                         $all_page=ceil($all_product/20);
                                         $skip_page=20*($page-1);
-                                        $se_tablets=(new data)->paging_tablet($skip_page,$search);
+                                        $se_smartwatches=(new data)->paging_smartwatch($skip_page,$search);
                                         
-                                        foreach($se_tablets as $each_tablet): ?>
+                                        foreach($se_smartwatches as $each_smartwatch): ?>
                                 <div class="col l-2-4 m-4 c-6">
-                                    <a class="home-product-item" href="detail_products.php?id=<?php echo $each_tablet['id'] ?>">
-                                        <div class="home-product-item__img" style="background-image: url(<?php echo $each_tablet['image'] ?>);"></div>
-                                        <h4 class="home-product-item__name"><?php echo $each_tablet['name'] ?></h4>
+                                    <a class="home-product-item" href="detail_products.php?id=<?php echo $each_smartwatch['id'] ?>">
+                                        <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartwatch['image'] ?>);"></div>
+                                        <h4 class="home-product-item__name"><?php echo $each_smartwatch['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo $each_tablet['price'] ?></span>
-                                            <span class="price-current"><?php echo number_format($each_tablet['price_sale']) ?> đ</span>
+                                            <span class="price-old"><?php echo $each_smartwatch['price'] ?></span>
+                                            <span class="price-current"><?php echo number_format($each_smartwatch['price_sale']) ?> đ</span>
                                         </div>
                                         <div class="home-product-item__action">
                                             <div class="home-product-item__rating">
