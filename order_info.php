@@ -75,7 +75,7 @@
                         </div> -->
                         <div class="shown-order__search">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Tìm kiếm theo Tên Shop, ID đơn hàng hoặc Tên Sản phẩm">
+                            <input type="text" placeholder="Tìm kiếm theo ID đơn hàng hoặc Tên Sản phẩm">
                         </div>
 
                         <div class="shown-order__information">
@@ -154,7 +154,7 @@
                                         </div>
                                     </div>
                                     <div class="re-order">
-                                        <div class="btn btn--primary">
+                                        <div class="re-order__btn btn btn--primary">
                                             Mua lại
                                         </div>
                                     </div>

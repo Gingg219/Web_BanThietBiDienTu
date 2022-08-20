@@ -67,19 +67,19 @@
                             <div class="info-shown__information">
                                 <form action="process_update_cus.php" method="POST">
                                     <div class="info-shown__item">
-                                        <div class="info-shown__item--left">Tên</div>
+                                        <div class="info-shown__item--left">Tên:</div>
                                         <div class="info-shown__item--right">
                                             <input type="text" name="name" value="<?php echo $each['name']; ?>">
                                         </div>
                                     </div>
                                     <div class="info-shown__item">
-                                        <div class="info-shown__item--left">Email</div>
+                                        <div class="info-shown__item--left">Email:</div>
                                         <div class="info-shown__item--right">
                                             <input type="email" name="email" value="<?php echo $each['email']; ?>">
                                         </div>
                                     </div>
                                     <div class="info-shown__item">
-                                        <div class="info-shown__item--left">Số điện thoại</div>
+                                        <div class="info-shown__item--left">Số điện thoại:</div>
                                         <div class="info-shown__item--right">
                                             <input type="text" name="phone_number" value="<?php echo '0'.$each['phone_number']; ?>">
                                         </div>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="info-shown__item">
                                         <div class="info-shown__item--left">
-                                            <label for="">Giới tính</label>
+                                            <label for="">Giới tính:</label>
                                         </div>
                                         <div class="info-shown__item--right-gender">
                                             <input type="radio" name="gender" value="male" <?php if ($each['gender']=='male') echo 'checked'; ?>>Nam
@@ -101,7 +101,7 @@
                                         </div>  
                                     </div>
                                     <div class="info-shown__item">
-                                        <div class="info-shown__item--left">Ngày sinh</div>
+                                        <div class="info-shown__item--left">Ngày sinh:</div>
                                         <div class="info-shown__item--right"><input type="date" name="date" value="<?php echo $each['date']; ?>"></div>
                                     </div>
                                     <div class="info-shown__item">
