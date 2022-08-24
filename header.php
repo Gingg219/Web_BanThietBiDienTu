@@ -65,7 +65,7 @@
                             <p class="">Gọi mua hàng<br /><span>1800.0000</span></p>
                         </div>
                     </a>
-                    <a href="" class="about-item about-2">
+                    <a href="#map" class="about-item about-2">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>

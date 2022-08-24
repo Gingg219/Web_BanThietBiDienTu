@@ -14,7 +14,7 @@
         width: 45px;
         height: 34px;
         display: inline-block;
-        float: left;
+        /* float: left; */
         padding: 0.2rem 0.2rem;
         background: rgba(255, 255, 255, 0.2);
         border-radius: 1rem;
@@ -159,6 +159,9 @@
     .re-order__btn {
         width: 100%;
     }
+    #map {
+        max-width: 330px;
+    }
 }
 /* Mobile */
 @media (max-width: 739px) {
@@ -261,6 +264,12 @@
             padding: .5rem 1rem;
             border-radius: .5rem;
             margin: 0 1rem .5rem 0;;
+        }
+        #map {
+            max-width: 179px;
+        }
+        .have-order-in-orders {
+            margin-bottom: 10px;
         }
     /* Responsive Detail Page */
         .detail-product__box-left,
