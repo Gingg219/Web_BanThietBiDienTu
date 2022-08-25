@@ -171,7 +171,7 @@
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartphone['image'] ?>);"></div>
                                         <h4 class="home-product-item__name"><?php echo $each_smartphone['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo number_format($each_smartphone['price']) ?></span>
+                                            <span class="price-old"><?php echo number_format($each_smartphone['price']) ?> đ</span>
                                             <span class="price-current"><?php echo number_format($each_smartphone['price_sale']); ?> đ</span>
                                         </div>
                                         <div class="home-product-item__action">

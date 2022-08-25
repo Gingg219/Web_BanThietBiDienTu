@@ -73,7 +73,7 @@
                             <tr>
                                 <td>Price</td>
                                 <td>
-                                    <input type="number" name="price" value="<?php echo $each['price'] ?>">
+                                    <input type="number" name="price" value="<?php echo number_format($each['price']) ?>">
                                 </td>
                             </tr>
                             <tr>

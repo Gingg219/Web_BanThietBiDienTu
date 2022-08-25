@@ -92,7 +92,7 @@ if (empty($_GET['id'])) {
                         <div class="box-info mb-2">
                             <div class="box-info__box-price">
                                 <p class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</p>
-                                <p class="price-old"><?php echo $each_product['price'] ?> đ</p>
+                                <p class="price-old"><?php echo number_format($each_product['price']) ?> đ</p>
                             </div>
                         </div>
                         <!-- Box-version -->
@@ -100,7 +100,7 @@ if (empty($_GET['id'])) {
                             <div class="list-version">
                                 <a class="version-item active" href="#">
                                     <strong>256GB</strong>
-                                    <span><?php echo $each_product['price'] ?></span>
+                                    <span><?php echo number_format($each_product['price']) ?> đ</span>
                                 </a>
                                 <a class="version-item" href="#">
                                     <strong>128GB</strong>

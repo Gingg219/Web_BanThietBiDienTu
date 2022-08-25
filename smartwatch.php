@@ -145,7 +145,7 @@
                                         <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartwatch['image'] ?>);"></div>
                                         <h4 class="home-product-item__name"><?php echo $each_smartwatch['name'] ?></h4>
                                         <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo number_format($each_smartwatch['price']) ?></span>
+                                            <span class="price-old"><?php echo number_format($each_smartwatch['price']) ?> đ</span>
                                             <span class="price-current"><?php echo number_format($each_smartwatch['price_sale']) ?> đ</span>
                                         </div>
                                         <div class="home-product-item__action">
