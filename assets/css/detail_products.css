@@ -430,6 +430,7 @@
             overflow-y: auto;
         }
         .modal-dialog {
+            margin-top: calc(var(--header-height) + 15px);
             overflow-y: auto;
         }
         .modal-content {
