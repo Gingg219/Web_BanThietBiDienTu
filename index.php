@@ -164,7 +164,7 @@
                                             </div>
                                         </li>
                                         <li class="item-menu">
-                                            <a class="item-menu__link" href="">
+                                            <a class="item-menu__link" href="smarthome.php">
                                                 <i class="item-menu__icon fa-solid fa-house-signal"></i>
                                                 <span>Nhà thông minh</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
@@ -182,7 +182,7 @@
                                             </div>
                                         </li>
                                         <li class="item-menu">
-                                            <a class="item-menu__link" href="">
+                                            <a class="item-menu__link" href="gadgets.php">
                                                 <i class="item-menu__icon fa-solid fa-diagram-project"></i>
                                                 <span>Phụ kiện</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
@@ -200,7 +200,7 @@
                                             </div>
                                         </li>
                                         <li class="item-menu">
-                                            <a class="item-menu__link" href="">
+                                            <a class="item-menu__link" href="tivi.php">
                                                 <i class="item-menu__icon fa-solid fa-tv"></i>
                                                 <span>Tivi</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
@@ -349,12 +349,14 @@
                                             <i class="home-product-item__star--gold fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_smartphone_index['sold']);?> đã bán</span>
                                     </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
+                                        <?php if ($each_smartphone_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                 </a>
                             </div>
                             <?php endforeach?>
@@ -401,12 +403,14 @@
                                             <i class="home-product-item__star--gold fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_tablet_index['sold']);?> đã bán</span>
                                     </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
+                                        <?php if ($each_tablet_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                 </a>
                             </div>
                             <?php endforeach?>
@@ -453,12 +457,14 @@
                                             <i class="home-product-item__star--gold fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_laptop_index['sold']);?> đã bán</span>
                                     </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
+                                        <?php if ($each_laptop_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                 </a>
                             </div>
                             <?php endforeach?>
@@ -505,12 +511,14 @@
                                             <i class="home-product-item__star--gold fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_headphone_index['sold']);?> đã bán</span>
                                     </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
+                                        <?php if ($each_headphone_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                 </a>
                             </div>
                             <?php endforeach?>
@@ -557,12 +565,14 @@
                                             <i class="home-product-item__star--gold fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                         </div>
-                                        <span class="home-product-item__sold">88 đã bán</span>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_smartwatch_index['sold']);?> đã bán</span>
                                     </div>
-                                    <div class="home-product-item__favorite">
-                                        <i class="fas fa-check"></i>
-                                        <Span>Yêu thích</Span>
-                                    </div>
+                                        <?php if ($each_smartwatch_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                 </a>
                             </div>
                             <?php endforeach?>

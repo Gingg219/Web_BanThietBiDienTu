@@ -21,6 +21,7 @@
                 ?>
                 <div class="form">
                     <form method="POST" action="process_insert.php" >
+                        
                         <table>
                             <tr>
                                 <td>Manufacturers</td>

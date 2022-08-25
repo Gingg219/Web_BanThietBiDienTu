@@ -666,6 +666,45 @@ public function se_users($search='',$skip_page){
             return($all_product);
             mysqli_close($conn);
         }
+        public function count_paging_smarthome1($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total
+            FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=6 and
+            manufacturers.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function count_paging_gadgets1($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total
+            FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=7 and
+            manufacturers.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function count_paging_tivi1($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total
+            FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=8 and
+            manufacturers.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
         public function count_paging_smartphone1($search=''){
             global $conn;
             $sql="SELECT count(*) as total

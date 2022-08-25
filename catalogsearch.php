@@ -52,54 +52,16 @@
                             <div class="filter__block-list-subcate">
                                 <div class="box-list-subcate">
                                     <div class="list-subcate">
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-286.svg" alt="">
+                                        <?php
+                                            require_once 'admin/control.php';
+                                            $sql="SELECT * FROM manufacturers where id_category=1";
+                                            $result=mysqli_query($conn, $sql);
+                                            foreach($result as $manuf):
+                                        ?>
+                                        <a class="item-subcate" href="catalogsearch.php?search=<?php echo $manuf['name'] ?>">
+                                            <img class="icons-subcate" src="<?php echo $manuf['image'] ?>" alt="">
                                         </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-211.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-274.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-769.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-1214.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-721.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-vsmart.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-1052.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-vivo.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-oneplus.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-nubia.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Cat
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Điện thoại phổ thông
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Tin đồn - mới ra
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Tecno
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Hãng khác
-                                        </a>
+                                        <?php endforeach ?>
                                     </div>
                                 </div>
                             </div>
@@ -189,12 +151,14 @@
                                                     <i class="home-product-item__star--gold fas fa-star"></i>
                                                     <i class="fas fa-star"></i>
                                                 </div>
-                                                <span class="home-product-item__sold">88 đã bán</span>
+                                                <span class="home-product-item__sold"><?php echo number_format($each_product['sold']) ?> đã bán</span>
                                             </div>
-                                            <!-- <div class="home-product-item__favorite">
-                                            <i class="fas fa-check"></i>
-                                            <Span>Yêu thích</Span>
-                                        </div> -->
+                                            <?php if ($each_product['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                         </a>
                                     </div>
                                 <?php endforeach ?>

@@ -48,46 +48,17 @@
                         <div class="block-filter-subcate">
                             <div class="filter__block-list-subcate">
                                 <div class="box-list-subcate">
-                                    <div class="list-subcate">
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-macbook-2.svg" alt="">
+                                <div class="list-subcate">
+                                        <?php
+                                            require_once 'admin/control.php';
+                                            $sql="SELECT * FROM manufacturers where id_category=3";
+                                            $result=mysqli_query($conn, $sql);
+                                            foreach($result as $manuf):
+                                        ?>
+                                        <a class="item-subcate" href="laptop.php?search=<?php echo $manuf['name'] ?>">
+                                            <img class="icons-subcate" src="<?php echo $manuf['image'] ?>" alt="">
                                         </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-hp-2.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-dell.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-lenovo.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-micosoftsurface.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-asus.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-acer.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-lg.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-msi.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-gygabyte.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            <img class="icons-subcate" src="https://cellphones.com.vn/media/icons/brands/brand-fujitsu.svg" alt="">
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Laptop Avita
-                                        </a>
-                                        <a class="item-subcate" href="">
-                                            Huawei
-                                        </a>
+                                        <?php endforeach ?>
                                     </div>
                                 </div>
                             </div>
@@ -171,12 +142,14 @@
                                                 <i class="home-product-item__star--gold fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                             </div>
-                                            <span class="home-product-item__sold">88 đã bán</span>
+                                            <span class="home-product-item__sold"><?php echo number_format($each_laptop['sold']);?> đã bán</span>
                                         </div>
-                                        <div class="home-product-item__favorite">
-                                            <i class="fas fa-check"></i>
-                                            <Span>Yêu thích</Span>
-                                        </div>
+                                        <?php if ($each_laptop['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
                                     </a>
                                 </div>
                                 <?php endforeach?>
