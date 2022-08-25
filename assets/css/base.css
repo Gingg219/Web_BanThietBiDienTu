@@ -230,3 +230,24 @@ html {
     color: var(--primary-color);
     margin-left: 10px !important;
 }
+
+/* Scroll to top */
+#top-up {
+    font-size: 4rem;
+    cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+    color:#2f80ed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    opacity: 0.8;;
+ }
+#top-up:hover {
+    opacity: 1;
+}
+
+/* Map */
+#map {
+    max-width: 282px;
+}

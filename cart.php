@@ -40,12 +40,12 @@
         <?php
             if(empty($_SESSION['cart'])){
                 echo '<div class="cart-container">
-                <div class="nothing-in-cart">
-                    <i class="nothing-in-cart__icon fa-solid fa-face-frown"></i>
-                    <p>Không có sản phẩm nào trong giỏ hàng, vui lòng quay lại</p>
-                    <a href="index.php" class="btn btn--primary" href="">Quay lại trang chủ</a>
-                </div>
-            </div>';
+                    <div class="nothing-in-cart">
+                        <i class="nothing-in-cart__icon fa-solid fa-face-frown"></i>
+                        <p>Không có sản phẩm nào trong giỏ hàng, vui lòng quay lại</p>
+                        <a href="index.php" class="btn btn--primary" href="">Quay lại trang chủ</a>
+                    </div>
+                </div>';
             exit;
             }
         require_once 'admin/control.php';
