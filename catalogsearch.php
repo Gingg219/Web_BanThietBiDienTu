@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,9 +16,10 @@
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
+
 <body>
     <?php
-        include('header.php')
+    include('header.php')
     ?>
 
     <!-- Block-breadcrumb  -->
@@ -38,7 +40,7 @@
         </div>
     </div>
 
-    
+
     <!-- Container -->
     <div class="container">
         <div class="grid wide">
@@ -106,39 +108,39 @@
 
                     <!-- Swiper-block  -->
                     <?php
-                        include('swiper_block.php');
+                    include('swiper_block.php');
                     ?>
-                    
+
                     <!-- filter_block -->
                     <?php
-                        include('filter_block.php')
+                    include('filter_block.php')
                     ?>
 
                     <div class="home-product" style="width: 100%">
                         <!-- grip -> row -> column -->
                         <div class="grid wide">
                             <div class="row sm-gutter">
-                            <!-- product item -->
-                            <?php
-                                    require_once 'admin/control.php';
-                                    $catalog='';
-                                    $check='';
-                                    if(isset($_GET['search'])){
-                                        $search=$_GET['search'];
-                                    }
-                                    if(isset($_POST['sale'])){
-                                        $check=$_POST['sale'];
-                                    }
-                                    $page=1;
-                                        if(isset($_GET['page'])){
-                                            $page=$_GET['page'];
-                                        }
-                                        $all_product=(new data)->count_product($search);
-                                        $all_page=ceil($all_product/10);
-                                        $skip_page=10*($page-1);
-                                        switch ($check) {
-                                            case '1':
-                                                $sql="SELECT products.*,
+                                <!-- product item -->
+                                <?php
+                                require_once 'admin/control.php';
+                                $catalog = '';
+                                $check = '';
+                                if (isset($_GET['search'])) {
+                                    $search = $_GET['search'];
+                                }
+                                if (isset($_POST['sale'])) {
+                                    $check = $_POST['sale'];
+                                }
+                                $page = 1;
+                                if (isset($_GET['page'])) {
+                                    $page = $_GET['page'];
+                                }
+                                $all_product = (new data)->count_product($search);
+                                $all_page = ceil($all_product / 10);
+                                $skip_page = 10 * ($page - 1);
+                                switch ($check) {
+                                    case '1':
+                                        $sql = "SELECT products.*,
                                                 (products.price-products.price_sale) as sale 
                                                 FROM products INNER JOIN manufacturers On
                                                 products.id_manufacturers=manufacturers.id
@@ -146,9 +148,9 @@
                                                 products.name like '%$search%' or  manufacturers.name like '%$search%'
                                                 order by products.price_sale desc
                                                 limit 10 offset $skip_page";
-                                                break;
-                                            case '2':
-                                                $sql="SELECT products.*,
+                                        break;
+                                    case '2':
+                                        $sql = "SELECT products.*,
                                                 (products.price-products.price_sale) as sale 
                                                 FROM products INNER JOIN manufacturers On
                                                 products.id_manufacturers=manufacturers.id
@@ -156,9 +158,9 @@
                                                 products.name like '%$search%' or  manufacturers.name like '%$search%'
                                                 order by products.price_sale asc
                                                 limit 10 offset $skip_page";
-                                                break;
-                                            default:
-                                                $sql="SELECT products.*,
+                                        break;
+                                    default:
+                                        $sql = "SELECT products.*,
                                                 (products.price-products.price_sale) as sale 
                                                 FROM products INNER JOIN manufacturers On
                                                 products.id_manufacturers=manufacturers.id
@@ -166,49 +168,49 @@
                                                 products.name like '%$search%' or  manufacturers.name like '%$search%'
                                                 order by sale desc
                                                 limit 10 offset $skip_page";
-                                            }
-                                        
-                                        $se_products=mysqli_query($conn,$sql);
+                                }
+
+                                $se_products = mysqli_query($conn, $sql);
                                 ?>
-                                <?php foreach($se_products as $each_product): ?>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home-product-item" href="detail_products.php?id=<?php echo $each_product['id'] ?>">
-                                        <div class="home-product-item__img" style="background-image: url(<?php echo $each_product['image'] ?>);"></div>
-                                        <h4 class="home-product-item__name"><?php echo $each_product['name'] ?></h4>
-                                        <div class="home-product-item__price">
-                                            <span class="price-old"><?php echo number_format($each_product['price']) ?> đ</span>
-                                            <span class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</span>
-                                        </div>
-                                        <div class="home-product-item__action">
-                                            <div class="home-product-item__rating">
-                                                <i class="home-product-item__star--gold fas fa-star"></i>
-                                                <i class="home-product-item__star--gold fas fa-star"></i>
-                                                <i class="home-product-item__star--gold fas fa-star"></i>
-                                                <i class="home-product-item__star--gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                <?php foreach ($se_products as $each_product) : ?>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <a class="home-product-item" href="detail_products.php?id=<?php echo $each_product['id'] ?>">
+                                            <div class="home-product-item__img" style="background-image: url(<?php echo $each_product['image'] ?>);"></div>
+                                            <h4 class="home-product-item__name"><?php echo $each_product['name'] ?></h4>
+                                            <div class="home-product-item__price">
+                                                <span class="price-old"><?php echo number_format($each_product['price']) ?> đ</span>
+                                                <span class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</span>
                                             </div>
-                                            <span class="home-product-item__sold">88 đã bán</span>
-                                        </div>
-                                        <!-- <div class="home-product-item__favorite">
+                                            <div class="home-product-item__action">
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="home-product-item__star--gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">88 đã bán</span>
+                                            </div>
+                                            <!-- <div class="home-product-item__favorite">
                                             <i class="fas fa-check"></i>
                                             <Span>Yêu thích</Span>
                                         </div> -->
-                                    </a>
-                                </div>
-                                <?php endforeach?>
+                                        </a>
+                                    </div>
+                                <?php endforeach ?>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Pagination -->
-                    <?php require_once 'paging.php'?>
+                    <?php require_once 'paging.php' ?>
                 </div>
             </div>
         </div>
     </div>
 
     <?php
-        include('footer.php')
+    include('footer.php')
     ?>
 
     <!-- <script>
@@ -224,8 +226,5 @@
         });
     </script> -->
 </body>
+
 </html>
-
-
-
-

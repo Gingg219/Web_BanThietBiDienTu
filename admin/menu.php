@@ -4,6 +4,11 @@
         session_start(); 
     } 
 ?>
+            <?php
+                    if(isset($_GET['success'])){
+            ?>
+                 <script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>')</script>
+            <?php } ?>
 <div class="wrapper">
         <div class="sidebar">
             <h2>Dashboards</h2>

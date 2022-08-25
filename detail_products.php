@@ -1,10 +1,11 @@
 <?php
-    if(empty($_GET['id'])){
-        header('location:index.php?success=Lại em yêu khoa học rồi :D');
-    }
+if (empty($_GET['id'])) {
+    header('location:index.php?success=Lại em yêu khoa học rồi :D');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,14 +21,15 @@
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.css">
 </head>
+
 <body>
     <?php
-        include('header.php')
+    include('header.php')
     ?>
 
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="krhzOEGc"></script>
-    
+
     <!-- Block-breadcrumbs -->
     <div class="block-breadcrumbs">
         <div class="grid wide">
@@ -45,16 +47,16 @@
             </ul>
         </div>
     </div>
-    
+
     <!-- Block-detail-product -->
     <div class="block-detail-product">
         <div class="detail-product__box-name">
-        <?php
+            <?php
             require_once 'admin/control.php';
-            $id=$_GET['id'];
-            $products=(new data)->find_products($id);
-            $each_product=mysqli_fetch_array($products);
-        ?>
+            $id = $_GET['id'];
+            $products = (new data)->find_products($id);
+            $each_product = mysqli_fetch_array($products);
+            ?>
             <div class="grid wide">
                 <div class="box-name__box-product-name">
                     <h1><?php echo $each_product['name'] ?></h1>
@@ -73,138 +75,138 @@
 
                         <div class="swiper-wrapper">
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" onclick="currentDiv(1)">
+                                <img class="thumb-item" src="<?php echo $each_product['image'] ?>" onclick="currentDiv(1)">
                             </div>
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="<?php echo $each_product['image'] ?>" onclick="currentDiv(2)">
+                                <img class="thumb-item" src="<?php echo $each_product['image'] ?>" onclick="currentDiv(2)">
                             </div>
                             <div class="thumb-wrap">
-                              <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" onclick="currentDiv(3)">
+                                <img class="thumb-item" src="https://image.cellphones.com.vn/358x/media/catalog/product/i/p/iphone-se-midnight-select-2022031.jpg" onclick="currentDiv(3)">
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
                 <div class="l-4 c-12">
                     <div class="detail-product__box-center mb-3">
-                    <!-- Box-price -->
-                    <div class="box-info mb-2">
-                        <div class="box-info__box-price">
-                            <p class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</p>
-                            <p class="price-old"><?php echo $each_product['price'] ?> đ</p>
+                        <!-- Box-price -->
+                        <div class="box-info mb-2">
+                            <div class="box-info__box-price">
+                                <p class="price-current"><?php echo number_format($each_product['price_sale']) ?> đ</p>
+                                <p class="price-old"><?php echo $each_product['price'] ?> đ</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Box-version -->
-                    <div class="box-version mb-2">
-                        <div class="list-version">
-                            <a class="version-item active" href="#">
-                                <strong>256GB</strong>
-                                <span><?php echo $each_product['price'] ?></span>
-                            </a>
-                            <a class="version-item" href="#">
-                                <strong>128GB</strong>
-                                <span>13.490.000</span>
-                            </a>
-                            <a class="version-item" href="#">
-                                <strong>64GB</strong>
-                                <span>12.490.000</span>
-                            </a>
+                        <!-- Box-version -->
+                        <div class="box-version mb-2">
+                            <div class="list-version">
+                                <a class="version-item active" href="#">
+                                    <strong>256GB</strong>
+                                    <span><?php echo $each_product['price'] ?></span>
+                                </a>
+                                <a class="version-item" href="#">
+                                    <strong>128GB</strong>
+                                    <span>13.490.000</span>
+                                </a>
+                                <a class="version-item" href="#">
+                                    <strong>64GB</strong>
+                                    <span>12.490.000</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Box-Options -->
-                    <div class="product-option mb-2">
-                        <div class="box-product-option">
-                            <div class="box-option-title">
-                                <p class="box-title__title font-weight-both">
-                                    Chọn màu để xem giá và chi nhánh có hàng
+                        <!-- Box-Options -->
+                        <div class="product-option mb-2">
+                            <div class="box-product-option">
+                                <div class="box-option-title">
+                                    <p class="box-title__title font-weight-both">
+                                        Chọn màu để xem giá và chi nhánh có hàng
+                                    </p>
+                                </div>
+                                <div class="box-option-content">
+                                    <ul class="list-colors">
+                                        <li class="item-color disable">
+                                            <a href="#">
+                                                <img src="https://image.cellphones.com.vn/25x/media/catalog/product/d/o/download_2__3_7.png" alt="">
+                                            </a>
+                                            <p>
+                                                <strong>Green</strong>
+                                                <span>12.490.000</span>
+                                            </p>
+                                        </li>
+                                        <li class="item-color active">
+                                            <a href="#">
+                                                <img src="<?php echo $each_product['image'] ?>" alt="">
+                                            </a>
+                                            <p>
+                                                <strong><?php echo $each_product['name_color'] ?></strong>
+                                                <span><?php echo number_format($each_product['price_sale']) ?> đ</span>
+                                            </p>
+                                        </li>
+                                        <li class="item-color disable">
+                                            <a href="#">
+                                                <img src="https://image.cellphones.com.vn/25x/media/catalog/product/d/o/download_1__6_7.png" alt="">
+                                            </a>
+                                            <p>
+                                                <strong>Orange</strong>
+                                                <span>12.490.000</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Box-promotion -->
+                        <div class="box-promotion mb-2">
+                            <div class="box-promotion-title">
+                                <i class="promotion-title__icon fa-solid fa-gift"></i>
+                                <p class="promotion-title__title">
+                                    Khuyến mại
                                 </p>
                             </div>
-                            <div class="box-option-content">
-                                <ul class="list-colors">
-                                    <li class="item-color disable">
-                                        <a href="#">
-                                            <img src="https://image.cellphones.com.vn/25x/media/catalog/product/d/o/download_2__3_7.png" alt="">
+                            <div class="box-promotion-content">
+                                <ul class="list-promotions">
+                                    <li class="promotion-item">
+                                        <a href="#" class="text-decoration-none">
+                                            Nhập CPS500 - Giảm 0đ cho các sản phẩm từ 0 triệu khi thanh toán qua VNPAY tại cửa hàng
+                                            <span>(xem chi tiết)</span>
                                         </a>
-                                        <p>
-                                            <strong>Green</strong>
-                                            <span>12.490.000</span>
-                                        </p>
                                     </li>
-                                    <li class="item-color active">
-                                        <a href="#">
-                                            <img src="<?php echo $each_product['image'] ?>" alt="">
+                                    <li class="promotion-item">
+                                        <a href="#" class="text-decoration-none">
+                                            Giảm thêm đến 2.000.000đ khi thanh toán qua thẻ tín dụng Citibank
+                                            <span>(xem chi tiết)</span>
                                         </a>
-                                        <p>
-                                            <strong><?php echo $each_product['name_color'] ?></strong>
-                                            <span><?php echo number_format($each_product['price_sale']) ?> đ</span>
-                                        </p>
-                                    </li>
-                                    <li class="item-color disable">
-                                        <a href="#">
-                                            <img src="https://image.cellphones.com.vn/25x/media/catalog/product/d/o/download_1__6_7.png" alt="">
-                                        </a>
-                                        <p>
-                                            <strong>Orange</strong>
-                                            <span>12.490.000</span>
-                                        </p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <!-- Box-promotion -->
-                    <div class="box-promotion mb-2">
-                        <div class="box-promotion-title">
-                            <i class="promotion-title__icon fa-solid fa-gift"></i>
-                            <p class="promotion-title__title">
-                                Khuyến mại
-                            </p>
+                        <!-- Button-Buy -->
+                        <div class="box-action-botton">
+                            <a href="add2cart.php?id=<?php echo $each_product['id'] ?>" class="action-botton">
+                                <strong>MUA NGAY</strong>
+                                <span>(Giao tận nơi hoặc lấy tại cửa hàng)</span>
+                            </a>
                         </div>
-                        <div class="box-promotion-content">
-                            <ul class="list-promotions">
-                                <li class="promotion-item">
-                                    <a href="#" class="text-decoration-none">
-                                        Nhập CPS500 - Giảm 0đ cho các sản phẩm từ 0 triệu khi thanh toán qua VNPAY tại cửa hàng 
-                                        <span>(xem chi tiết)</span>
-                                    </a>
-                                </li>
-                                <li class="promotion-item">
-                                    <a href="#" class="text-decoration-none" >
-                                        Giảm thêm đến 2.000.000đ khi thanh toán qua thẻ tín dụng Citibank 
-                                        <span>(xem chi tiết)</span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <!-- Box-promotion-more -->
+                        <div class="box-promotion-more">
+                            <div class="promotion-more-title">
+                                <p class="promotion-more__title">Ưu đãi thêm</p>
+                            </div>
+                            <div class="promotion-more__content">
+                                <ul class="list-promotions">
+                                    <li class="promotion-item">
+                                        <a href="" class="text-decoration-none">Giảm thêm tới 1% cho thành viên Smember (áp dụng tùy sản phẩm)</a>
+                                    </li>
+                                    <li class="promotion-item">
+                                        <a href="" class="text-decoration-none">Giảm thêm 500.000đ khi thanh toán qua thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu</a>
+                                    </li>
+                                    <li class="promotion-item">
+                                        <a href="" class="text-decoration-none">Giảm thêm 500.000đ khi thanh toán qua thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu</a>
+                                    </li>
+                                    <li class="promotion-item">
+                                        <a href="" class="text-decoration-none">Giảm thêm 500.000đ khi thanh toán qua thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Button-Buy -->
-                    <div class="box-action-botton">
-                        <a href="add2cart.php?id=<?php echo $each_product['id'] ?>" class="action-botton">
-                            <strong>MUA NGAY</strong>
-                            <span>(Giao tận nơi hoặc lấy tại cửa hàng)</span>
-                        </a>
-                    </div>
-                    <!-- Box-promotion-more -->
-                    <div class="box-promotion-more">
-                        <div class="promotion-more-title">
-                            <p class="promotion-more__title">Ưu đãi thêm</p>
-                        </div>
-                        <div class="promotion-more__content">
-                            <ul class="list-promotions">
-                                <li class="promotion-item">
-                                    <a href="" class="text-decoration-none">Giảm thêm tới 1% cho thành viên Smember (áp dụng tùy sản phẩm)</a>
-                                </li>
-                                <li class="promotion-item">
-                                    <a href="" class="text-decoration-none">Giảm thêm 500.000đ khi thanh toán qua thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu</a>
-                                </li>
-                                <li class="promotion-item">
-                                    <a href="" class="text-decoration-none">Giảm thêm 500.000đ khi thanh toán qua thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu</a>
-                                </li>
-                                <li class="promotion-item">
-                                    <a href="" class="text-decoration-none">Giảm thêm 500.000đ khi thanh toán qua thẻ tín dụng VP Bank cho đơn hàng từ 10 triệu</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <div class="l-4 c-12">
@@ -281,7 +283,7 @@
                         <div class="fb-comments box-outstanding-features" data-href="http://wstore.test/index.php" data-width="100%" data-numposts="5">
 
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="l-4">
                     <div class="box-technical-info">
@@ -345,7 +347,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                
+
                             <div class="box-btn-show-more">
                                 <a href="#" class="btn-show-more" id="showTechnical">
                                     Xem cấu hình chi tiết
@@ -660,26 +662,28 @@
             </div>
         </div>
     </div>
-    
+
     <?php
-        include('footer.php')
+    include('footer.php')
     ?>
 
     <!-- Automatic Slideshow -->
     <script>
         var myIndex = 0;
         carousel();
-        
+
         function carousel() {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-          }
-          myIndex++;
-          if (myIndex > x.length) {myIndex = 1}    
-          x[myIndex-1].style.display = "block";  
-          setTimeout(carousel, 4000); // Change image every 2 seconds
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000); // Change image every 2 seconds
         }
     </script>
 
@@ -688,17 +692,21 @@
         function currentDiv(n) {
             showDivs(slideIndex = n);
         }
-        
+
         function showDivs(n) {
             var i;
             var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
 
-            x[slideIndex-1].style.display = "block";
+            x[slideIndex - 1].style.display = "block";
         }
     </script>
 
@@ -711,34 +719,33 @@
         const hideTechnicalInfo = document.getElementById("hideTechnicalInfo")
         const headerHideTechInfo = document.getElementById("headerHideTechInfo")
 
-        if(showTechnical) {
+        if (showTechnical) {
             showTechnical.onclick = (e) => {
                 e.preventDefault()
-                if(modalHide) {
+                if (modalHide) {
                     modalHide.classList.toggle("toggleHideShow")
                     body.style.overflow = "hidden"
                 }
             }
         }
-        if(hideTechnicalInfo) {
+        if (hideTechnicalInfo) {
             hideTechnicalInfo.onclick = (e) => {
                 e.preventDefault()
-                if(modalHide) {
+                if (modalHide) {
                     modalHide.classList.toggle("toggleHideShow")
                     body.style.overflow = "inherit"
                 }
             }
         }
-        if(headerHideTechInfo) {
+        if (headerHideTechInfo) {
             headerHideTechInfo.onclick = (e) => {
                 e.preventDefault()
-                if(modalHide) {
+                if (modalHide) {
                     modalHide.classList.toggle("toggleHideShow")
                     body.style.overflow = "inherit"
                 }
             }
         }
-
     </script>
 
     <!-- Show more describe, Show less describe btn -->
@@ -747,19 +754,20 @@
             var dots = document.getElementById("dots");
             var moreText = document.getElementById("more");
             var btnText = document.getElementById("showMoreInfo");
-            
+
             if (dots.style.display === "none") {
                 dots.style.display = "inline";
-                btnText.innerHTML = "Xem thêm"; 
+                btnText.innerHTML = "Xem thêm";
                 moreText.style.display = "none";
             } else {
                 dots.style.display = "none";
-                btnText.innerHTML = "Ẩn đi"; 
+                btnText.innerHTML = "Ẩn đi";
                 moreText.style.display = "inline";
             }
         }
     </script>
 
-    
+
 </body>
+
 </html>

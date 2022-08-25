@@ -419,7 +419,8 @@ public function se_users($search='',$skip_page){
         public function paging_laptop($skip_page,$search){
             global $conn;
             $sql="SELECT products.*,
-            (products.price-products.price_sale) as sale FROM products INNER JOIN manufacturers On
+            (products.price-products.price_sale) as sale
+            FROM products INNER JOIN manufacturers On
             products.id_manufacturers=manufacturers.id
             WHERE manufacturers.id_category=3 and manufacturers.name like '%$search%'
             order by sale desc
@@ -762,7 +763,7 @@ public function se_users($search='',$skip_page){
         $sql="SELECT COUNT(*) as total
         FROM ORDERS
         WHERE
-        DATE_FORMAT(order_date, '%Y-W%u')='$ORDER_DATE'";
+        DATE_FORMAT(order_date, '%Y-%m')='$ORDER_DATE'";
         $result=mysqli_query($conn,$sql);
         $each=mysqli_fetch_array($result);
         $orders=$each['total'];
@@ -850,7 +851,7 @@ public function se_users($search='',$skip_page){
         FROM customers
         LEFT JOIN orders ON customers.id=orders.id_customer
         WHERE STATUS='1'
-        GROUP BY customers.id LIMIT 3";
+        GROUP BY customers.id";
         $result=mysqli_query($conn,$sql);
         return($result);
         mysqli_close($conn);

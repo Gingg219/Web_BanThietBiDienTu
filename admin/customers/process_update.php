@@ -9,7 +9,4 @@ $date=$_POST['date'];
 $email=$_POST['email'];
 $password=$_POST['password'];
 $result=(new data())->store_cus($id,$name,$phone_number,$gender,$address,$date,$email,$password);
-if($result)
-    echo "OK";
-else
-    echo "false";
+header('location:index.php?success=Update successful');

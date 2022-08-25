@@ -128,10 +128,42 @@
                                         if(isset($_GET['page'])){
                                             $page=$_GET['page'];
                                         }
+                                        $check = '';
+                                        if (isset($_POST['sale'])) {
+                                            $check = $_POST['sale'];
+                                        }
                                         $all_product=(new data)->count_paging_smartphone1($search);
                                         $all_page=ceil($all_product/20);
                                         $skip_page=20*($page-1);
-                                        $se_smartphones=(new data)->paging_mobile($skip_page,$search);
+                                        switch ($check) {
+                                            case '1':
+                                                $sql = "SELECT products.*,
+                                                        (products.price-products.price_sale) as sale
+                                                        FROM products INNER JOIN manufacturers On
+                                                        products.id_manufacturers=manufacturers.id
+                                                        WHERE manufacturers.id_category=1 and manufacturers.name like '%$search%'
+                                                        order by products.price_sale desc
+                                                        limit 20 offset $skip_page";
+                                                break;
+                                            case '2':
+                                                $sql = "SELECT products.*,
+                                                        (products.price-products.price_sale) as sale
+                                                        FROM products INNER JOIN manufacturers On
+                                                        products.id_manufacturers=manufacturers.id
+                                                        WHERE manufacturers.id_category=1 and manufacturers.name like '%$search%'
+                                                        order by products.price_sale asc
+                                                        limit 20 offset $skip_page";
+                                                break;
+                                            default:
+                                                $sql = "SELECT products.*,
+                                                        (products.price-products.price_sale) as sale
+                                                        FROM products INNER JOIN manufacturers On
+                                                        products.id_manufacturers=manufacturers.id
+                                                        WHERE manufacturers.id_category=1 and manufacturers.name like '%$search%'
+                                                        order by sale desc
+                                                        limit 20 offset $skip_page";
+                                        }
+                                        $se_smartphones = mysqli_query($conn, $sql);
 
                                 foreach($se_smartphones as $each_smartphone): ?>
                                 <div class="col l-2-4 m-4 c-6">

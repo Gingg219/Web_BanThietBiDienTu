@@ -1,5 +1,5 @@
 <?php 
-require '../check_admin_login.php'; 
+require '../check_super_admin_login.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +13,6 @@ require '../check_admin_login.php';
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-            <?php
-                    if(isset($_GET['success'])){
-            ?>
-                 echo "<script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>');</script>";
-            <?php } ?>
     <?php require_once '../menu.php'; ?>
     
     <div class="info">
