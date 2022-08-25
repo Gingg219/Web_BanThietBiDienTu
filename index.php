@@ -35,6 +35,9 @@
                             $manuf_tablets=(new data)->se_manuf_tablets();
                             $manuf_headphones=(new data)->se_manuf_headphones();
                             $manuf_smartwatches=(new data)->se_manuf_smartwatch();
+                            $manuf_smarthome=(new data)->se_manuf_smarthome();
+                            $manuf_gadgets=(new data)->se_manuf_gadgets();
+                            $manuf_tivi=(new data)->se_manuf_tivi();
                         ?>
                         <!-- Begin: block-sliding-home__left -->
                             <div class="block-sliding-home__left hide-on-mobile-tablet">
@@ -166,6 +169,17 @@
                                                 <span>Nhà thông minh</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
                                             </a>
+                                            <div class="box-list-item box-child-list-item">
+                                                <ul class="list-item">
+                                                <?php foreach($manuf_smarthome as $each_smarthome): ?>
+                                                    <li class="item-menu">
+                                                        <a class="item-menu__link" href="smarthome.php?search=<?php echo $each_smarthome['name'] ?>">
+                                                            <span><?php echo $each_smarthome['name'] ?></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach?>
+                                                </ul>
+                                            </div>
                                         </li>
                                         <li class="item-menu">
                                             <a class="item-menu__link" href="">
@@ -173,38 +187,35 @@
                                                 <span>Phụ kiện</span>
                                                 <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
                                             </a>
-                                        </li>
-                                        <li class="item-menu">
-                                            <a class="item-menu__link" href="">
-                                                <i class="item-menu__icon fa-solid fa-comments-dollar"></i>
-                                                <span>Thu cũ</span>
-                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                            </a>
-                                        </li>
-                                        <li class="item-menu">
-                                            <a class="item-menu__link" href="">
-                                                <i class="item-menu__icon fa-solid fa-right-left"></i>
-                                                <span>Hàng cũ</span>
-                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
-                                            </a>
+                                            <div class="box-list-item box-child-list-item">
+                                                <ul class="list-item">
+                                                <?php foreach($manuf_gadgets as $each_gadgets): ?>
+                                                    <li class="item-menu">
+                                                        <a class="item-menu__link" href="gadgets.php?search=<?php echo $each_gadgets['name'] ?>">
+                                                            <span><?php echo $each_gadgets['name'] ?></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach?>
+                                                </ul>
+                                            </div>
                                         </li>
                                         <li class="item-menu">
                                             <a class="item-menu__link" href="">
                                                 <i class="item-menu__icon fa-solid fa-tv"></i>
                                                 <span>Tivi</span>
+                                                <i class="item-menu__icon-sub fa-solid fa-angle-right"></i>
                                             </a>
-                                        </li>
-                                        <li class="item-menu">
-                                            <a class="item-menu__link" href="">
-                                                <i class="item-menu__icon fa-solid fa-newspaper"></i>
-                                                <span>Tin công nghệ</span>
-                                            </a>
-                                        </li>
-                                        <li class="item-menu">
-                                            <a class="item-menu__link" href="">
-                                                <i class="item-menu__icon fa-solid fa-bullhorn"></i>
-                                                <span>Khuyến mại</span>
-                                            </a>
+                                            <div class="box-list-item box-child-list-item">
+                                                <ul class="list-item">
+                                                <?php foreach($manuf_tivi as $each_tivi): ?>
+                                                    <li class="item-menu">
+                                                        <a class="item-menu__link" href="tivi.php?search=<?php echo $each_tivi['name'] ?>">
+                                                            <span><?php echo $each_tivi['name'] ?></span>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach?>
+                                                </ul>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -287,27 +298,7 @@
                     </li>
                     <li class="mobile-tablet-category__item">
                         <a href="" class="mobile-tablet-category__link">
-                            <div class="mobile-tablet-category__name">Thu cũ</div>
-                        </a>
-                    </li>
-                    <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
-                            <div class="mobile-tablet-category__name">Hàng cũ</div>
-                        </a>
-                    </li>
-                    <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
                             <div class="mobile-tablet-category__name">Tivi</div>
-                        </a>
-                    </li>
-                    <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
-                            <div class="mobile-tablet-category__name">Tin công nghệ</div>
-                        </a>
-                    </li>
-                    <li class="mobile-tablet-category__item">
-                        <a href="" class="mobile-tablet-category__link">
-                            <div class="mobile-tablet-category__name">Khuyến mại</div>
                         </a>
                     </li>
                 </ul>

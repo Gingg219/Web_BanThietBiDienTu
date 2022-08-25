@@ -183,6 +183,30 @@ public function se_users($search='',$skip_page){
         return $result;
         mysqli_close($conn);
     }
+    public function se_manuf_smarthome(){
+        global $conn;
+        $sql="select * from manufacturers
+        where id_category=6";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_manuf_gadgets(){
+        global $conn;
+        $sql="select * from manufacturers
+        where id_category=7";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_manuf_tivi(){
+        global $conn;
+        $sql="select * from manufacturers
+        where id_category=8";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
     public function se_manuf_tablets(){
         global $conn;
         $sql="select * from manufacturers
@@ -531,6 +555,75 @@ public function se_users($search='',$skip_page){
             $sql="SELECT products.* FROM products INNER JOIN manufacturers On
             products.id_manufacturers=manufacturers.id
             WHERE manufacturers.id_category=4 and
+            products.name like '%$search%'
+            limit 4 offset $skip_page";
+            $result=mysqli_query($conn,$sql);
+            return($result);
+            mysqli_close($conn);
+        }
+        public function count_paging_smarthome($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=6 and
+            products.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function search_paging_smarthome($search,$skip_page){
+            global $conn;
+            $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=6 and
+            products.name like '%$search%'
+            limit 4 offset $skip_page";
+            $result=mysqli_query($conn,$sql);
+            return($result);
+            mysqli_close($conn);
+        }
+        public function count_paging_gadgets($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=7 and
+            products.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function search_paging_gadgets($search,$skip_page){
+            global $conn;
+            $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=7 and
+            products.name like '%$search%'
+            limit 4 offset $skip_page";
+            $result=mysqli_query($conn,$sql);
+            return($result);
+            mysqli_close($conn);
+        }
+        public function count_paging_tivi($search=''){
+            global $conn;
+            $sql="SELECT count(*) as total FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=8 and
+            products.name like '%$search%'";
+            $run=mysqli_query($conn,$sql);
+            $result=mysqli_fetch_array($run);
+            $all_product=$result['total'];
+            return($all_product);
+            mysqli_close($conn);
+        }
+        public function search_paging_tivi($search,$skip_page){
+            global $conn;
+            $sql="SELECT products.* FROM products INNER JOIN manufacturers On
+            products.id_manufacturers=manufacturers.id
+            WHERE manufacturers.id_category=8 and
             products.name like '%$search%'
             limit 4 offset $skip_page";
             $result=mysqli_query($conn,$sql);

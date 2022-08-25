@@ -100,7 +100,7 @@ if (empty($_GET['id'])) {
                             <div class="list-version">
                                 <a class="version-item active" href="#">
                                     <strong>256GB</strong>
-                                    <span><?php echo number_format($each_product['price']) ?> đ</span>
+                                    <span><?php echo number_format($each_product['price_sale']) ?> đ</span>
                                 </a>
                                 <a class="version-item" href="#">
                                     <strong>128GB</strong>
@@ -136,7 +136,7 @@ if (empty($_GET['id'])) {
                                                 <img src="<?php echo $each_product['image'] ?>" alt="">
                                             </a>
                                             <p>
-                                                <strong><?php echo $each_product['name_color'] ?></strong>
+                                                <strong><?php echo ucfirst($each_product['name_color']) ?></strong>
                                                 <span><?php echo number_format($each_product['price_sale']) ?> đ</span>
                                             </p>
                                         </li>

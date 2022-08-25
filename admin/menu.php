@@ -21,6 +21,9 @@
                         <li><a href="/admin/products/laptops">Laptop</a></li>
                         <li><a href="/admin/products/headphones">Headphones</a></li>
                         <li><a href="/admin/products/smartwatches">Smartwatches</a></li>
+                        <li><a href="/admin/products/smarthome">SmartHome</a></li>
+                        <li><a href="/admin/products/gadgets">Gadgets</a></li>
+                        <li><a href="/admin/products/tivi">Tivi</a></li>
                     </ul>
                 </li>
                 <li><a href="/admin/customers"><i class="fa-solid fa-user"></i>Customers</a></li>
