@@ -57,7 +57,7 @@
                 </div>
     
                 <div class="header-about hide-on-mobile-tablet">
-                    <a href="" class="about-item about-1">
+                    <a href="#" class="about-item about-1" onclick="showSuccessToast()">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-phone"></i>
                         </div>
@@ -147,4 +147,6 @@
             </div>
         </div>
     </div>
+
+    <script src="./Javascript/notify.js"></script>
 <!-- End: Header  -->

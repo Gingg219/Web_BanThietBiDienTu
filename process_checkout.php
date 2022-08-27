@@ -33,4 +33,7 @@ foreach($cart as $product_id => $each){
 mysqli_close($conn);
 unset($_SESSION['cart']);
 
-header('location:order_info.php?success=Đặt hàng thành công.');
+$_SESSION['success'] = 'Đặt hàng thành công';
+
+
+header('location:order_info.php?');

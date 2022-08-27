@@ -1,6 +1,7 @@
 
 <?php
  require 'check_login.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -171,6 +172,8 @@
     <?php
         include('footer.php')
     ?>
+
+    
 </body>
 </html>
 
