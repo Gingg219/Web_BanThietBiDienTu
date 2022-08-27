@@ -1,7 +1,8 @@
 <?php
-if (empty($_GET['id'])) {
-    header('location:index.php?success=Lại em yêu khoa học rồi :D');
-}
+session_start();
+// if (empty($_GET['id'])) {
+//     header('location:index.php?success=Lại em yêu khoa học rồi :D');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,29 +25,16 @@ if (empty($_GET['id'])) {
 
 <body>
     <?php
-    include('header.php')
+        include('./components/header.php')
     ?>
 
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="krhzOEGc"></script>
 
     <!-- Block-breadcrumbs -->
-    <div class="block-breadcrumbs">
-        <div class="grid wide">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="index.php">
-                        <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
-                        Trang chủ
-                    </a>
-                    <i class="fa-solid fa-angle-right"></i>
-                </li>
-                <li>
-                    Điện thoại
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php
+        include('./components/block_breadcrumbs.php');
+    ?>
 
     <!-- Block-detail-product -->
     <div class="block-detail-product">
@@ -180,7 +168,7 @@ if (empty($_GET['id'])) {
                         </div>
                         <!-- Button-Buy -->
                         <div class="box-action-botton">
-                            <a href="add2cart.php?id=<?php echo $each_product['id'] ?>" class="action-botton">
+                            <a href="./process/add2cart.php?id=<?php echo $each_product['id'] ?>" class="action-botton">
                                 <strong>MUA NGAY</strong>
                                 <span>(Giao tận nơi hoặc lấy tại cửa hàng)</span>
                             </a>
@@ -664,7 +652,7 @@ if (empty($_GET['id'])) {
     </div>
 
     <?php
-    include('footer.php')
+    include('./components/footer.php')
     ?>
 
     <script src="./Javascript/detailProduct.js"></script>

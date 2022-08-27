@@ -1,5 +1,6 @@
-<?php session_start(); ?>
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +19,8 @@
 </head>
 <body>
     <?php
-        include ('header.php');
+        include ('./components/header.php');
     ?>
-    
-
     <!-- Container -->
     <div class="app-container">
         <div class="grid wide">
@@ -255,7 +254,7 @@
             
             <!-- Swiper-block  -->
             <?php
-                include('swiper_block.php');
+                include('./components/swiper_block.php');
             ?>
             
             <!-- Mobile-tablet-category -->
@@ -584,7 +583,7 @@
     </div>
 
     <?php 
-        include ('footer.php')
+        include ('./components/footer.php')
     ?>
 
     <!-- home-slide -->

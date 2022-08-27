@@ -1,7 +1,5 @@
-
 <?php
- require 'check_login.php';
-
+    require './process/check_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,26 +20,13 @@
 </head>
 <body>
     <?php
-        include('header.php')
+        include('./components/header.php')
     ?>
 
     <!-- Block-breadcrums  -->
-    <div class="block-breadcrumbs">
-        <div class="grid wide">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="index.php">
-                        <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
-                        Trang chủ
-                    </a>
-                    <i class="fa-solid fa-angle-right"></i>
-                </li>
-                <li>
-                    Điện thoại
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php
+        include('./components/block_breadcrumbs.php')
+    ?>
 
     <!-- Container -->
     <div class="container container-user-info">
@@ -54,26 +39,6 @@
                 </div>
                 <div class="info-shown">
                     <div class="info-order-shown">
-                        <!-- <div class="shown-order__state">
-                            <a class="order-state__link order-state__link--active" href="">
-                                <span>Tất cả</span>
-                            </a>
-                            <a class="order-state__link" href="">
-                                <span>Chờ xác nhận</span>
-                            </a>
-                            <a class="order-state__link" href="">
-                                <span>Chờ lấy hàng</span>
-                            </a>
-                            <a class="order-state__link" href="">
-                                <span>Đang giao</span>
-                            </a>
-                            <a class="order-state__link" href="">
-                                <span>Đã giao</span>
-                            </a>
-                            <a class="order-state__link" href="">
-                                <span>Đã Hủy</span>
-                            </a>
-                        </div> -->
                         <div class="shown-order__search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" placeholder="Tìm kiếm theo ID đơn hàng hoặc Tên Sản phẩm">
@@ -170,10 +135,9 @@
     </div>
     
     <?php
-        include('footer.php')
+        include('./components/footer.php')
     ?>
 
-    
 </body>
 </html>
 

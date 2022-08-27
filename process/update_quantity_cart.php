@@ -15,4 +15,4 @@ if($type === 'inc'){
 }
 
 
-header('location:cart.php');
+header('location:../cart.php');

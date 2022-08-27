@@ -22,24 +22,10 @@
     include('header.php')
     ?>
 
-    <!-- Block-breadcrumb  -->
-    <div class="block-breadcrumbs">
-        <div class="grid wide">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="index.php">
-                        <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
-                        Trang chủ
-                    </a>
-                    <i class="fa-solid fa-angle-right"></i>
-                </li>
-                <li>
-                    Điện thoại
-                </li>
-            </ul>
-        </div>
-    </div>
-
+    
+    <?php
+    include('block_breadcrumbs.php')
+    ?>
 
     <!-- Container -->
     <div class="container">
@@ -177,18 +163,6 @@
     include('footer.php')
     ?>
 
-    <!-- <script>
-
-        let itemFilter = document.querySelectorAll('.item-filter');
-        let filterValue = document.getElementsByClassName('filter-value');
-
-        itemFilter.forEach((element,index) => {
-            element.onclick = function () {
-                document.querySelector(".item-filter.btn--active").classList.remove("btn--active");
-                this.classList.add("btn--active");
-            };
-        });
-    </script> -->
 </body>
 
 </html>

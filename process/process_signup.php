@@ -1,5 +1,5 @@
 <?php 
-require_once 'admin/control.php';
+require_once '../admin/control.php';
 // if(empty($_POST['name']) || empty($_POST['add']) || empty($_POST['email']
 //     )|| empty($_POST['pass1'])|| empty($_POST['gender'])|| empty($_POST['date']) ){
 //         header('location:form_insert.php?error=Must be filled in completely');
@@ -35,4 +35,7 @@ $_SESSION['mess'] = 'Signup completely';
 $_SESSION['id'] = $id;
 $_SESSION['name'] = $name;
 mysqli_close($connect);
-header('location:index.php');
+
+$_SESSION['success'] = 'Đăng ký thành công';
+
+header('location:../index.php');

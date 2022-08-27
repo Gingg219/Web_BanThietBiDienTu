@@ -1,8 +1,5 @@
 <?php
-    // session_start();
-    // if(isset($_SESSION['name'])){
-    //     header('location:index.php');
-    // }
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +29,7 @@
 <!-- End: Header  -->
     
 <div class="main-form">
-    <form action="process_signup.php" method="POST" class="form-container" id="register" style="display: none">
+    <form action="./process/process_signup.php" method="POST" class="form-container" id="register" style="display: none">
       <div class="form-header">
           <h3 class="form-heading">Đăng Ký</h3>
           <span class="form-switch-btn" id="showLogin">Đăng Nhập</span>
@@ -104,7 +101,7 @@
     </div>
     </form>
 
-    <form action="process_signing.php" method="POST" class="form-container" id="login" >
+    <form action="./process/process_signing.php" method="POST" class="form-container" id="login" >
         <div class="form-header">
             <h3 class="form-heading">Đăng Nhập</h3>
             <span class="form-switch-btn" id="showRegister">Đăng Ký</span>

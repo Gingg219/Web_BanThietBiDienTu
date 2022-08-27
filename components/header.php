@@ -1,10 +1,9 @@
 
 <?php
-        if(isset($_GET['success'])){
+    include('notify.php');
+    if(isset($_GET['success']))
 ?>
-        echo "<script type='text/javascript'>alert(' <?php echo $_GET['success'] ?>');</script>";
-<?php } ?>
-
+    
 <!-- Begin: Header -->
     <div class="header">
         <div class="grid wide">
@@ -25,7 +24,7 @@
                 </div>
 
                 <ul class="header__menu-list">
-                    <div class="user__moblie-info">
+                    <div class="user__mobile-info">
                         <img src="./assets/img/Wstore.png" alt="" class="navbar__user-img">
                         <span class="navbar__user-name">Tượng Văn Trưng</span>
                     </div>
@@ -40,7 +39,7 @@
                         <a href="password_control.php">Đổi mật khẩu</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="process_signing.php">Đăng xuất</a>
+                        <a href="./process/process_signing.php">Đăng xuất</a>
                     </li>
                 </ul>
 
@@ -57,7 +56,7 @@
                 </div>
     
                 <div class="header-about hide-on-mobile-tablet">
-                    <a href="#" class="about-item about-1" onclick="showSuccessToast()">
+                    <a href="#" class="about-item about-1" onclick="showInfoToast('Nhân viên tư vấn chưa thể nhận cuộc gọi')">
                         <div class="about-item__icon">
                             <i class="fa-solid fa-phone"></i>
                         </div>
@@ -120,7 +119,7 @@
                                 <a href="order_info.php">Đơn mua</a>
                             </li>
                             <li class="navbar__user-item navbar__user-item--separate">
-                                <a href="process_sign_out.php">Đăng xuất</a>
+                                <a href="./process/process_sign_out.php">Đăng xuất</a>
                             </li>
                         </ul>
                     </div>

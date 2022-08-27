@@ -1,5 +1,5 @@
 <?php
-    require 'check_login.php';
+    require './process/check_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
 </head>
 <body>
     <!-- Begin: Header -->
-    <?php require_once 'header.php'; ?>
+    <?php include('./components/header.php')  ?>
 <!-- End: Header  -->
     
     <div class="app-container">
@@ -73,9 +73,9 @@
                                 <p>Chọn số lượng:</p>
                             </div>
                             <div class="number">
-                                <a href="update_quantity_cart.php?id=<?php echo $id ?>&action=inc" type="button" style="text-decoration: none;" class="minus">-</a>
+                                <a href="./process/update_quantity_cart.php?id=<?php echo $id ?>&action=inc" type="button" style="text-decoration: none;" class="minus">-</a>
                                 <input type="text" readonly="readonly" value="<?php echo $each['quantity'] ?>">
-                                <a href="update_quantity_cart.php?id=<?php echo $id ?>&action=dec" type="button" style="text-decoration: none;" class="plus">+</a>
+                                <a href="./process/update_quantity_cart.php?id=<?php echo $id ?>&action=dec" type="button" style="text-decoration: none;" class="plus">+</a>
                                <?php $result = $each['price_sale'] * $each['quantity'];
                                 $sum += $result;?>
                             </div>
@@ -100,7 +100,7 @@
                     </div>
                     
                 </div>
-                <div class="delete-cart"><a href="delete_product_from_cart.php?id=<?php echo $id ?>"><i class="delete-cart__icon fa-solid fa-xmark"></i></a></div>
+                <div class="delete-cart"><a href="./process/delete_product_from_cart.php?id=<?php echo $id ?>"><i class="delete-cart__icon fa-solid fa-xmark"></i></a></div>
             </div>  
         </div>
         <?php endforeach ?>
@@ -118,7 +118,7 @@
                     $each_cus = mysqli_fetch_array($result);}
                     ?>
                 <div class="form-info-client">
-        <form action="process_checkout.php" method="POST">
+        <form action="./process/process_checkout.php" method="POST">
                         <div class="form-group">
                             <input type="text" name="name" placeholder=" " class="form-input" value="<?php  echo $each_cus['name'];  ?>">
                             <label for="email" class="form-label">Name...</label>
@@ -149,5 +149,8 @@
             </div>
             </div>
         </form>
+    <?php 
+        include('./components/footer.php');
+    ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 <?php
- require 'check_login.php';
+ require './process/check_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,26 +22,13 @@
 </head>
 <body>
     <?php
-        include('header.php')
+        include('./components/header.php')
     ?>
 
     <!-- Block-breadcrums  -->
-    <div class="block-breadcrumbs">
-        <div class="grid wide">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="index.php">
-                        <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
-                        Trang chủ
-                    </a>
-                    <i class="fa-solid fa-angle-right"></i>
-                </li>
-                <li>
-                    Điện thoại
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php
+        include('./components/block_breadcrumbs.php')
+    ?>
 
     <!-- Container -->
     <div class="container container-user-info">
@@ -59,7 +46,7 @@
                             <p>Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</p>
                         </div>
                         <div class="password-control__change">
-                            <form action="process_pass.php" method="POST">
+                            <form action="./process/process_pass.php" method="POST">
                                 <div class="info-shown__item">
                                     <div class="info-shown__item--left">Mật Khẩu Hiện Tại</div>
                                     <div class="info-shown__item--right">
@@ -93,7 +80,7 @@
     </div>
     
     <?php
-        include('footer.php')
+        include('./components/footer.php')
     ?>
 </body>
 </html>

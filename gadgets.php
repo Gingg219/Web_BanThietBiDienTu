@@ -17,26 +17,13 @@
 </head>
 <body>
     <?php
-        include('header.php')
+        include('./components/header.php')
     ?>
 
     <!-- Block-breadcrumb  -->
-    <div class="block-breadcrumbs">
-        <div class="grid wide">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="index.php">
-                        <i class="breadcrumbs__home-icon fa-solid fa-house"></i>
-                        Trang chủ
-                    </a>
-                    <i class="fa-solid fa-angle-right"></i>
-                </li>
-                <li>
-                    Điện thoại
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php
+        include('./components/block_breadcrumbs.php')
+    ?>
 
     
     <!-- Container -->
@@ -46,34 +33,19 @@
                 <div class="row">
                     <div class="col">
                         <!-- Block-filter -->
-                        <div class="block-filter-subcate">
-                            <div class="filter__block-list-subcate">
-                                <div class="box-list-subcate">
-                                    <div class="list-subcate">
-                                        <?php
-                                            require_once 'admin/control.php';
-                                            $sql="SELECT * FROM manufacturers where id_category=7";
-                                            $result=mysqli_query($conn, $sql);
-                                            foreach($result as $manuf):
-                                        ?>
-                                        <a class="item-subcate" href="gadgets.php?search=<?php echo $manuf['name'] ?>">
-                                            <img class="icons-subcate" src="<?php echo $manuf['image'] ?>" alt="">
-                                        </a>
-                                        <?php endforeach ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            include('./components/block_filter.php')
+                        ?>
                     </div>
 
                     <!-- Swiper-block  -->
                     <?php
-                        include('swiper_block.php');
+                        include('./components/swiper_block.php');
                     ?>
                     
                     <!-- fillter_block -->
                     <?php
-                        include('filter_block.php');
+                        include('./components/filter_block.php');
                     ?>
 
                     <div class="home-product" style="width: 100%">
@@ -159,7 +131,7 @@
                         </div>
                     </div>
                     <!-- Pagination -->
-                    <?php require_once 'paging.php'; ?>
+                    <?php include('paging.php') ?>
                 </div>
             </div>
         </div>

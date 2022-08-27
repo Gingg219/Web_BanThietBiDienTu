@@ -22,4 +22,4 @@ if($number_rows == 1){
     exit;
 }
 
-header('location:password_control.php?error=Change password failed');
+header('location:/password_control.php?error=Change password failed');

@@ -4,7 +4,7 @@ $name_receiver = $_POST['name'];
 $phone_receiver = $_POST['phone'];
 $address_receiver = $_POST['address'];
 
-require 'admin/control.php';
+require '../admin/control.php';
 session_start();
 
 $cart = $_SESSION['cart'];
@@ -33,7 +33,4 @@ foreach($cart as $product_id => $each){
 mysqli_close($conn);
 unset($_SESSION['cart']);
 
-$_SESSION['success'] = 'Đặt hàng thành công';
-
-
-header('location:order_info.php?');
+header('location:../order_info.php');

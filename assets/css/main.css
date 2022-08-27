@@ -287,7 +287,7 @@
             background-color: #fafafa;
         }
 
-        .user__moblie-info {
+        .user__mobile-info {
             display: flex;
             padding: 20px 6px 10px 6px;
             border-bottom: 1px solid var(--primary-color) ;
@@ -718,7 +718,7 @@
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            margin: 0 0 20px 20px;
+            padding: 0 0 20px 20px;
         }
         .home-product-item__action  {
             display: flex;
