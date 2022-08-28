@@ -25,7 +25,7 @@
     echo "<script type='text/javascript'>alert(' <?php echo $_GET['error'] ?>');</script>";
 <?php } ?>
     <!-- Begin: Header -->
-    <?php require_once 'header.php'; ?>
+    <?php require_once 'components/header.php'; ?>
 <!-- End: Header  -->
     
 <div class="main-form">

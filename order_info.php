@@ -120,7 +120,7 @@
                                         </div>
                                     </div>
                                     <div class="re-order">
-                                        <form action="process_re-buy.php">
+                                        <form action="process/process_re-buy.php">
                                             <input type="hidden" value="<?php echo $each['id'] ?>" name="id">
                                             <button class="re-order__btn btn btn--primary" type="submit">
                                                 Mua lại

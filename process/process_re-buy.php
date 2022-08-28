@@ -2,7 +2,7 @@
 session_start();
 $customer_id = $_SESSION['id'];
 
-require_once'admin/control.php';
+require_once'../admin/control.php';
 $id_order=$_GET['id'];
 
 $sql="SELECT * from orders where id='$id_order'";
@@ -33,4 +33,4 @@ foreach($result as $each){
 }
 mysqli_close($conn);
 
-header('location:order_info.php?success=Đặt lại hàng thành công.');
+header('location:../order_info.php?success=Đặt lại hàng thành công.');

@@ -862,7 +862,8 @@ public function se_users($search='',$skip_page){
     }
     public function se_orders($id_cus){
         global $conn;
-        $sql="SELECT * FROM orders WHERE id_customer ='$id_cus'";
+        $sql="SELECT * FROM orders WHERE id_customer ='$id_cus'
+        order by order_date desc";
         $result=mysqli_query($conn,$sql);
         return($result);
         mysqli_close($conn);

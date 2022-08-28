@@ -131,14 +131,14 @@
                         </div>
                     </div>
                     <!-- Pagination -->
-                    <?php include('paging.php') ?>
+                    <?php require_once('components/paging.php') ?>
                 </div>
             </div>
         </div>
     </div>
 
     <?php
-        require_once 'footer.php';
+        require_once 'components/footer.php';
     ?>
 </body>
 </html>

@@ -130,7 +130,7 @@
                     </div>
                     
                     <!-- Pagination -->
-                    <?php require_once 'paging.php';?>
+                    <?php require_once 'components/paging.php';?>
                 </div>
             </div>
         </div>

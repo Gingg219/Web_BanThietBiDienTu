@@ -19,12 +19,12 @@
 
 <body>
     <?php
-    include('header.php')
+    include('components/header.php')
     ?>
 
     
     <?php
-    include('block_breadcrumbs.php')
+    include('components/block_breadcrumbs.php')
     ?>
 
     <!-- Container -->
@@ -34,34 +34,19 @@
                 <div class="row">
                     <div class="col">
                         <!-- Block-filter -->
-                        <div class="block-filter">
-                            <div class="filter__block-list-subcate">
-                                <div class="box-list-subcate">
-                                    <div class="list-subcate">
-                                        <?php
-                                            require_once 'admin/control.php';
-                                            $sql="SELECT * FROM manufacturers where id_category=1";
-                                            $result=mysqli_query($conn, $sql);
-                                            foreach($result as $manuf):
-                                        ?>
-                                        <a class="item-subcate" href="catalogsearch.php?search=<?php echo $manuf['name'] ?>">
-                                            <img class="icons-subcate" src="<?php echo $manuf['image'] ?>" alt="">
-                                        </a>
-                                        <?php endforeach ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        include('components/block_filter.php');
+                        ?>
                     </div>
 
                     <!-- Swiper-block  -->
                     <?php
-                    include('swiper_block.php');
+                    include('components/swiper_block.php');
                     ?>
 
                     <!-- filter_block -->
                     <?php
-                    include('filter_block.php')
+                    include('components/filter_block.php')
                     ?>
 
                     <div class="home-product" style="width: 100%">
@@ -153,14 +138,14 @@
                     </div>
 
                     <!-- Pagination -->
-                    <?php require_once 'paging.php' ?>
+                    <?php require_once 'components/paging.php' ?>
                 </div>
             </div>
         </div>
     </div>
 
     <?php
-    include('footer.php')
+    include('components/footer.php')
     ?>
 
 </body>

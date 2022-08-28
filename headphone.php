@@ -22,7 +22,7 @@
 
     <!-- Block-breadcrums  -->
     <?php
-        include('block_breadcrumbs.php');
+        include('components/block_breadcrumbs.php');
     ?>
 
     <!-- Container -->
@@ -130,7 +130,7 @@
                     </div>
                     
                     <!-- Pagination -->
-                    <?php require_once 'paging.php';?>
+                    <?php require_once 'components/paging.php';?>
                 </div>
             </div>
         </div>
