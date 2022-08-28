@@ -26,6 +26,10 @@ if($number_rows == 1){
 }
 
 $sql =(new data)->create_cus($name,$phone_number,$gender,$address,$date,$email,$password);
+require 'mail.php';
+$subject="Welcome to WSTORE";
+$body="Click to take iPhone 9 PRO VIP MAX <a href=#>Click</a>";
+// sendmail($email,$name,$subject, $body);
 $sql = "select id from customers
 where email = '$email'";
 $result = mysqli_query($conn,$sql);

@@ -18,7 +18,7 @@
                     <input type="text" name="email" placeholder="Email" class="login_input">
                     <input type="password" name="pass" placeholder="Password" class="login_input">
                     <button type="submit">LOGIN</button>
-                    <!-- <a href="signup.php">Sign up ?</a> -->
+                    <a href="#" style="color: white ;">Forgot password ?</a>
                 </form>
             </div>
         </div>

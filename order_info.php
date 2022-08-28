@@ -120,9 +120,13 @@
                                         </div>
                                     </div>
                                     <div class="re-order">
-                                        <div class="re-order__btn btn btn--primary">
-                                            Mua lại
-                                        </div>
+                                        <form action="process_re-buy.php">
+                                            <input type="hidden" value="<?php echo $each['id'] ?>" name="id">
+                                            <button class="re-order__btn btn btn--primary" type="submit">
+                                                Mua lại
+                                            </button>
+                                        </form>
+                                        
                                     </div>
                                 </div>
                                 <?php endforeach ?>

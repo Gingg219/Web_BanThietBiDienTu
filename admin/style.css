@@ -292,20 +292,10 @@ body{
 .login_container {
   width: 100vw;
   height: 100vh;
-  background: #16a085; 
+  background: #594f8d; 
   display: flex;
   justify-content: center;
   align-items: center;
-  background: -webkit-linear-gradient(
-      to right,
-      #f4d03f,
-      #16a085
-  );
-  background: linear-gradient(
-      to right,
-      #f4d03f,
-      #16a085
-  );
 }
 .login {
   background: var(--background-color);
