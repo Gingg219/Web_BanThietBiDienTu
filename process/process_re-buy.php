@@ -33,4 +33,6 @@ foreach($result as $each){
 }
 mysqli_close($conn);
 
+$_SESSION['success']="Đặt hàng thành công";
+
 header('location:../order_info.php?success=Đặt lại hàng thành công.');
