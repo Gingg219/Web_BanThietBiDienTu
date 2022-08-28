@@ -22,7 +22,7 @@
 
     <!-- Block-breadcrumb  -->
     <?php
-        include('./components/block_breadcrumb.php')
+        include('./components/block_breadcrumbs.php')
     ?>
 
     

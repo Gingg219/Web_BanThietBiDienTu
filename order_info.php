@@ -64,22 +64,29 @@
                                 ?>
                                 <div class="have-order-in-orders">
                                     <div class="order-state-wrap">
-                                        <span>
-                                            Trạng thái đơn hàng: 
-                                        </span>
-                                        <?php
-                                            switch ($each['status']) {
-                                                case '0':
-                                                    echo '<span class="order-state">Chờ duyệt</span>';
-                                                    break;
-                                                case '1':
-                                                    echo '<span class="order-state">Đã duyệt </span>';
-                                                    break;
-                                                case '2':
-                                                    echo '<span class="order-state">Đã huỷ</span>';
-                                                    break;
-                                                }
-                                        ?>
+                                        <div style="display: flex">
+                                            <span style="margin-right: 10px">Thời gian đặt hàng: </span>
+                                            <p id="order-time" style="color: var(--primary-color"><?php echo $each['order_date']; ?></p>
+                                        </div>
+                                        
+                                        <div>
+                                            <span>
+                                                Trạng thái đơn hàng: 
+                                            </span>
+                                            <?php
+                                                switch ($each['status']) {
+                                                    case '0':
+                                                        echo '<span class="order-state">Chờ duyệt</span>';
+                                                        break;
+                                                    case '1':
+                                                        echo '<span class="order-state">Đã duyệt </span>';
+                                                        break;
+                                                    case '2':
+                                                        echo '<span class="order-state">Đã huỷ</span>';
+                                                        break;
+                                                    }
+                                            ?>
+                                        </div>
                                     </div>
                                     <?php
                                         $detail=(new data)->detail_orders($each['id']);
@@ -141,7 +148,6 @@
     <?php
         include('./components/footer.php')
     ?>
-
 </body>
 </html>
 
