@@ -577,6 +577,162 @@
                             <?php endforeach?>
                         </div>         
                     </div>
+                    <div class="col l-12 m-12 c-12">
+                        <!-- list-product -->
+                        <div class="box-outstanding-title">
+                            <a href="" class="box-outstanding-title__title text-decoration-none">
+                                <h2>Tivi nổi bật</h2>
+                            </a>
+                            <div class="box-related-tag">
+                                <div class="list-related-tag">
+                                    <!-- <a class="item-related-tag" href="">Reno7</a> -->
+                                <?php foreach($manuf_tivi as $each_smartwatch): ?>
+                                    <a href="smartwatch.php?search=<?php echo $each_smartwatch['name'] ?>"><?php echo $each_smartwatch['name'] ?></a>
+                                <?php endforeach?>
+                                    <a class="item-related-tag" href="">Xem tất cả</a>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="row sm-gutter product-item__wrap mb-3">
+                            <!-- product item -->
+                            <?php
+                                $smartwatches_index=(new data)->se_products_tivi_index();
+                                foreach($smartwatches_index as $each_smartwatch_index):
+                            ?>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="detail_products.php?id=<?php echo $each_smartwatch_index['id']?>">
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartwatch_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_smartwatch_index['name']?></h4>
+                                    <div class="home-product-item__price">
+                                        <span class="price-old"><?php echo number_format($each_smartwatch_index['price'])?> đ</span>
+                                        <span class="price-current"><?php echo number_format($each_smartwatch_index['price_sale'])?> đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_smartwatch_index['sold']);?> đã bán</span>
+                                    </div>
+                                        <?php if ($each_smartwatch_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
+                                </a>
+                            </div>
+                            <?php endforeach?>
+                        </div>         
+                    </div>
+                    <div class="col l-12 m-12 c-12">
+                        <!-- list-product -->
+                        <div class="box-outstanding-title">
+                            <a href="" class="box-outstanding-title__title text-decoration-none">
+                                <h2>Phụ kiện nổi bật</h2>
+                            </a>
+                            <div class="box-related-tag">
+                                <div class="list-related-tag">
+                                    <!-- <a class="item-related-tag" href="">Reno7</a> -->
+                                <?php foreach($manuf_gadgets as $each_smartwatch): ?>
+                                    <a href="smartwatch.php?search=<?php echo $each_smartwatch['name'] ?>"><?php echo $each_smartwatch['name'] ?></a>
+                                <?php endforeach?>
+                                    <a class="item-related-tag" href="">Xem tất cả</a>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="row sm-gutter product-item__wrap mb-3">
+                            <!-- product item -->
+                            <?php
+                                $smartwatches_index=(new data)->se_products_gadgets_index();
+                                foreach($smartwatches_index as $each_smartwatch_index):
+                            ?>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="detail_products.php?id=<?php echo $each_smartwatch_index['id']?>">
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartwatch_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_smartwatch_index['name']?></h4>
+                                    <div class="home-product-item__price">
+                                        <span class="price-old"><?php echo number_format($each_smartwatch_index['price'])?> đ</span>
+                                        <span class="price-current"><?php echo number_format($each_smartwatch_index['price_sale'])?> đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_smartwatch_index['sold']);?> đã bán</span>
+                                    </div>
+                                        <?php if ($each_smartwatch_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
+                                </a>
+                            </div>
+                            <?php endforeach?>
+                        </div>         
+                    </div>
+                    <div class="col l-12 m-12 c-12">
+                        <!-- list-product -->
+                        <div class="box-outstanding-title">
+                            <a href="" class="box-outstanding-title__title text-decoration-none">
+                                <h2>Smart Home nổi bật</h2>
+                            </a>
+                            <div class="box-related-tag">
+                                <div class="list-related-tag">
+                                    <!-- <a class="item-related-tag" href="">Reno7</a> -->
+                                <?php foreach($manuf_smarthome as $each_smartwatch): ?>
+                                    <a href="smartwatch.php?search=<?php echo $each_smartwatch['name'] ?>"><?php echo $each_smartwatch['name'] ?></a>
+                                <?php endforeach?>
+                                    <a class="item-related-tag" href="">Xem tất cả</a>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="row sm-gutter product-item__wrap mb-3">
+                            <!-- product item -->
+                            <?php
+                                $smartwatches_index=(new data)->se_products_smarthome_index();
+                                foreach($smartwatches_index as $each_smartwatch_index):
+                            ?>
+                            <div class="col l-2-4 m-4 c-6">
+                                <a class="home-product-item" href="detail_products.php?id=<?php echo $each_smartwatch_index['id']?>">
+                                    <div class="home-product-item__img" style="background-image: url(<?php echo $each_smartwatch_index['image']?>);"></div>
+                                    <h4 class="home-product-item__name"><?php echo $each_smartwatch_index['name']?></h4>
+                                    <div class="home-product-item__price">
+                                        <span class="price-old"><?php echo number_format($each_smartwatch_index['price'])?> đ</span>
+                                        <span class="price-current"><?php echo number_format($each_smartwatch_index['price_sale'])?> đ</span>
+                                    </div>
+                                    <div class="home-product-item__action">
+                                        <div class="home-product-item__rating">
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="home-product-item__star--gold fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="home-product-item__sold"><?php echo number_format($each_smartwatch_index['sold']);?> đã bán</span>
+                                    </div>
+                                        <?php if ($each_smartwatch_index['sold'] > 9) { ?>
+                                                <div class="home-product-item__favorite">
+                                                <i class="fas fa-check"></i>
+                                                <Span>Yêu thích</Span>
+                                            </div>
+                                            <?php } ?>
+                                </a>
+                            </div>
+                            <?php endforeach?>
+                        </div>         
+                    </div>
                 </div>
             </div>
         </div>

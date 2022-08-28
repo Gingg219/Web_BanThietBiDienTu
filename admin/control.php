@@ -375,7 +375,7 @@ public function se_users($search='',$skip_page){
         products.id_manufacturers=manufacturers.id
         WHERE manufacturers.id_category=4
         order by sale desc
-        limit 10";
+        limit 5";
         $result=mysqli_query($conn,$sql);
         return $result;
         mysqli_close($conn);
@@ -386,7 +386,40 @@ public function se_users($search='',$skip_page){
         products.id_manufacturers=manufacturers.id
         WHERE manufacturers.id_category=5
         order by sale desc
-        limit 10";
+        limit 5";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_products_smarthome_index(){
+        global $conn;
+        $sql="SELECT products.*,(products.price-products.price_sale) as sale FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE manufacturers.id_category=6
+        order by sale desc
+        limit 5";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_products_gadgets_index(){
+        global $conn;
+        $sql="SELECT products.*,(products.price-products.price_sale) as sale FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE manufacturers.id_category=7
+        order by sale desc
+        limit 5";
+        $result=mysqli_query($conn,$sql);
+        return $result;
+        mysqli_close($conn);
+    }
+    public function se_products_tivi_index(){
+        global $conn;
+        $sql="SELECT products.*,(products.price-products.price_sale) as sale FROM products INNER JOIN manufacturers On
+        products.id_manufacturers=manufacturers.id
+        WHERE manufacturers.id_category=8
+        order by sale desc
+        limit 5";
         $result=mysqli_query($conn,$sql);
         return $result;
         mysqli_close($conn);
