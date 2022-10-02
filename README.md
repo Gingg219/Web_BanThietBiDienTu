@@ -1,5 +1,7 @@
 # Web_BanThietBiDienTu
 
+# Một số hình ảnh về sản phẩm: https://drive.google.com/file/d/1SeIuOcNIs0XFVSIgSw55kSOf5VmdJLhq/view?usp=sharing
+
 # Mô tả chức năng
 
 Phía người dùng:
